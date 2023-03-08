@@ -17,6 +17,7 @@ Believe it or not, that's pretty much all there is to it. Every program you've e
 {% embed url="https://youtu.be/kgEP202a2MU" %}
 
 {% embed url="https://youtu.be/kgEP202a2MU" %}
-{% include youtube.html id="kgEP202a2MU" %}  
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kgEP202a2MU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{% embed url="https://youtu.be/kgEP202a2MU" %}
+
+{% embed url="https://youtu.be/0Vc2IUIJExY" %}

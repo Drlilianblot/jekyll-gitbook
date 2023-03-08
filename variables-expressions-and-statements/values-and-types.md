@@ -1,5 +1,7 @@
 # Values and types
 
+{% embed url="https://youtu.be/z47VfZ8rn9E" %}
+
 A **value** is one of the basic things a program works with, like a letter or a number. The values we have seen so far are `1`, `2`, and `'Hello, World!'`.
 
 These values belong to different **types** also known as **classes** in Python 3. For example, `2` is an integer, and `'Hello, World!'` is a **string**, so-called because it contains a string of letters. You (and the interpreter) can identify strings because they are enclosed in quotation marks.
@@ -19,14 +21,14 @@ If you are not sure what type a value has, the interpreter can tell you.
 </strong><strong>&#x3C;class 'int'>
 </strong></code></pre>
 
-&#x20;Not surprisingly, strings belong to the type (class) `str` and integers belong to the type (class) `int`. Less obviously, numbers with a decimal point belong to a type called `float`, because these numbers are represented in a format called **floating-point**.
+Not surprisingly, strings belong to the type (class) `str` and integers belong to the type (class) `int`. Less obviously, numbers with a decimal point belong to a type called `float`, because these numbers are represented in a format called **floating-point**.
 
 ```python
 >>> type(3.2) 
 <class 'float'> 
 ```
 
-What about values like `'17'` and `'3.2'`? They look like numbers, but they are in quotation marks like strings.&#x20;
+What about values like `'17'` and `'3.2'`? They look like numbers, but they are in quotation marks like strings.
 
 ```python
 >>> type('17') 
@@ -169,7 +171,7 @@ The first example is a list of four integers. The second is a list of three stri
 >>>
 ```
 
-A list within another list is said to be **nested**. A list that contains no elements is called an **empty list**; you can create one with empty brackets, `[]`. As you might expect, you can assign list values to variables:&#x20;
+A list within another list is said to be **nested**. A list that contains no elements is called an **empty list**; you can create one with empty brackets, `[]`. As you might expect, you can assign list values to variables:
 
 ```bash
 >>> cheeses = ['Cheddar', 'Edam', 'Gouda'] 
@@ -206,7 +208,7 @@ You can think of a list as a relationship between indices and elements. This rel
 
 <mark style="background-color:blue;">\beforefig \centerline{\includegraphics{figs/list\_state.eps\}} \afterfig</mark>
 
-Lists are represented by boxes with the word "list" outside and the elements of the list inside. `cheeses` refers to a list with three elements indexed `0`, `1` and `2`. `numbers` contains two elements; the diagram shows that the value of the second element has been reassigned from `123` to `5`. `empty` refers to a list with no elements.  List indices work the same way as string indices:
+Lists are represented by boxes with the word "list" outside and the elements of the list inside. `cheeses` refers to a list with three elements indexed `0`, `1` and `2`. `numbers` contains two elements; the diagram shows that the value of the second element has been reassigned from `123` to `5`. `empty` refers to a list with no elements. List indices work the same way as string indices:
 
 * Any integer expression can be used as an index.
 * If you try to read or write an element that does not exist, you get an `IndexError`.
@@ -283,7 +285,7 @@ But both of those operations can be expressed more clearly with list methods sho
 
 ### Tuples
 
-A tuple is a sequence of values. The values can be any type, and they are indexed by integers., so in that respect tuples are a lot like lists. The important difference is that tuples are **immutable** (like Strings).  Syntactically, a tuple is a comma-separated list of values:
+A tuple is a sequence of values. The values can be any type, and they are indexed by integers., so in that respect tuples are a lot like lists. The important difference is that tuples are **immutable** (like Strings). Syntactically, a tuple is a comma-separated list of values:
 
 <pre class="language-python"><code class="lang-python"><strong>t = 'a', 'b', 'c', 'd', 'e' 
 </strong></code></pre>
@@ -405,7 +407,7 @@ The return value from `split` is a list with two elements; the first element is 
 >>>
 ```
 
-It is recommended to read the [documentation about the `split`](https://python-reference.readthedocs.io/en/latest/docs/str/split.html) "function"[^1] from the string (`str`) data type as it is a very useful function.
+It is recommended to read the [documentation about the `split`](https://python-reference.readthedocs.io/en/latest/docs/str/split.html) "function" from the string (`str`) data type as it is a very useful function.
 
 ### Function `len`
 
@@ -442,5 +444,3 @@ The reason for the `IndexError` is that there is no letter in `'banana'` with th
 ```
 
 Alternatively, you can use negative indices, which count backward from the end of the string. The expression `fruit[-1]` yields the last letter, `fruit[-2]` yields the second to last, and so on.
-
-[^1]: The proper term is "**method**" instead of function. This will be covered when we will be covering Python classes.
