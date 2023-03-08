@@ -1,13 +1,6 @@
 # Table of contents
 
 * [Preface](README.md)
-* [A deeper dive into Strings, Lists and Tuples](a-deeper-dive-into-strings-lists-and-tuples/README.md)
-  * [Debugging](a-deeper-dive-into-strings-lists-and-tuples/debugging.md)
-  * [Exercises](a-deeper-dive-into-strings-lists-and-tuples/exercises.md)
-  * [Glossary](a-deeper-dive-into-strings-lists-and-tuples/glossary.md)
-  * [More on Lists](a-deeper-dive-into-strings-lists-and-tuples/more-on-lists.md)
-  * [More on Strings](a-deeper-dive-into-strings-lists-and-tuples/more-on-strings.md)
-  * [More on Tuples](a-deeper-dive-into-strings-lists-and-tuples/more-on-tuples.md)
 * [Conditionals](conditionals/README.md)
   * [Alternative execution](conditionals/alternative-execution.md)
   * [Boolean expressions](conditionals/boolean-expressions.md)
@@ -50,6 +43,13 @@
   * [Multiple assignment & Updating variables](variables-expressions-and-statements/multiple-assignment-and-updating-variables.md)
   * [Values and types](variables-expressions-and-statements/values-and-types.md)
   * [Variables](variables-expressions-and-statements/variables.md)
+* [A deeper dive into Strings, Lists and Tuples](a-deeper-dive-into-strings-lists-and-tuples/README.md)
+  * [Debugging](a-deeper-dive-into-strings-lists-and-tuples/debugging.md)
+  * [Exercises](a-deeper-dive-into-strings-lists-and-tuples/exercises.md)
+  * [Glossary](a-deeper-dive-into-strings-lists-and-tuples/glossary.md)
+  * [More on Lists](a-deeper-dive-into-strings-lists-and-tuples/more-on-lists.md)
+  * [More on Strings](a-deeper-dive-into-strings-lists-and-tuples/more-on-strings.md)
+  * [More on Tuples](a-deeper-dive-into-strings-lists-and-tuples/more-on-tuples.md)
 * [Code Format](code-format.md)
 
 ## Group 1
