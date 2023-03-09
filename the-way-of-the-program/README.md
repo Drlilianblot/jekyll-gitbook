@@ -13,11 +13,3 @@ The details look different in different languages, but a few basic instructions 
 * **repetition:** Perform some action repeatedly, usually with some variation.
 
 Believe it or not, that's pretty much all there is to it. Every program you've ever used, no matter how complicated, is made up of instructions that look pretty much like these. So you can think of programming as the process of breaking a large, complex task into smaller and smaller subtasks until the subtasks are simple enough to be performed with one of these basic instructions. That may be a little vague, but we will come back to this topic when we talk about **algorithms**.
-
-{% embed url="https://youtu.be/kgEP202a2MU" %}
-
-{% embed url="https://youtu.be/kgEP202a2MU" %}
-
-{% embed url="https://youtu.be/kgEP202a2MU" %}
-
-{% embed url="https://youtu.be/0Vc2IUIJExY" %}
