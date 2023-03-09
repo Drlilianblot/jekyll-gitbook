@@ -8,5 +8,3 @@ description: >-
 # Variables, expressions and statements
 
 We will learn about operators and operands, the building blocks of a Python expressions. We will also look at how to build more complex expression and assign the result of the computation to a variable.
-
-{% embed url="https://youtu.be/z47VfZ8rn9E" %}
