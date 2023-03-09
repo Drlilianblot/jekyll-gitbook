@@ -1,5 +1,7 @@
 # More on Lists
 
+{% embed url="https://www.youtube.com/watch?index=8&list=PLKb_ndRMEWN9LzbKCy4R-5YtI4GoMzCgd&v=u6e7wKVbu8E" %}
+
 ## The `in` operator
 
 The `in` operator seen for strings also works on lists.
@@ -24,7 +26,7 @@ for cheese in cheeses:
 ```
 {% endcode %}
 
-&#x20;This works well if you only need to read the elements of the list. But if you want to write or update the elements, you need the indices. A common way to do that is to combine the functions `range` and `len`:
+This works well if you only need to read the elements of the list. But if you want to write or update the elements, you need the indices. A common way to do that is to combine the functions `range` and `len`:
 
 {% code lineNumbers="true" %}
 ```python
@@ -71,8 +73,6 @@ Similarly, the `*` operator repeats a list a given number of times:
 
 The first example repeats `[0]` four times. The second example repeats the list `[1, 2, 3]` three times.
 
-
-
 ## List methods
 
 Python provides methods that operate on lists. For example, `append` adds a new element to the end of a list:
@@ -108,7 +108,7 @@ This example leaves `t2` unmodified.
 >>>
 ```
 
-List methods are all void; they modify the list and return `None`. If you accidentally write \
+List methods are all void; they modify the list and return `None`. If you accidentally write\
 `t = t.sort()`, you will be disappointed with the result.
 
 ## Map, filter and reduce
@@ -159,7 +159,7 @@ def capitalise_all(word):
 ```
 {% endcode %}
 
-`result` is initialised with an empty list; each time through the loop, we append the next element. So `result` is another kind of accumulator.  An operation like `capitalise_all` is sometimes called a `map` because it "maps" a function (in this case the method `capitalize`) onto each of the elements in a sequence.
+`result` is initialised with an empty list; each time through the loop, we append the next element. So `result` is another kind of accumulator. An operation like `capitalise_all` is sometimes called a `map` because it "maps" a function (in this case the method `capitalize`) onto each of the elements in a sequence.
 
 Another common operation is to select some of the elements from a list and return a sublist. For example, the following function takes a list of strings and returns a list that contains only the uppercase strings:
 
@@ -430,7 +430,7 @@ def tail(t):
 ```
 {% endcode %}
 
-&#x20;This function leaves the original list unmodified. Here's how it is used:
+This function leaves the original list unmodified. Here's how it is used:
 
 ```bash
 >>> letters = ['a', 'b', 'c']
@@ -451,8 +451,3 @@ def tail(t):
 
 
 </details>
-
-
-
-
-

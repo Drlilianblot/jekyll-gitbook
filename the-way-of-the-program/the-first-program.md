@@ -8,24 +8,25 @@ Before we can write our first program we need to launch the Python interpreter. 
 
 <figure><img src="../.gitbook/assets/PythonShellCMD.png" alt=""><figcaption><p>Using the Python interpreter from the command shell</p></figcaption></figure>
 
-* Open IDLE(Python 3.6 32 bits) from the Windows start menu. A Python shell opens and is ready to accept your code:
+* Open IDLE(Python 3.6 or later) from the Windows start menu. A Python shell opens and is ready to accept your code:
 
 <figure><img src="../.gitbook/assets/IDLEshell.png" alt=""><figcaption><p>Using the Python interpreter via IDLE</p></figcaption></figure>
 
 Now that we have a Python shell opened, we can write our program. In Python 3, it looks like this:
 
-```python
+```bash
 >>> print('Hello, World!') 
-Hello, World!
+ Hello, World!
+>>>
 ```
 
 The quotation marks in the program mark the beginning and end of the text to be displayed; they don't appear in the result.
 
 Now that we can start programming, it might be a good time to illustrate the type of errors we may encounter whilst programming. The first one we mentioned was a syntax error like this one:
 
-```python
+```bash
 >>> 1 + 2) 
-SyntaxError: invalid syntax
+ SyntaxError: invalid syntax
 >>>
 ```
 
@@ -33,10 +34,11 @@ where the opening bracket is missing.
 
 The second type of error are runtime errors like the division by zero shown here:
 
-```python
+```bash
 >>> print(10/0) 
-Traceback (most recent call last): File "<pyshell#1>", line 1, in print(10/0) 
-ZeroDivisionError: division by zero
+ Traceback (most recent call last): 
+     File "<pyshell#1>", line 1, in print(10/0) 
+ ZeroDivisionError: division by zero
 >>>
 ```
 
@@ -48,9 +50,10 @@ $$
 
 Now if we write the following implementation:
 
-```python
+```bash
 >>> print('Fahrenheit 35 in Celsius degree is:', 5/9*35-32) 
-Fahrenheit 35 in Celsius degree is: -12.555555555555554
+ Fahrenheit 35 in Celsius degree is: -12.555555555555554
+>>>
 ```
 
 the program runs and does not create any error. Does that mean that the program is correct? Unfortunately, NO. The result should have been `1.66` not `-12.55`.

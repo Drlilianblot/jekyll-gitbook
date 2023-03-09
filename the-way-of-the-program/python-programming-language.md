@@ -1,12 +1,14 @@
 # Python Programming Language
 
+{% embed url="https://www.youtube.com/watch?v=kgEP202a2MU" %}
+
 ## Formal and natural languages
 
-**Definition -Natural languages** are the languages people speak, such as English, Spanish, and French. They were not designed by people (although people try to impose some order on them); they evolved naturally.&#x20;
+**Definition -Natural languages** are the languages people speak, such as English, Spanish, and French. They were not designed by people (although people try to impose some order on them); they evolved naturally.
 
-**Definition - Formal languages** are languages that are designed by people for specific applications. For example, the notation that mathematicians use is a formal language that is particularly good at denoting relationships among numbers and symbols. Chemists use a formal language to represent the chemical structure of molecules.&#x20;
+**Definition - Formal languages** are languages that are designed by people for specific applications. For example, the notation that mathematicians use is a formal language that is particularly good at denoting relationships among numbers and symbols. Chemists use a formal language to represent the chemical structure of molecules.
 
-> &#x20;Programming languages are formal languages that have been designed to express computations.
+> Programming languages are formal languages that have been designed to express computations.
 
 Formal languages tend to have strict rules about syntax. For example, `3 + 3 = 6` is a syntactically correct mathematical statement, but `3 + = 6£3` is not. Syntax rules come in two flavours, pertaining to **tokens** and **structure**. Tokens are the basic elements of the language, such as words, numbers, operators. One of the problems with `3 + = 6£3` is that `£` is not a legal token in mathematics.
 
@@ -34,20 +36,21 @@ The advantages are enormous. First, it is much easier for a human to program in 
 
 Two kinds of programs process high-level languages into low-level languages: **interpreters** and **compilers**. An interpreter reads a high-level program and executes it, meaning that it does what the program says. It processes the program a little at a time, alternately reading lines and performing computations.
 
-* [ ] insert figure for an interpreter
+* [ ] <mark style="background-color:red;">insert figure for an interpreter</mark>
 
 A compiler reads the program and translates it completely before the program starts running. In this context, the high-level program is called the **source code**, and the translated program is called the **object code** or the **executable**. Once a program is compiled, you can execute it repeatedly without further translation.
 
-* [ ] insert figure for compiler
+* [ ] <mark style="background-color:red;">insert figure for compiler</mark>
 
 Python is considered an interpreted language because Python programs are executed by an interpreter. There are two ways to use the interpreter: **interactive mode** and **script mode**. In interactive mode, you type Python programs and the interpreter prints the result:
 
-```python
+```bash
 >>> 1 + 1
-2
+ 2
+>>>
 ```
 
-The chevron, >>>, is the **prompt** the interpreter uses to indicate that it is ready. If you type 1 + 1, the interpreter replies 2, the evaluation of the expression 1+1.
+The chevron, <mark style="color:blue;">>>></mark>, is the **prompt** the interpreter uses to indicate that it is ready. If you type 1 + 1, the interpreter replies 2, the evaluation of the expression 1+1.
 
 Alternatively, you can store code in a file and use the interpreter to execute the contents of the file, which is called a **script**. By convention, Python scripts have names that end with `.py`. To execute the script, you have to tell the interpreter the name of the file. In a Windows command shell, you would type:
 
@@ -55,7 +58,7 @@ Alternatively, you can store code in a file and use the interpreter to execute t
 C:\code> python helloworld.py
 ```
 
-where `helloworld.py` is the script located in the folder `C:\code` you want to execute. In other development environments, the details of executing scripts are different. You can find instructions for your environment at the Python website [python.org](https://www.python.org).
+where `helloworld.py` is the script located in the folder `C:\code` you want to execute. In other development environments, the details of executing scripts are different. You can find instructions for your environment at the Python website [python.org](https://www.python.org). Please note that in this example, we assume that `python.exe` is in your windows `PATH`.
 
 Working in interactive mode is convenient for testing small pieces of code because you can type and execute them immediately. But for anything more than a few lines, you should save your code as a script so you can modify and execute it in the future.
 

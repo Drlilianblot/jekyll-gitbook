@@ -8,41 +8,46 @@ These values belong to different **types** also known as **classes** in Python 3
 
 The print statement also works for integers.
 
-```python
+```bash
 >>> print(4) 
-4
+ 4
+>>>
 ```
 
 If you are not sure what type a value has, the interpreter can tell you.
 
-<pre class="language-python"><code class="lang-python"><strong>>>> type('Hello, World!') 
-</strong><strong>&#x3C;class 'str'> 
+<pre class="language-bash"><code class="lang-bash"><strong>>>> type('Hello, World!') 
+</strong><strong> &#x3C;class 'str'> 
 </strong><strong>>>> type(17) 
-</strong><strong>&#x3C;class 'int'>
+</strong> &#x3C;class 'int'>
+<strong>>>>
 </strong></code></pre>
 
 Not surprisingly, strings belong to the type (class) `str` and integers belong to the type (class) `int`. Less obviously, numbers with a decimal point belong to a type called `float`, because these numbers are represented in a format called **floating-point**.
 
-```python
+```bash
 >>> type(3.2) 
-<class 'float'> 
+ <class 'float'> 
+>>>
 ```
 
 What about values like `'17'` and `'3.2'`? They look like numbers, but they are in quotation marks like strings.
 
-```python
+```bash
 >>> type('17') 
-<class 'str'> 
+ <class 'str'> 
 >>> type('3.2') 
-<class 'str'>
+ <class 'str'>
+>>>
 ```
 
 They are strings.
 
 When you type a large integer, you might be tempted to use commas between groups of three digits, as in `1,000,000`. This is not a legal integer in Python, but it is legal:
 
-<pre class="language-python"><code class="lang-python"><strong>>>> print(1,000,000) 
-</strong><strong>1 0 0 
+<pre class="language-bash"><code class="lang-bash"><strong>>>> print(1,000,000) 
+</strong><strong> 1 0 0 
+</strong><strong>>>>
 </strong></code></pre>
 
 Well, that's not what we expected at all! Python interprets `1,000,000` as a comma-separated sequence of integers, which it prints with spaces between. This is the first example we have seen of a semantic error: the code runs without producing an error message, but it doesn't do the "right" thing.
@@ -51,10 +56,11 @@ Well, that's not what we expected at all! Python interprets `1,000,000` as a com
 
 One of the most powerful features of a programming language is the ability to manipulate **variables**. A variable is a name that refers to a value. An **assignment statement** creates new variables and gives them values:
 
-```python
+```bash
 >>> message = 'And now for something completely different' 
 >>> n = 17 
 >>> pi = 3.1415926535897931
+>>>
 ```
 
 This example makes three assignments. The first assigns a string to a new variable named `message`; the second gives the integer `17` to `n`; the third assigns the (approximate) value of $$\pi$$to `pi`.
@@ -65,26 +71,28 @@ A common way to represent variables on paper is to write the name with an arrow 
 
 To display the value of a variable, you can use a print statement:
 
-```python
+```bash
 >>> print(n) 
-17 
+ 17 
 >>> print(pi) 
-3.14159265359
+ 3.14159265359
+>>>
 ```
 
 The type of a variable is the type of the value it refers to.
 
-<pre class="language-python"><code class="lang-python"><strong>>>> type(message)
-</strong><strong>&#x3C;class 'str'> 
-</strong><strong>>>> type(n) 
-</strong><strong>&#x3C;class 'int'> 
+<pre class="language-bash"><code class="lang-bash"><strong>>>> type(message)
+</strong> &#x3C;class 'str'> 
+<strong>>>> type(n) 
+</strong><strong> &#x3C;class 'int'> 
 </strong><strong>>>> type(pi) 
-</strong><strong>&#x3C;class 'float'>
+</strong><strong> &#x3C;class 'float'>
+</strong><strong>>>>
 </strong></code></pre>
 
 :information\_source: If you type an integer with a leading zero, you might get a confusing error:
 
-```python
+```bash
 >>> zipcode = 02492 
                   ^
 SyntaxError: invalid token 
@@ -96,13 +104,13 @@ Programmers generally choose names for their variables that are meaningful-they 
 
 If you give a variable an illegal name, you get a syntax error:
 
-```
+```bash
 >>> 76trombones = 'big parade' 
-SyntaxError: invalid syntax 
+ SyntaxError: invalid syntax 
 >>> more@ = 1000000 
-SyntaxError: invalid syntax 
+ SyntaxError: invalid syntax 
 >>> class = 'Advanced Theoretical Zymurgy' 
-SyntaxError: invalid syntax 
+ SyntaxError: invalid syntax 
 ```
 
 `76trombones` is illegal because it does not begin with a letter. `more@` is illegal because it contains an illegal character, `@`. But what's wrong with `class`? It turns out that `class` is one of Python's **keywords**. The interpreter uses keywords to recognise the structure of the program, and they cannot be used as variable names. Python 3 has 33 keywords has shown in the table below
@@ -128,17 +136,17 @@ For example, the script
 
 {% code lineNumbers="true" %}
 ```python
-print(1) 
-x = 2 
+print(5) 
+x = 8 
 print(x) 
 ```
 {% endcode %}
 
 produces the output
 
-```
-1
-2
+```bash
+5
+8
 ```
 
 The assignment statement produces no output.
@@ -191,12 +199,12 @@ x = x+1
 
 This means "get the current value of `x`, add one, and then update `x` with the new value." If you try to update a variable that doesn't exist, you get an error, because Python evaluates the right side before it assigns a value to `x`:
 
-```
+```bash
 >>> y = y+1 
-Traceback (most recent call last): 
- File "<pyshell#49>", line 1, in <module> 
-   y = y+1 
-NameError: name 'y' is not defined 
+ Traceback (most recent call last): 
+     File "<pyshell#49>", line 1, in <module> 
+       y = y+1 
+ NameError: name 'y' is not defined 
 ```
 
 Before you can update a variable, you have to **initialise** it, usually with a simple assignment:

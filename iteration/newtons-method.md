@@ -24,6 +24,7 @@ For example, if $$a$$ is $$4$$ and $$x$$ is $$3$$:
 >>> y = (x + a/x) / 2 
 >>> print(y) 
  2.16666666667 
+>>>
 ```
 
 Which is closer to the correct answer ($$\sqrt{4} = 2$$). If we repeat the process with the new estimate, it gets even closer:
@@ -33,6 +34,7 @@ Which is closer to the correct answer ($$\sqrt{4} = 2$$). If we repeat the proce
 >>> y = (x + a/x) / 2 
 >>> print(y)
  2.00641025641 
+>>>
 ```
 
 After a few more updates, the estimate is almost exact:
@@ -46,6 +48,7 @@ After a few more updates, the estimate is almost exact:
 >>> y = (x + a/x) / 2 
 >>> print(y) 
  2.00000000003 
+>>>
 ```
 
 In general we don't know ahead of time how many steps it takes to get to the right answer, but we know when we get there because the estimate stops changing:
@@ -59,6 +62,7 @@ In general we don't know ahead of time how many steps it takes to get to the rig
 >>> y = (x + a/x) / 2 
 >>> print(y) 
  2.0 
+>>>
 ```
 
 When `y == x`, we can stop. Here is a loop that starts with an initial estimate, `x`, and improves it until it stops changing:
@@ -83,9 +87,4 @@ if abs(y-x) < epsilon:
 ```
 {% endcode %}
 
-Where `epsilon` has a value like $$0.0000001$$ that determines how close is close enough.&#x20;
-
-
-
-
-
+Where `epsilon` has a value like $$0.0000001$$ that determines how close is close enough.

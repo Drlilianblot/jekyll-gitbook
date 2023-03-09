@@ -4,7 +4,7 @@ At this point the syntax error you are most likely to make is an illegal variabl
 
 If you put a space in a variable name, Python thinks it is two operands without an operator:
 
-```
+```bash
 >>> bad name = 5 
 SyntaxError: invalid syntax 
 ```
@@ -13,12 +13,13 @@ For syntax errors, the error messages don't help much. The most common messages 
 
 The runtime error you are most likely to make is a `NameError` that is, trying to use a variable before you have assigned a value. This can happen if you spell a variable name wrong:
 
-```python
+```bash
 >>> principal = 327.68 
 >>> interest = principle * rate
-Traceback (most recent call last): File "<pyshell#36>", line 1, 
-in interest = principle * rate NameError: name 'principle' 
-is not defined 
+ Traceback (most recent call last): 
+     File "<pyshell#36>", line 1, 
+        in interest = principle * rate 
+  NameError: name 'principle' is not defined 
 ```
 
 Variables names are case sensitive, so `Principal` is not the same as `principal`.

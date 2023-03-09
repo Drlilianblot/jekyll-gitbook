@@ -7,6 +7,7 @@ A string is a **sequence** of characters. You can access the characters one at a
 ```bash
 >>> fruit = 'banana' 
 >>> letter = fruit[1] 
+>>>
 ```
 
 The second statement selects character number 1 from `fruit` and assigns it to `letter`. The expression in brackets is called an **index**. The index indicates which character in the sequence you want (hence the name). But be careful with indices, you might not get what you expect:
@@ -14,6 +15,7 @@ The second statement selects character number 1 from `fruit` and assigns it to `
 ```bash
 >>> print(letter)
  a 
+>>>
 ```
 
 For most people, the first letter (meaning at position 1) of `'banana'` is `b`, not `a`. But for computer scientists, the index is an offset from the beginning of the string, and the offset of the first letter is zero.
@@ -117,7 +119,7 @@ There are several ways to create a new list; the simplest is to enclose the elem
 
 The first example is a list of four integers. The second is a list of three strings. The elements of a list don't have to be the same type. The following list contains a string, a float, an integer, and another list:
 
-```
+```bash
 >>> mixedData = ['spam', 2.0, 5, [10, 20]] 
 >>>
 ```
@@ -285,7 +287,7 @@ If the argument is a sequence (string, list or tuple), the result is a tuple wit
 
 Because `tuple` is the name of a built-in function, you should avoid using it as a variable name. Most list operators also work on tuples. The bracket operator indexes an element:
 
-```
+```bash
 >>> t = ('a', 'b', 'c', 'd', 'e') 
 >>> print(t[0]) 
  a
@@ -343,7 +345,7 @@ The left side is a tuple of variables; the right side is a tuple of expressions.
 
 More generally, the right side can be any kind of sequence (string, list or tuple). For example, to split an email address into a user name and a domain, you could write:
 
-```
+```bash
 >>> addr = 'monty@python.org' 
 >>> uname, domain = addr.split('@')
 ```

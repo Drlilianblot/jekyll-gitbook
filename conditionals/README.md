@@ -1,16 +1,2 @@
 # Conditionals
 
-
-
-\newpage
-
-
-
-
-
-
-
-
-
-
-

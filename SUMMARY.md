@@ -26,13 +26,9 @@
   * [Exercises](functions/exercises.md)
 * [Conditionals](conditionals/README.md)
   * [Boolean expressions](conditionals/boolean-expressions.md)
-  * [Conditional execution](conditionals/conditional-execution.md)
-  * [Alternative execution](conditionals/alternative-execution.md)
-  * [Chained conditionals](conditionals/chained-conditionals.md)
-  * [Nested conditionals](conditionals/nested-conditionals.md)
+  * [Conditional statements](conditionals/conditional-execution.md)
   * [PEP 8 Recommendations](conditionals/pep-8-recommendations.md)
 * [Iteration](iteration/README.md)
-  * [Simple repetition](iteration/simple-repetition.md)
   * [The while statement](iteration/the-while-statement.md)
   * [The for statement](iteration/the-for-statement.md)
   * [break and continue statements](iteration/break-and-continue-statements.md)
@@ -50,6 +46,7 @@
   * [Glossary](a-deeper-dive-into-strings-lists-and-tuples/glossary.md)
   * [Exercises](a-deeper-dive-into-strings-lists-and-tuples/exercises.md)
 * [Code Format](code-format.md)
+* [to add to the dictionary chapter](page-1.md)
 
 ## Group 1
 
@@ -67,4 +64,3 @@
   * [Page with cover image](group-1/\_posts/2022-05-24-page\_cover.md)
   * [Wide tables](group-1/\_posts/2022-06-26-wide\_tables.md)
   * [Tips, Warnings, and Dangers](group-1/\_posts/2022-06-30-tips\_warnings\_dangers.md)
-* [Page 1](group-1/page-1.md)

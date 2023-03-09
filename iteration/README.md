@@ -1,5 +1,7 @@
 # Iteration
 
+{% embed url="https://www.youtube.com/watch?index=6&list=PLKb_ndRMEWN9LzbKCy4R-5YtI4GoMzCgd&v=14SkGe6DHdI" %}
+
 The following code repeats the same task twice:
 
 {% code lineNumbers="true" %}
@@ -28,7 +30,7 @@ for i in range(1000):
 ```
 {% endcode %}
 
-This is the simplest use of the `for` statement; we will see more later.&#x20;
+This is the simplest use of the `for` statement; we will see more later.
 
 `while` loops, on the other hand, are used to iterate until a certain condition is met. They are sometimes referred to as condition-controlled loops.
 

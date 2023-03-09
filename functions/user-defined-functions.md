@@ -28,7 +28,7 @@ Although function can be defined via the interpreter prompt, you are strongly en
 
 Defining a function creates a variable with the same name.
 
-```python
+```bash
 >>> print(print_lyrics) 
  <function print_lyrics at 0x03092C00> 
 >>> type(print_lyrics) 
@@ -40,7 +40,7 @@ The value of `print_lyrics` is a **function object**, which has type **function*
 
 The syntax for calling the new function is the same as for built-in functions:
 
-```
+```bash
 >>> print_lyrics() 
  I'm a lumberjack, and I'm okay. 
  I sleep all night and I work all day. 
@@ -59,7 +59,7 @@ def repeat_lyrics():
 
 And then call `repeat_lyrics`:
 
-```
+```bash
 >>> repeat_lyrics() 
  I'm a lumberjack, and I'm okay. 
  I sleep all night and I work all day. 
@@ -94,7 +94,7 @@ As you might expect, you have to create a function before you can execute it. In
 
 <summary>Exercise 1</summary>
 
-Move the last line of this program to the top, so the function call appears before the definitions. Run the program and see what error message you get.&#x20;
+Move the last line of this program to the top, so the function call appears before the definitions. Run the program and see what error message you get.
 
 </details>
 
@@ -102,7 +102,7 @@ Move the last line of this program to the top, so the function call appears befo
 
 <summary>Exercise 2</summary>
 
-Move the function call back to the bottom and move the definition of `print_lyrics` after the definition of `repeat_lyrics`. What happens when you run this program?&#x20;
+Move the function call back to the bottom and move the definition of `print_lyrics` after the definition of `repeat_lyrics`. What happens when you run this program?
 
 </details>
 
@@ -130,7 +130,7 @@ def print_twice(word):
 
 This function assigns the argument to a parameter named `word`. When the function is called, it prints the value of the parameter (whatever it is) twice. This function works with any value that can be printed.
 
-```
+```bash
 >>> print_twice('Spam') 
  Spam
  Spam 
@@ -145,7 +145,7 @@ This function assigns the argument to a parameter named `word`. When the functio
 
 The same rules of composition that apply to built-in functions also apply to user-defined functions, so we can use any kind of expression as an argument for `print_twice`:
 
-<pre class="language-shell-session"><code class="lang-shell-session"><strong>>>> print_twice('Spam ' * 4) 
+<pre class="language-bash"><code class="lang-bash"><strong>>>> print_twice('Spam ' * 4) 
 </strong><strong> Spam Spam Spam Spam 
 </strong><strong> Spam Spam Spam Spam 
 </strong><strong>>>> print_twice(math.cos(math.pi)) 
@@ -190,6 +190,7 @@ This function takes two arguments, concatenates them, and prints the result twic
 >>> cat_twice(line1, line2) 
  Bing tiddle tiddle bang. 
  Bing tiddle tiddle bang. 
+>>>
 ```
 
 When `cat_twice` terminates, the variable `cat` is destroyed. If we try to print it, we get an exception:
@@ -263,6 +264,7 @@ When you call a function in interactive mode, Python displays the result:
 ```sh
 >>> math.sqrt(5)
  2.2360679774997898 
+>>>
 ```
 
 But in a script, if you call a non-void function all by itself, the return value is lost forever!
@@ -275,11 +277,11 @@ math.sqrt(5)
 ```
 {% endcode %}
 
-This script computes the square root of 5, but since it doesn't store or display the result, it is not very useful.&#x20;
+This script computes the square root of 5, but since it doesn't store or display the result, it is not very useful.
 
 Void functions might display something on the screen or have some other effect, but they don't have a return value. If you try to assign the result to a variable, you get a special value called `None`. Note the capital letter **`N`**} in `None`.
 
-```
+```bash
 >>> result = print_twice('Bing') 
  Bing Bing 
 >>> print(result) 
@@ -292,6 +294,7 @@ The value `None` is not the same as the string `'None'`. It is a special value t
 ```sh
 >>> print(type(None)) 
  <type 'NoneType'> 
+>>>
 ```
 
 The functions we have written so far are all void. We will start writing non-void functions in a few chapters.
