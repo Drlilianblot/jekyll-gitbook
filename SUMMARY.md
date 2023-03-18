@@ -46,6 +46,11 @@
   * [Glossary](a-deeper-dive-into-strings-lists-and-tuples/glossary.md)
   * [Exercises](a-deeper-dive-into-strings-lists-and-tuples/exercises.md)
 * [Code Format](code-format.md)
+* [A deeper look at Functions in Python](a-deeper-look-at-functions-in-python/README.md)
+  * [Positional and Keywords arguments](a-deeper-look-at-functions-in-python/positional-and-keywords-arguments.md)
+  * [Nested Functions](a-deeper-look-at-functions-in-python/nested-functions.md)
+  * [Scope of a variable](a-deeper-look-at-functions-in-python/scope-of-a-variable.md)
+  * [Recursion](a-deeper-look-at-functions-in-python/recursion.md)
 * [to add to the dictionary chapter](page-1.md)
 
 ## Group 1

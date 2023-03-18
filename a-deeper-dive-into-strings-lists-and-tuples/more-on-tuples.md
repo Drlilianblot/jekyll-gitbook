@@ -13,7 +13,7 @@ The built-in function `divmod` takes two arguments and returns a tuple of two va
 >>>
 ```
 
-Or use tuple assignment to store the elements separately:
+Or use [tuple assignment](../variables-expressions-and-statements/values-and-types.md#multiple-assignment) to store the elements separately:
 
 ```bash
 >>> quot, rem = divmod(7, 3)
@@ -34,66 +34,6 @@ def min_max(t):
 {% endcode %}
 
 `max` and `min` are built-in functions that find the largest and smallest elements of a sequence. `min_max` computes both and returns a tuple of two values. Note that in the return statement, the `()` are omitted.
-
-## Variable-length argument tuples
-
-Functions can take a variable number of arguments. A parameter name that begins with `*` **gathers** arguments into a tuple. For example, `printall` takes any number of arguments and prints them:
-
-{% code lineNumbers="true" %}
-```python
-def printall(*args): 
-    print(args)
-```
-{% endcode %}
-
-The gather parameter can have any name you like, but `args` is conventional. Here's how the function works:
-
-```bash
->>> printall(1, 2.0, '3')
- (1, 2.0, '3')
->>>
-```
-
-The complement of gather is **scatter**. If you have a sequence of values and you want to pass it to a function as multiple arguments, you can use the `*` operator. For example, `divmod` takes exactly two arguments; it doesn't work with a tuple:
-
-```bash
->>> t = (7, 3)
->>> divmod(t)
- TypeError: divmod expected 2 arguments, got 1 
-```
-
-But if you scatter the tuple, it works:
-
-```bash
->>> divmod(*t)
- (2, 1)
->>>
-```
-
-Many of the built-in functions use variable-length argument tuples. For example, `print`, `max` and `min` can take any number of arguments:
-
-```bash
->>> max(1,2,3)
- 3 
->>>
-```
-
-But `sum` does not.
-
-```bash
->>> sum(1,2,3)
- TypeError: sum expected at most 2 arguments, got 3
-```
-
-**Exercise:** Write a function called {\tt sumall} that takes any number of arguments and returns their sum.
-
-<details>
-
-<summary>Answer:</summary>
-
-
-
-</details>
 
 ## Lists and tuples
 
@@ -119,7 +59,7 @@ If the sequences are not the same length, the result has the length of the short
 `>>>`
 {% endhint %}
 
-You can use tuple assignment in a {\tt for} loop to traverse a list of tuples:
+You can use tuple assignment in a `for` loop to traverse a list of tuples:
 
 {% code lineNumbers="true" %}
 ```python
@@ -165,8 +105,6 @@ The output of this loop is:
 1 b 
 2 c 
 ```
-
-
 
 ## Comparing tuples
 
