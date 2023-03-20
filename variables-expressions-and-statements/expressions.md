@@ -8,12 +8,12 @@
 
 {% code lineNumbers="true" %}
 ```python
-20+32 
-hour-1 
-hour*60+minute 
+20 + 32 
+hour - 1 
+hour*60 + minute 
 minute/60 
 5**2 
-(5+9)*h(15-7)
+(5+9) * (15-7)
 ```
 {% endcode %}
 
@@ -49,7 +49,7 @@ x + 17
 If you type an expression in interactive mode, the interpreter evaluates it and displays the result:
 
 ```python
->>> 1+1
+>>> 1 + 1
 2
 ```
 
@@ -71,8 +71,7 @@ Now put the same statements into a script and run it. What is the output? Modify
 
 </details>
 
-You can use a variable in an expression, and you can assign the result of an expression to a variable. In addition, a variable can be used on both side of the assignment operator `=` like in\
-`x = x + 1`. In this assignment statement the result of `x + 1` is assigned to `x`. For example, if `x` has the value `1` before the assignment statement is executed, then `x` becomes `2` after the statement is executed.
+You can use a variable in an expression, and you can assign the result of an expression to a variable. In addition, a variable can be used on both side of the assignment operator `=` like in `x = x + 1`. In this assignment statement the result of `x + 1` is assigned to `x`. For example, if `x` has the value `1` before the assignment statement is executed, then `x` becomes `2` after the statement is executed.
 
 :information\_source:In mathematics, $$x = 2 * x + 1$$ denotes an equation (where $$x = -1$$ is the solution). In python, it is an assignment statement, and if `x` has the value `1` before the statement, executing the statement would change `x` to `3`.
 

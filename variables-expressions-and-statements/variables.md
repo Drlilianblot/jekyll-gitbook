@@ -113,14 +113,14 @@ There are several ways to create a new list; the simplest is to enclose the elem
 
 ```bash
 >>> numbers = [10, 20, 30, 40] 
->>> frenchCuisine = ['crunchy frog', 'ram bladder', 'lark vomit']
+>>> french_cuisine = ['crunchy frog', 'ram bladder', 'lark vomit']
 >>>
 ```
 
 The first example is a list of four integers. The second is a list of three strings. The elements of a list don't have to be the same type. The following list contains a string, a float, an integer, and another list:
 
 ```bash
->>> mixedData = ['spam', 2.0, 5, [10, 20]] 
+>>> mixed_data = ['spam', 2.0, 5, [10, 20]] 
 >>>
 ```
 
@@ -217,7 +217,7 @@ A slice operator on the left side of an assignment can update multiple elements:
 
 You can add elements to a list by squeezing them into an empty slice:
 
-```
+```bash
 >>> t = ['a', 'd', 'e', 'f'] 
 >>> t[1:1] = ['b', 'c'] 
 >>> print(t) 
@@ -227,7 +227,7 @@ You can add elements to a list by squeezing them into an empty slice:
 
 And you can remove elements from a list by assigning the empty list to them:
 
-```
+```bash
 >>> t = ['a', 'b', 'c', 'd', 'e', 'f'] 
 >>> t[1:3] = [] 
 >>> print t 

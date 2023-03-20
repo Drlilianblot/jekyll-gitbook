@@ -7,8 +7,6 @@ It may not be clear why it is worth the trouble to divide a program into functio
 * Dividing a long program into functions allows you to debug the parts one at a time and then assemble them into a working whole.
 * Well-designed functions are often useful for many programs. Once you write and debug one, you can reuse it. The aim is to write code once and use it many times.
 
-## ChatGPT version
-
 ## Advantages of Functions
 
 Functions are an important feature of Python programming language, and there are many reasons why you might want to use them:
@@ -28,7 +26,7 @@ While functions offer many advantages in Python, there are also some potential d
 
 1. **Overuse:** If you create too many functions, your code may become more difficult to read and understand, particularly if the functions are poorly named or poorly organized.
 2. **Performance:** Function calls can sometimes be slower than inline code, particularly if the function is small and simple. This can have an impact on the overall performance of your code, particularly if you are calling a function many times in a loop.
-3. **Scope:** If you are not careful with how you define variables within functions, you can accidentally create variables with the same name as variables outside of the function. This can lead to unintended behavior and bugs in your code.
+3. **Scope:** If you are not careful with how you define variables within functions, you can accidentally create variables with the same name as variables outside of the function. This can lead to unintended behaviour and bugs in your code.
 4. **Debugging:** Debugging code that uses functions can sometimes be more difficult, particularly if the function is defined in a separate module or library.
 5. **Function call overhead:** When calling a function, there is a small amount of overhead associated with setting up the function call and passing parameters. While this overhead is generally small, it can add up if you are calling a large number of functions.
 

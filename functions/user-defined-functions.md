@@ -279,7 +279,7 @@ math.sqrt(5)
 
 This script computes the square root of 5, but since it doesn't store or display the result, it is not very useful.
 
-Void functions might display something on the screen or have some other effect, but they don't have a return value. If you try to assign the result to a variable, you get a special value called `None`. Note the capital letter **`N`**} in `None`.
+Void functions might display something on the screen or have some other effect, but they don't have a return value. If you try to assign the result to a variable, you get a special value called `None`. Note the capital letter **`N`** in `None`.
 
 ```bash
 >>> result = print_twice('Bing') 

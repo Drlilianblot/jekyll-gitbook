@@ -4,9 +4,7 @@
 
 <summary>Exercise: Python Documentation</summary>
 
-
-
-Use a web browser to go to the Python website \url{python.org}. This page contains information about Python and links to Python-related pages, and it gives you the ability to search the Python documentation. For example, if you enter {\tt print} in the search window, the first link that appears is the documentation of the {\tt print} statement. At this point, not all of it will make sense to you, but it is good to know where it is.
+Use a web browser to go to the [Python website](https://www.python.org). This page contains information about Python and links to Python-related pages, and it gives you the ability to search the Python documentation. For example, if you enter `print` in the search window, the first link that appears is the documentation of the `print` statement. At this point, not all of it will make sense to you, but it is good to know where it is.
 
 </details>
 

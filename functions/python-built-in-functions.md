@@ -79,9 +79,9 @@ The programs we have written so far are a bit rude in the sense that they accept
 Python provides a built-in function called `input` that gets input from the keyboard. When this function is called, the program stops and waits for the user to type something. When the user presses the "Return" or "Enter" key, the program resumes and `input` returns what the user typed as a string.
 
 ```bash
->>> userInput = input()
+>>> user_input = input()
  What are you waiting for? 
->>> print(userInput) 
+>>> print(user_input) 
  What are you waiting for? 
 >>>
 ```
