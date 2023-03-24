@@ -54,6 +54,7 @@
 * [Code Documentation](code-documentation.md)
 * [to add to the dictionary chapter](page-1.md)
 * [File I/O](file-i-o.md)
+* [Handling Errors and Exceptions](handling-errors-and-exceptions.md)
 
 ## Group 1
 

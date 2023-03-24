@@ -105,19 +105,26 @@ When you are done writing, you have to close the file.
 >>>
 ```
 
-## \section{Format operator}
+## Format operator
 
-\index{format operator} \index{operator!format}
+The argument of `write` has to be a string, so if we want to put other values in a file, we have to convert them to strings. The easiest way to do that is with `str`:
 
-The argument of {\tt write} has to be a string, so if we want to put other values in a file, we have to convert them to strings. The easiest way to do that is with {\tt str}:
+```
+>>> fout = open('output.txt', 'w')
+>>> x = 52 
+>>> fout.write(str(x)) 
+>>>
+```
 
-\beforeverb \begin{pyinterpreter}
+An alternative is to use the **format operator**, `%`. When applied to integers, `%` is the modulus operator. But when the first operand is a string, `%` is the format operator. The first operand is the **format string**, which contains one or more **format sequences**, which specify how the second operand is formatted. The result is a string. For example, the format sequence `'%d'` means that the second operand should be formatted as an integer (`d` stands for "decimal"):
 
-> > > x = 52 f.write(str(x)) \end{pyinterpreter} \afterverb % An alternative is to use the {\bf format operator}, {\tt %\}. When applied to integers, {\tt %\} is the modulus operator. But when the first operand is a string, {\tt %\} is the format operator. % \index{format string} % The first operand is the {\bf format string}, which contains one or more {\bf format sequences}, which specify how the second operand is formatted. The result is a string. % \index{format sequence} % For example, the format sequence \verb"'%d'" means that the second operand should be formatted as an integer ({\tt d} stands for \`\`decimal''):
+```
+>>> camels = 42
+>>> '%d' % camels
+>>> '42' 
+```
 
-\beforeverb \begin{pyinterpreter}
-
-> > > camels = 42 '%d' % camels '42' \end{pyinterpreter} \afterverb % The result is the string \verb"'42'", which is not to be confused with the integer value {\tt 42}. % A format sequence can appear anywhere in the string, so you can embed a value in a sentence:
+> > > The result is the string \verb"'42'", which is not to be confused with the integer value {\tt 42}. % A format sequence can appear anywhere in the string, so you can embed a value in a sentence:
 
 \beforeverb \begin{pyinterpreter}
 
@@ -193,75 +200,7 @@ The {\tt os} module provides functions for working with files and directories (`
 
 \begin{exercise} The {\tt os} module provides a function called {\tt walk} that is similar to this one but more versatile. Read the documentation and use it to print the names of the files in a given directory and its subdirectories. \end{exercise}
 
-\section{Catching exceptions} \label{sec:catch}
 
-A lot of things can go wrong when you try to read and write files. If you try to open a file that doesn't exist, you get an {\tt IOError}:
-
-\index{open function} \index{function!open} \index{exception!IOError} \index{IOError}
-
-\beforeverb \begin{pyinterpreter}
-
-> > > fin = open('bad\_file') FileNotFoundError: \[Errno 2] No such file or directory: 'bad\_file' \end{pyinterpreter} \afterverb % And if you try to open a directory for reading, you get
-
-\beforeverb \begin{pyinterpreter}
-
-> > > fin = open('/home') IOError: \[Errno 21] Is a directory \end{pyinterpreter} \afterverb % To avoid these errors, you could use functions like {\tt os.path.exists} and {\tt os.path.isfile}, but it would take a lot of time and code to check all the possibilities.
-
-\index{exception, catching} \index{try statement} \index{statement!try}
-
-It is better to go ahead and try, and deal with problems if they happen, which is exactly what the {\tt try} statement does. The syntax is similar to an {\tt if} statement:
-
-\beforeverb \begin{pycode} try:\
-fin = open('bad\_file') for line in fin: print(line) fin.close() except: print('Something went wrong.') \end{pycode} \afterverb % Python starts by executing the {\tt try} clause. If all goes well, it skips the {\tt except} clause and proceeds. If an exception occurs, it jumps out of the {\tt try} clause and executes the {\tt except} clause.
-
-Handling an exception with a {\tt try} statement is called {\bf catching} an exception. In this example, the {\tt except} clause prints an error message that is not very helpful. In general, catching an exception gives you a chance to fix the problem, or try again, or at least end the program gracefully.
-
-\newpage
-
-\subsection\{{\tt finally} clause} There are two options to the \verb|try-except| statement. The first one is the clause {\tt finally}. All code included in the {\tt finally} clause will be executed, whether an exception occurred or not. This is a good place to clean up our program. For example this is a good place to close a file if it has been open in the {\tt try} clause. The code below shows how it is done.
-
-\beforeverb \begin{pycode} fin = None try:\
-print('Try to open a file.') fin = open('words.txt') for line in fin: print(line) except: print('Something went wrong.') finally: print('cleaning up') if fin is not None: print('closing the file') fin.close() \end{pycode} \afterverb
-
-First we set the variable {\tt fin} to {\tt None}. In the {\tt try} clause, we open a file and then assign it to {\tt fin}. Two things can happen:
-
-\begin{itemize} \item An exception occurs while we are trying to open the file, {\tt fin} is not assigned any new object and contains the value {\tt None}. The program jumps directly to the {\tt except} clause and executes the code in the {\tt except} block. Then the program jumps to the {\tt finally} clause and executes the code there.
-
-```
-\item The file is opened successfully, {\tt fin} is assigned the file object, and the rest
-of the code in the {\tt try} statement is executed. Then the program jumps to the {\tt finally}
-clause and executes the code there.
-```
-
-\end{itemize}
-
-\subsection\{{\tt else} clause} The second option is the {\tt else} clause, which should be after the {\tt except} clause and before the {\tt finally} clause. The code in the {\tt else} clause is executed only if no exceptions were raised. It is executed before the {\tt finally} clause. The {\tt else} clause is use for all code that does not raise any exception.
-
-\newpage
-
-In our previous code, it would be the place to read the lines in the file. The refactored code is:
-
-\beforeverb \begin{pycode} fin = None try:\
-fin = open('word.txt') except: print('Something went wrong.') else: print('Do your thing if all went well.') for line in fin: print(line)\
-finally: print('cleaning up.') if fin is not None: print('closing the file.') fin.close() \end{pycode} \afterverb
-
-As you can see, the {\tt try} clause contains only the code that may raise an exception. \begin{itemize} \item If an exception occurs whilst opening the file, the program jumps to the {\tt except} clause and then executes the {\tt finally} clause. In this case, the output is:
-
-\begin{pyoutput} TRY: open file. EXCEPT: Something went wrong. FINALLY: cleaning up. \end{pyoutput}
-
-```
-\item If no exceptions are raised, the program skips the {\tt except} clause, and jumps to the {\tt else} clause. Once the code in the {\tt else} clause has been executed, the program jumps to the {\tt finally} clause. In this case, the output is: 
-```
-
-\begin{pyoutput} TRY: open file. --> file open successfully. ELSE: Do your thing if all went well. --> line 1 of text file
-
-\--> line 2 of text file
-
-\--> last line of text file
-
-FINALLY: cleaning up. --> closing the file. \end{pyoutput}
-
-\end{itemize}
 
 \section{Writing modules} \label{sec:modules}
 
