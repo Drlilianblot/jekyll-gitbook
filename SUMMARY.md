@@ -51,6 +51,7 @@
   * [Nested Functions](a-deeper-look-at-functions-in-python/nested-functions.md)
   * [Scope of a variable](a-deeper-look-at-functions-in-python/scope-of-a-variable.md)
   * [Recursion](a-deeper-look-at-functions-in-python/recursion.md)
+* [Code Documentation](code-documentation.md)
 * [to add to the dictionary chapter](page-1.md)
 
 ## Group 1
