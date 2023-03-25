@@ -1,7 +1,5 @@
 # More on Strings
 
-
-
 ## String traversal with a `for` loop
 
 A lot of computations involve processing a string one character at a time. Often they start at the beginning, select each character in turn, do something to it, and continue until the end. This pattern of processing is called a **traversal**. One way to write a traversal is with a `while` loop:
@@ -40,7 +38,7 @@ for char in fruit:
 
 Each time through the loop, the next character in the string is assigned to the variable `char`. The loop continues until no characters are left.
 
-The following example shows how to use concatenation (string addition) and a `for` loop to generate an abecedarian series (that is, in alphabetical order). In Robert McCloskey's book  "_Make Way for Ducklings_", the names of the ducklings are Jack, Kack, Lack, Mack, Nack, Ouack, Pack, and Quack. This loop outputs these names in order:
+The following example shows how to use concatenation (string addition) and a `for` loop to generate an abecedarian series (that is, in alphabetical order). In Robert McCloskey's book "_Make Way for Ducklings_", the names of the ducklings are Jack, Kack, Lack, Mack, Nack, Ouack, Pack, and Quack. This loop outputs these names in order:
 
 {% code lineNumbers="true" %}
 ```python
@@ -66,7 +64,7 @@ Qack
 
 Of course, that's not quite right because "Ouack" and "Quack" are misspelled.
 
-**Exercise:** Modify the program to fix this error.&#x20;
+**Exercise:** Modify the program to fix this error.
 
 <details>
 
@@ -75,8 +73,6 @@ Of course, that's not quite right because "Ouack" and "Quack" are misspelled.
 
 
 </details>
-
-
 
 ## Searching
 
@@ -96,7 +92,7 @@ def find(word, letter):
 
 In a sense, `find` is the opposite of the `[ ]` operator. Instead of taking an index and extracting the corresponding character, it takes a character and finds the index where that character appears. If the character is not found, the function returns `-1`. This is the first example we have seen of a `return` statement inside a loop. If `word[index] == letter`, the function breaks out of the loop and returns immediately. If the character doesn't appear in the string, the program exits the loop normally and returns `-1`. This pattern of computation - traversing a sequence and returning when we find what we are looking for - is called a **search**.
 
-**Exercise:** Modify `find` so that it has a third parameter, the index in `word` where it should start looking.&#x20;
+**Exercise:** Modify `find` so that it has a third parameter, the index in `word` where it should start looking.
 
 <details>
 
@@ -123,7 +119,7 @@ print(count)
 
 This program demonstrates another pattern of computation called a **counter**. The variable `count` is initialized to `0` and then incremented each time an `a` is found. When the loop exits, `count` contains the result - the total number of `a`'s.
 
-**Exercise:** Encapsulate this code in a function named `count`, and generalise it so that it accepts the string and the letter as arguments.&#x20;
+**Exercise:** Encapsulate this code in a function named `count`, and generalise it so that it accepts the string and the letter as arguments.
 
 <details>
 
@@ -145,7 +141,7 @@ This program demonstrates another pattern of computation called a **counter**. T
 
 ## `String` methods
 
-A `method` is similar to a function - it takes arguments and may return a value - but the syntax is different. For example, the method `upper` takes a string and returns a new string with all uppercase letters;  Instead of the function syntax `upper(word)`, it uses the method syntax `word.upper()`. This is known as the **dot** notation.
+A `method` is similar to a function - it takes arguments and may return a value - but the syntax is different. For example, the method `upper` takes a string and returns a new string with all uppercase letters; Instead of the function syntax `upper(word)`, it uses the method syntax `word.upper()`. This is known as the **dot** notation.
 
 <pre class="language-bash"><code class="lang-bash">>>> word = 'banana'
 <strong>>>> new_word = word.upper() 
@@ -191,7 +187,7 @@ And as a third argument the index where it should stop:
 
 This search fails because `b` does not appear in the index range from `1` to `2` (not including `2`).
 
-Exercise: There is a string method called `count` that is similar to the function in the previous exercise. Read the documentation of this method and write an invocation that counts the number of `a` in `banana`.&#x20;
+Exercise: There is a string method called `count` that is similar to the function in the previous exercise. Read the documentation of this method and write an invocation that counts the number of `a` in `banana`.
 
 <details>
 
@@ -258,3 +254,138 @@ else:
 {% endcode %}
 
 Python does not handle uppercase and lowercase letters the same way that people do. All the uppercase letters come before all the lowercase letters.
+
+### String Formatting
+
+Python f-strings are a convenient way to format strings by embedding expressions within curly braces `{}`. The `f` in f-strings stands for “formatted” and they were introduced in Python 3.6.
+
+F-strings provide an easier, cleaner, and more concise way of formatting strings than the previous formatting methods available in Python. They allow you to insert values and expressions directly into string literals, making the code more readable and easier to maintain.
+
+To create an f-string, you simply prepend the string literal with the letter "f" and then include the expressions you want to include inside curly braces. For example:
+
+<pre class="language-bash"><code class="lang-bash">>>> name = "Alice"
+<strong>>>> age = 25
+</strong>>>> print(f"Hello, my name is {name} and I am {age} years old.")
+ Hello, my name is Alice and I am 25 years old.
+>>>
+</code></pre>
+
+In this example, the f-string includes two expressions inside curly braces: `{name}` and `{age}`. When the string is evaluated, these expressions will be replaced with their corresponding values.
+
+F-strings support a variety of expressions, including variables, literals, function calls, and arithmetic operations. You can also use f-strings to format numbers, dates, and times using specific formatting codes.
+
+For example, to format a floating-point number with two decimal places, you can use the following code:
+
+```bash
+>>> pi = 3.14159265
+>>> print(f"The value of pi is approximately {pi:.2f}.")
+ The value of pi is approximately 3.14.
+>>>
+```
+
+In this example, the `:.2f` after the expression specifies that the number should be formatted as a floating-point number with two decimal places.
+
+Here's a table of some commonly used format specifiers:
+
+| Format specifier | Description                                                                 |
+| ---------------- | --------------------------------------------------------------------------- |
+| `:<`             | Left align the value                                                        |
+| `:>`             | Right align the value                                                       |
+| `:^`             | Center align the value                                                      |
+| `:0>`            | Pad the value with zeroes on the left                                       |
+| `:,`             | Add commas as thousands separators                                          |
+| `:.2f`           | Format the value as a float with two decimal places                         |
+| `:e`             | Format the value in scientific notation                                     |
+| `!s`             | Convert the value to a string                                               |
+| `!r`             | Convert the value to a string and represent it as a valid Python expression |
+
+Below you can find some example of code using format specifiers.
+
+1. Padding a number with zeroes using the `:0>` format specifier:
+
+```bash
+>>> x = 42
+>>> print(f"The answer is: {x:0>4}")
+ The answer is: 0042
+>>>
+```
+
+2. Formatting a number as currency using the `:,.2f` format specifier:
+
+```bash
+>>> price = 12345.6789
+>>> print(f"The price is: ${price:,.2f}")
+ The price is: $12,345.68
+>>>
+```
+
+3. Using the `!s` format specifier to convert a value to a string:
+
+```bash
+>>> x = 42
+>>> print(f"The answer is: {x!s}") 
+ The answer is: 42
+>>>
+```
+
+4. Using the `!r` format specifier to convert a value to a string and represent it as a valid Python expression:
+
+```bash
+>>> x = "hello"
+>>> print(f"The value of x is: {x!r}") 
+ The value of x is: 'hello'
+>>>
+```
+
+5. Using f-strings to format multiline strings:
+
+```python
+name = "John"
+age = 30
+address = "123 Main St\nAnytown, USA"
+message = f"""
+Name: {name}
+Age: {age}
+Address:
+{address}
+"""
+print(message)
+```
+
+Output:
+
+```
+Name: John
+Age: 30
+Address:
+123 Main St
+Anytown, USA
+```
+
+One of the biggest benefits of f-strings is that they make code more readable by eliminating the need for complicated string formatting syntax. For example, compare the following two code snippets:
+
+Using f-strings:
+
+{% code lineNumbers="true" %}
+```python
+name = "Alice"
+age = 25
+print(f"Hello, my name is {name} and I am {age} years old.")
+```
+{% endcode %}
+
+Using old-style string formatting:
+
+{% code lineNumbers="true" %}
+```python
+name = "Alice"
+age = 25
+print("Hello, my name is %s and I am %d years old." % (name, age))
+```
+{% endcode %}
+
+The f-string version is much cleaner and easier to read. It's also less prone to errors, as it eliminates the need to manually count placeholders and arguments.
+
+Another benefit of f-strings is that they are evaluated at runtime, which means you can use them to create dynamic strings that change based on the program's state. For example, you could use f-strings to create customized error messages that include specific details about the error.
+
+To summarise, f-strings are a powerful and convenient way to format strings in Python. They make code more readable and easier to maintain by eliminating the need for complicated string formatting syntax. They also support a variety of expressions and formatting codes, making them versatile enough for a wide range of use cases.
