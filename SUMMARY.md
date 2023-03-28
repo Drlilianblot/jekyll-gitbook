@@ -52,10 +52,10 @@
   * [Scope of a variable](a-deeper-look-at-functions-in-python/scope-of-a-variable.md)
   * [Recursion](a-deeper-look-at-functions-in-python/recursion.md)
 * [Code Documentation](code-documentation.md)
-* [to add to the dictionary chapter](page-1.md)
+* [Sets and dictionaries](page-1.md)
 * [File I/O](file-i-o.md)
 * [Handling Errors and Exceptions](handling-errors-and-exceptions.md)
-* [Page 1](page-1-1.md)
+* [Python's Type Hinting](pythons-type-hinting.md)
 
 ## Group 1
 

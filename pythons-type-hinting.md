@@ -1,4 +1,4 @@
-# Page 1
+# Python's Type Hinting
 
 Python is a dynamically typed programming language, which means that the type of a variable is determined at runtime, not at compile time. This feature allows for more flexibility and rapid prototyping but can also lead to errors that are difficult to catch and fix. To address this issue, Python introduced type hinting in version 3.5, a way of annotating code with hints about the types of variables and function arguments.
 
@@ -163,13 +163,98 @@ print(result)
 
 In the above example, the function `apply_function` takes two parameters: a callable function `func` that takes an integer parameter and returns an integer, and an integer `num`. The function `apply_function` calls the function `func` with the `num` parameter and returns the result. The function `double` is defined as a callable function that doubles the value of the parameter passed to it. The `apply_function` function is called with the `double` function and an integer value of `5`, and the result is printed, which is `10`.
 
+#### Aliases
+
+To avoid repetition and make the code more readable, type aliases can be used.
+
+{% code lineNumbers="true" %}
+```python
+from typing import Dict, Union
+
+DictStrIntOrStr = Dict[str, Union[int, str]]
+
+def print_dict(d: DictStrIntOrStr) -> None:
+    for key, value in d.items():
+        print(f"{key}: {value}")
+
+my_dict: DictStrIntOrStr = {"age": 42, "firstname": "Lilian", "surname": "Blot"}
+
+print_dict(my_dict)
+```
+{% endcode %}
+
+In this example, we define the `DictStrIntOrStr` alias to represent a dictionary with string keys and values that can be either integers or strings. We then define a function `print_dict` that takes a dictionary of this type and prints out each key-value pair.
+
+We create an example dictionary `my_dict` of this type and pass it to the `print_dict` function. When we run the code, we see the following output:
+
+```makefile
+foo: 42
+firstname: Lilian
+surname: Blot
+```
+
+This example demonstrates how aliases can be used to make our code more readable and easier to maintain. By defining the `DictStrIntOrStr` alias, we can use it throughout our code to represent dictionaries with a specific set of key-value types. If we need to change the types of the values in our dictionary, we can simply update the alias definition, rather than modifying the type annotations throughout our codebase.
+
 Advanced type hinting allows developers to specify more complex data types and function signatures, making their code more readable and maintainable. Union types, optional types, typed dictionaries, and callable types are just some of the tools available in Python's type hinting system. By using these tools, developers can write better code with fewer bugs, making their programs more efficient and reliable.
 
 ## Best Practices for Type Hinting&#x20;
 
 A. Choosing the Correct Type Hint B. Avoiding Overuse of Type Hints C. Documenting Type Hints D. Updating Type Hints
 
-IV. Advanced Type Hinting A. Union Types B. Optional Types C. Typed Dictionaries D. Callable Types
+Using type hinting can greatly improve the readability and maintainability of your Python code. However, simply adding type hints is not enough. It is important to follow best practices to ensure that your code is clear and consistent. Here are some best practices to follow when using type hinting in Python:
+
+1. Be consistent: Consistency is key when it comes to type hinting. Make sure that you use type hints consistently throughout your codebase. This means using the same style of type hinting, and being consistent with the names and types of variables and parameters.
+2. Use descriptive variable names: When using type hinting, it is important to use descriptive variable names. This will make it easier for others to understand what the variable is for and what type it should be.
+3. Use Union types for variables that can have multiple types: Union types allow you to specify that a variable can have more than one type. This can be useful when dealing with variables that can have multiple types, such as a parameter that can be either a string or a list.
+4. Use Optional types for optional parameters: Optional types allow you to specify that a parameter is optional. This can be useful when dealing with functions that have optional parameters.
+5. Use Typed Dictionaries: Typed dictionaries are a great way to define a dictionary with specific key-value pairs. This can be useful when working with APIs that require specific input formats.
+6. Use Callable types for functions that take functions as arguments: Callable types allow you to specify the type of function that is expected as an argument. This can be useful when working with higher-order functions that take functions as arguments.
+7. It is important to be precise with the types being used. This means avoiding generic types like `Any` and instead using more specific types like `List[str]` or `Tuple[int, str]`. This helps make the code more self-documenting and easier to understand.
+8. It is a good practice to use type aliases to avoid repetition and make the code more readable. For example, instead of writing `Dict[str, Union[int, str]]`, a type alias `DictStrIntOrStr` can be defined and used throughout the code
+
+To illustrate these best practices, consider the following example code:
+
+```python
+from typing import List, Dict, Tuple
+
+# Consistent type hinting style
+def greet(name: str) -> str:
+    return f"Hello, {name}!"
+
+# Descriptive variable names
+def calculate_average_grade(student_grades: List[int]) -> float:
+    total = sum(student_grades)
+    return total / len(student_grades)
+
+# Union types for variables that can have multiple types
+def get_first_element(data: Union[List[str], str]) -> str:
+    if isinstance(data, list):
+        return data[0]
+    return data
+    
+# Use type aliases to avoid repetition and make code more readable
+DictStrIntOrStr = Dict[str, Union[int, str]]
+
+# Be precise with types being used
+def get_longest_string(strings: List[str]) -> str:
+    longest = ""
+    for string in strings:
+        if len(string) > len(longest):
+            longest = string
+    return longest
+
+# Use type hints consistently throughout the codebase
+def add_student_scores(
+        scores: Dict[str, int], 
+        student_scores: List[Tuple[str, int]]) -> Dict[str, int]:
+    for student, score in student_scores:
+        scores[student] = scores.get(student, 0) + score
+    return scores
+
+
+```
+
+In this example, type aliases are used to avoid repetition and make the code more readable. Precise types like `List[str]`, `Dict[str, int]`, and `Tuple[str, int]` are used to provide more information and make the code more self-documenting.
 
 
 

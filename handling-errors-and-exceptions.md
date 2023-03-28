@@ -118,3 +118,70 @@ FINALLY: cleaning up.
 ```
 
 ## Catching multiple exceptions
+
+We have seen that a try statement allows you to catch and handle exceptions that may occur during program execution. It provides a way to handle errors gracefully, without crashing the program. But what happens if different types of errors may occur, and how can we handle them differently?
+
+This is where multiple except clauses come in. A try statement with multiple except clauses looks like this:
+
+```python
+try:
+    # some code that may raise an exception
+except ExceptionType1:
+    # handle exception of type ExceptionType1
+except ExceptionType2:
+    # handle exception of type ExceptionType2
+...
+except ExceptionTypeN:
+    # handle exception of type ExceptionTypeN
+```
+
+In this example, the try block contains the code that may raise an exception. The except clauses are used to handle exceptions of different types. Each except clause is associated with a specific exception type. When an exception is raised in the try block, Python checks each except clause in order, and executes the first one that matches the exception type. If none of the except clauses match the exception type, the exception is passed up to the calling code.
+
+It's important to note that the except clauses should be ordered from the most specific to the most general exception type. This is because Python checks each except clause in order, and the first one that matches the exception type is executed. If you have a more general exception type before a more specific one, the more general one will catch the exception first, and the more specific one will never be executed.
+
+Here's an example of a try statement with multiple except clauses:
+
+```python
+try:
+    num1 = int(input("Enter a number: "))
+    num2 = int(input("Enter another number: "))
+    result = num1 / num2
+    print("Result:", result)
+except ZeroDivisionError:
+    print("Error: division by zero")
+except ValueError:
+    print("Error: invalid input")
+except:
+    print("Unknown error occurred")
+```
+
+In this example, the user is asked to enter two numbers. If the user enters an invalid input (i.e. something that can't be converted to an integer), a `ValueError` will be raised. If the user enters 0 as the second number, a `ZeroDivisionError` will be raised. If any other type of exception occurs, the last except clause will handle it.
+
+You can also use a tuple to specify multiple exception types in a single except clause. Here's an example:
+
+```python
+try:
+    # some code that may raise an exception
+except (ExceptionType1, ExceptionType2, ..., ExceptionTypeN):
+    # handle exceptions of type ExceptionType1, ExceptionType2, ..., ExceptionTypeN
+```
+
+In this example, the except clause will catch exceptions of any of the specified types. This can be useful if you want to handle a group of related exceptions in the same way.
+
+Here's an example of using a tuple to catch multiple exception types:
+
+```python
+try:
+    num1 = int(input("Enter a number: "))
+    num2 = int(input("Enter another number: "))
+    result = num1 / num2
+    print("Result:", result)
+except (ZeroDivisionError, ValueError):
+    print("Error: invalid input or division by zero")
+except:
+    print("Unknown error occurred")
+```
+
+In this example, the same except clause is used to handle both `ZeroDivisionError` and `ValueError` exceptions.
+
+In conclusion, multiple except clauses in a try statement provide a way to handle exceptions of different types in different ways. By specifying one or more except clauses, you can catch specific exceptions and handle them gracefully, without crashing the program.
