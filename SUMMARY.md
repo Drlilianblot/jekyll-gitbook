@@ -55,7 +55,11 @@
 * [Sets and dictionaries](page-1.md)
 * [File I/O](file-i-o.md)
 * [Handling Errors and Exceptions](handling-errors-and-exceptions.md)
-* [Python's Type Hinting](pythons-type-hinting.md)
+* [Python's Type Hinting](page-1-1.md)
+* [Classes](classes/README.md)
+  * [Classes and Objects](classes/classes-and-objects.md)
+  * [Classes and Functions](classes/classes-and-functions.md)
+  * [Classes and Methods](classes/classes-and-methods.md)
 
 ## Group 1
 
