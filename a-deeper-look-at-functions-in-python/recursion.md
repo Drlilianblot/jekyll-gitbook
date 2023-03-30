@@ -1,5 +1,36 @@
 # Recursion
 
+The concept of recursion is a challenging concept which sometimes inspires fears among students. For some it is a natural way of thinking and they will find the concept almost trivial, whereas for others it will take more time. Don't be discouraged, after some effort you will find the concept rather elegant and intuitive.
+
+## A definition
+
+_**"In mathematical logic and computer science recursive definition or inductive definition is used to define an object in terms of itself. "**_
+
+This definition of Eczel may seem obscure at first but it will become clearer later when we talk about function and recursive data structure. Eczel’s definition can be read as follows when we consider only the case of function definition. A recursive definition of a function defines the value of a function for some inputs in terms of the value of the same function for other (usually smaller) inputs. Let's look at a well know mathematical function, $$n!$$ (factorial $$n$$). Factorial n can be define as follow:
+
+$$
+n! = n \times (n-1)!
+$$
+
+As you can see, factorial $$n$$ is defined in term of factorial but for a smaller value $$n-1$$. There is however a small issue with this definition as it is, that is we cannot compute the value of $$n!$$.&#x20;
+
+$$
+\begin{eqnarray} n! & = & n \times (n-1)! \\   & =& n \times (n-1)\times (n-2)! \\ & = &n \times (n-1)\times (n-2)\times ...\times 0! \\  & = & ...\end{eqnarray}
+$$
+
+This definition can be expanded forever and never stops. Clearly something is missing. A function exhibits recursive behaviour when it can be defined by two properties:&#x20;
+
+* a simple base case (or cases)&#x20;
+* and a set of rules which reduce all other cases towards the base case.
+
+So we are missing a base case in our definition of factorial, and this base case is $$0!=1$$. Now that we have defined the general case and a base case we can compute the values of the factorial function as shown below for $$3!$$.
+
+$$
+\begin{eqnarray} 3! & = & 3 \times 2! \\ & =& 3 \times 2\times 1! \\ & = &3 \times 2\times 1\times 0! \\  & = &3 \times 2\times 1\times 1 \\  & = &3 \times 2\times 1\\  & = &3 \times 2\\ & = &6  \end{eqnarray}
+$$
+
+Now that we have seen a definition of recursion, let's see how it can be implemented in Python.
+
 ## First Examples
 
 Rather than using `while` or `for` loops, we can implement repetition through recursion. It is legal for one function to call another; it is also legal for a function to call itself, and in that case the function is said to be **recursive**, and the process is called **recursion**. It may not be obvious why that is a good thing, but it turns out to be one of the most magical things a program can do.&#x20;
@@ -48,6 +79,19 @@ A recursive function calls itself, usually on a smaller argument. The sequence o
 A recursive function may have multiple base cases (**at least one**), and multiple recursive calls.
 {% endhint %}
 
+**Exercise:** Implement a recursive function `factorial(n)` that takes a positive integer as parameter and return $$n!$$. Use the mathematical definition provided below.
+
+* $$0! = 1$$,
+* $$\forall n>0, n! = n\times (n-1)!$$
+
+<details>
+
+<summary>Answer</summary>
+
+
+
+</details>
+
 As another example, we can write a function that prints a string `n` times.
 
 {% code lineNumbers="true" %}
@@ -90,6 +134,16 @@ The four `countdown` frames have different values for the parameter `n`. The bot
 
 </details>
 
+**Exercise:** Draw a stack diagram for `factorial` called with`n=3`.
+
+<details>
+
+<summary>Answer</summary>
+
+
+
+</details>
+
 ## Infinite recursion
 
 If a recursion never reaches a base case, it goes on making recursive calls forever, and the program never terminates. This is known as `infinite recursion`, and it is generally not a good idea. Here is a minimal program with an infinite recursion:
@@ -118,7 +172,7 @@ This traceback is a little bigger than the one we saw in the previous chapter. W
 
 ## Requirements&#x20;
 
-There are two general requirements for recursive functions:&#x20;
+As we have seen in the definition of recursion, there are two general requirements for recursive functions:&#x20;
 
 * The base case(s) need to be checked first, before the recursive call.&#x20;
 * The argument(s) of the recursive call(s) must be smaller (in other word get closer to a base case); otherwise we will end up with an infinite recursion as the base case(s) will never be reached.&#x20;
