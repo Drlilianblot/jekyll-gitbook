@@ -1,8 +1,6 @@
 # Exercises
 
-<details>
-
-<summary>Exercise 1:</summary>
+## Exercise 1
 
 Assume that we execute the following assignment statements:
 
@@ -22,19 +20,13 @@ For each of the following expressions, write the value of the expression and the
 * `1 + 2 * 5`
 * `delimiter * 5`
 
-Use the Python interpreter to check your answers.&#x20;
+Use the Python interpreter to check your answers.
 
-</details>
+## Exercise 2
 
-<details>
+Practice using the Python interpreter as a calculator:
 
-<summary>Exercise 2:</summary>
-
-Practice using the Python interpreter as a calculator:&#x20;
-
-* The volume of a sphere with radius $$r$$ is $$\frac{4}{3} \pi r^3$$. What is the volume of a sphere with radius 5? \
+* The volume of a sphere with radius $$r$$ is $$\frac{4}{3} \pi r^3$$. What is the volume of a sphere with radius 5?\
   **Hint:** 392.6 is incorrect!
 * Suppose the cover price of a book is £24.95, but bookstores get a 40% discount. Shipping costs £3 for the first copy and 75 pence for each additional copy. What is the total wholesale cost for 60 copies?
 * If I leave my house at 6:52 am and run 1 mile at an easy pace (8'15" per mile), then 3 miles at tempo (7'12" per mile) and 1 mile at easy pace again, what time do I get home for breakfast?
-
-</details>

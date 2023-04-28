@@ -13,7 +13,7 @@ Write a function named `right_justify`" that takes a string named `s` as a param
 
 <details>
 
-<summary>Model answer</summary>
+<summary>Answer</summary>
 
 ```python
 def rightJustify(s):
@@ -56,7 +56,7 @@ A `print` statement all by itself ends the current line and goes to the next lin
 
 <details>
 
-<summary>Model answer</summary>
+<summary>Answer</summary>
 
 {% code lineNumbers="true" %}
 ```python
@@ -79,7 +79,7 @@ Note: this is not a very good solution, a better approach is used in the solutio
 
 <details>
 
-<summary>Model answer</summary>
+<summary>Answer</summary>
 
 {% code lineNumbers="true" %}
 ```python
@@ -99,7 +99,7 @@ Note: This solution is better than the one given for the function `two_by_two_gr
 
 <details>
 
-<summary>Model answer</summary>
+<summary>Answer</summary>
 
 {% code lineNumbers="true" %}
 ```python

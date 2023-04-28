@@ -14,7 +14,7 @@ And even function calls:
 x = math.exp(math.log(x+1))
 ```
 
-Almost anywhere you can put a value, you can put an arbitrary expression, with one exception: the left side of an assignment statement has to be a variable name. Any other expression on the left side is a syntax error (We will see exceptions to this rule later).
+Almost anywhere you can put a value, you can put an arbitrary expression, **with one exception**: the left side of an assignment statement has to be a variable name. Any other expression on the left side is a syntax error (We will see exceptions to this rule later).
 
 {% code lineNumbers="true" %}
 ```python

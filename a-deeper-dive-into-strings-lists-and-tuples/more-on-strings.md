@@ -21,7 +21,7 @@ This loop traverses the string and displays each letter on a line by itself. The
 
 <details>
 
-<summary>answer:</summary>
+<summary>Answer</summary>
 
 
 
@@ -68,7 +68,7 @@ Of course, that's not quite right because "Ouack" and "Quack" are misspelled.
 
 <details>
 
-<summary>Answer:</summary>
+<summary>Answer</summary>
 
 
 
@@ -96,7 +96,7 @@ In a sense, `find` is the opposite of the `[ ]` operator. Instead of taking an i
 
 <details>
 
-<summary>answer:</summary>
+<summary>Answer</summary>
 
 
 
@@ -123,7 +123,7 @@ This program demonstrates another pattern of computation called a **counter**. T
 
 <details>
 
-<summary>Answer:</summary>
+<summary>Answer</summary>
 
 
 
@@ -133,7 +133,7 @@ This program demonstrates another pattern of computation called a **counter**. T
 
 <details>
 
-<summary>Answer:</summary>
+<summary>Answer</summary>
 
 
 
@@ -191,7 +191,7 @@ Exercise: There is a string method called `count` that is similar to the functio
 
 <details>
 
-<summary>Answer:</summary>
+<summary>Answer</summary>
 
 
 

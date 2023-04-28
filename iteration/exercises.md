@@ -2,7 +2,7 @@
 
 ## Exercise 1: printing a grid (revisited)
 
-This [exercise ](#user-content-fn-1)[^1] can be done using only the statements and other features we have learned so far.
+This [exercise ](#user-content-fn-1)[^1]can be done using only the statements and other features we have learned so far.
 
 1. Write a function `twoByTwoGrid` that draws a grid like the following:
 
@@ -32,7 +32,7 @@ A `print` statement all by itself ends the current line and goes to the next lin
 
 <details>
 
-<summary>Model answer</summary>
+<summary>Answer</summary>
 
 {% code lineNumbers="true" %}
 ```python
@@ -55,7 +55,7 @@ Note: this is not a very good solution, a better approach is used in the solutio
 
 <details>
 
-<summary>Model answer</summary>
+<summary>Answer</summary>
 
 {% code lineNumbers="true" %}
 ```python
@@ -67,15 +67,23 @@ def fourByFourGrid ():
 ```
 {% endcode %}
 
-Note: This solution is better than the one given for the function `twoByTwoGrid`. It is important to familiarise ourselves with manipulating string to build the expected output.&#x20;
+Note: This solution is better than the one given for the function `twoByTwoGrid`. It is important to familiarise ourselves with manipulating string to build the expected output.
 
 </details>
 
-3. Write a more generic function `xbyYGrid(rows, cols)` that draws a similar grid with `rows` rows and `cols` columns.&#x20;
+3. Write a more generic function `xbyYGrid(rows, cols)` that draws a similar grid with `rows` rows and `cols` columns.
 
 ## Exercise 2: Newton's method
 
 After reading the section on [Newton's method](newtons-method.md#newtons-method-for-computing-square-root) to compute the square root of a number, write a function called `squareRoot` that takes `a` as a parameter, chooses a reasonable value of `x`, and returns an estimate of the square root of `a`.
+
+<details>
+
+<summary>Answer</summary>
+
+
+
+</details>
 
 ## Exercise 3:
 
@@ -95,6 +103,14 @@ To test the square root algorithm implemented in exercise 2, you could compare i
 
 The first column is a number, $$a$$; the second column is the square root $$\sqrt{a}$$ computed with the algorithm from exercise 2; the third column is the square root computed by `math.sqrt`; the fourth column is the absolute value of the difference between the two estimates.
 
+<details>
+
+<summary>Answer</summary>
+
+
+
+</details>
+
 ## Exercise 4: Srinivasa Ramanujan infinite series
 
 The brilliant mathematician Srinivasa Ramanujan found an [infinite series](https://www.wikipedia.org/wiki/Pi) that can be used to generate a numerical approximation of $$\pi$$:
@@ -104,5 +120,13 @@ $$
 $$
 
 Write a function `estimatePI()` that uses this formula to compute and return an estimate of $$\pi$$. It should use a `while` loop to compute terms of the summation until the last term is smaller than `1e-15` (which is Python notation for $$10^{-15}$$). You can check the result by comparing it to `math.pi`.
+
+<details>
+
+<summary>Answer</summary>
+
+
+
+</details>
 
 [^1]: Based on an exercise in Oualline, _Practical C Programming_, Third Edition, O'Reilly (1997)

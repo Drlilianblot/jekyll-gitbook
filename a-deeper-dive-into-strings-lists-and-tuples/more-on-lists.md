@@ -446,7 +446,7 @@ This function leaves the original list unmodified. Here's how it is used:
 
 <details>
 
-<summary>Answer:</summary>
+<summary>Answer</summary>
 
 
 
