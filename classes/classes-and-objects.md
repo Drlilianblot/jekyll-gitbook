@@ -1,232 +1,344 @@
 # Classes and Objects
 
-\chapter{Classes and objects} \label{cha:class-objects}
+## User-defined types
 
-\section{User-defined types} \label{sec:point}
-
-\index{user-defined type} \index{type!user-defined}
-
-We have used many of Python's built-in types; now we are going to define a new type. As an example, we will create a type called {\tt Point} that represents a point in two-dimensional space. % \index{point, mathematical} % In mathematical notation, points are often written in parentheses with a comma separating the coordinates. For example, $(0, 0)$ represents the origin, and $(x, y)$ represents the point $x$ units to the right and $y$ units up from the origin.
+We have used many of Python's built-in types; now we are going to define a new type. As an example, we will create a type called `Point` that represents a point in two-dimensional space. In mathematical notation, points are often written in parentheses with a comma separating the coordinates. For example, $$(0, 0)$$ represents the origin, and $$(x, y)$$ represents the point $$x$$ units to the right and $$y$$ units up from the origin.
 
 There are several ways we might represent points in Python:
 
-\begin{itemize}
+* We could store the coordinates separately in two variables, `x` and `y`
+* We could store the coordinates as elements in a list or tuple.
+* We could create a new type to represent points as objects.
 
-\item We could store the coordinates separately in two variables, {\tt x} and {\tt y}.
+Creating a new type is (a little) more complicated than the other options, but it has advantages that will be apparent soon. A user-defined type is also called a `class`. A class definition looks like this:
 
-\item We could store the coordinates as elements in a list or tuple.
+{% code lineNumbers="true" %}
+```python
+class Point: 
+    """represents a point in 2-D space""" 
+```
+{% endcode %}
 
-\item We could create a new type to represent points as objects.
+This header indicates that the new class is a `Point`, which is a kind of `object`, which is itself a built-in type. The body is a docstring that explains what the class is for. You can define variables and functions inside a class definition, but we will get back to that later.
 
-\end{itemize}
+Defining a class named `Point` creates a class object.
 
-\index{representation}
+```bash
+>>> print(Point)
+ <class '__main__.Point'>
+>>>
+```
 
-Creating a new type is (a little) more complicated than the other options, but it has advantages that will be apparent soon. % A user-defined type is also called a {\bf class}. A class definition looks like this:
+Because `Point` is defined at the top level, its "full name" is `__`**`main__.`**`Point`. The class object is like a factory for creating objects. To create a Point, you call `Point` as if it were a function.
 
-\index{class} \index{object} \index{class definition} \index{definition!class}
+<pre class="language-bash"><code class="lang-bash">>>> blank = Point() 
+>>> print(blank) 
+<strong> &#x3C;__main__.Point object at 0x000002CF1E0EEAD0>
+</strong><strong>>>>
+</strong></code></pre>
 
-\beforeverb \begin{pycode} class Point(object): """represents a point in 2-D space""" \end{pycode} \afterverb % This header indicates that the new class is a {\tt Point}, which is a kind of {\tt object}, which is a built-in type. % \index{Point class} \index{class!Point} % The body is a docstring that explains what the class is for. You can define variables and functions inside a class definition, but we will get back to that later.
+The return value is a reference to a `Point` object, which we assign to `blank`. Creating a new object is called **instantiation**, and the object is an **instance** of the class. When you print an instance, Python tells you what class it belongs to and where it is stored in memory (the prefix `0x` means that the following number is in hexadecimal).
 
-\index{docstring}
-
-Defining a class named {\tt Point} creates a class object.
-
-\beforeverb \begin{pyinterpreter}
-
-> > > print(Point) \<class '**main**.Point'> \end{pyinterpreter} \afterverb % Because {\tt Point} is defined at the top level, its \`\`full name'' is \verb"**main**.Point". % \index{object!class} \index{class object} % The class object is like a factory for creating objects. To create a Point, you call {\tt Point} as if it were a function.
-
-\beforeverb \begin{pyinterpreter}
-
-> > > blank = Point() print(blank) <**main**.Point instance at 0xb7e9d3ac> \end{pyinterpreter} \afterverb % The return value is a reference to a Point object, which we assign to {\tt blank}.\
-> > > Creating a new object is called {\bf instantiation}, and the object is an {\bf instance} of the class. % \index{instance} \index{instantiation} % When you print an instance, Python tells you what class it belongs to and where it is stored in memory (the prefix {\tt 0x} means that the following number is in hexadecimal).
-
-\index{hexadecimal}
-
-\section{Attributes}
-
-\index{instance attribute} \index{attribute!instance} \index{dot notation}
+## Attributes
 
 You can assign values to an instance using dot notation:
 
-\beforeverb \begin{pyinterpreter}
+```bash
+>>> blank.x = 3.0 
+>>> blank.y = 4.0 
+>>>
+```
 
-> > > blank.x = 3.0 blank.y = 4.0 \end{pyinterpreter} \afterverb % This syntax is similar to the syntax for selecting a variable from a module, such as {\tt math.pi} or {\tt string.whitespace}. In this case, though, we are assigning values to named elements of an object. These elements are called {\bf attributes}. % As a noun, `AT-trib-ute'' is pronounced with emphasis on the first syllable, as opposed to` a-TRIB-ute,'' which is a verb. % The following diagram shows the result of these assignments. A state diagram that shows an object and its attributes is called an {\bf object diagram}:
+This syntax is similar to the syntax for selecting a variable from a module, such as `math.pi` or `string.whitespace`. In this case, though, we are assigning values to named elements of an object. These elements are called **attributes**. The following diagram shows the result of these assignments. A state diagram that shows an object and its attributes is called an **object diagram**:
 
-\index{state diagram} \index{diagram!state} \index{object diagram} \index{diagram!object}
+<mark style="background-color:red;">\beforefig \centerline{\includegraphics{figs/point.eps\}} \afterfig</mark>
 
-\beforefig \centerline{\includegraphics{figs/point.eps\}} \afterfig
+The variable `blank` refers to a Point object, which contains two attributes. Each attribute refers to a floating-point number. You can read the value of an attribute using the same syntax:
 
-The variable {\tt blank} refers to a Point object, which contains two attributes. Each attribute refers to a floating-point number. % You can read the value of an attribute using the same syntax:
+```bash
+>>> print(blank.y)
+ 4.0 
+>>> x = blank.x 
+>>> print(x) 
+ 3.0 
+>>>
+```
 
-\beforeverb \begin{pyinterpreter}
-
-> > > print(blank.y) 4.0 x = blank.x print(x) 3.0 \end{pyinterpreter} \afterverb % The expression {\tt blank.x} means, \`\`Go to the object {\tt blank} refers to and get the value of {\tt x}.'' In this case, we assign that value to a variable named {\tt x}. There is no conflict between the variable {\tt x} and the attribute {\tt x}.
+The expression `blank.x` means, "Go to the object `blank` refers to and get the value of `x"`. In this case, we assign that value to a variable named `x`. There is no conflict between the variable `x` and the attribute `x`.
 
 You can use dot notation as part of any expression. For example:
 
-\beforeverb \begin{pyinterpreter}
+```bash
+>>> print('(%g, %g)' % (blank.x, blank.y))
+ (3.0, 4.0) 
+>>> distance = math.sqrt(blank.x2 + blank.y2) 
+>>> print(distance) 
+ 5.0 
+>>> 
+```
 
-> > > print('(%g, %g)' % (blank.x, blank.y)) (3.0, 4.0) distance = math.sqrt(blank.x**2 + blank.y**2) print(distance) 5.0 \end{pyinterpreter} \afterverb % You can pass an instance as an argument in the usual way. For example:
+You can pass an instance as an argument in the usual way. For example:
 
-\index{instance!as argument}
+{% code lineNumbers="true" %}
+```python
+def print_point(p): 
+     print('(%g, %g)' % (p.x, p.y)) 
+```
+{% endcode %}
 
-\beforeverb \begin{pycode} def print\_point(p): print('(%g, %g)' % (p.x, p.y)) \end{pycode} \afterverb % \verb"print\_point" takes a point as an argument and displays it in mathematical notation. To invoke it, you can pass {\tt blank} as an argument:
+&#x20;`print_point` takes a point as an argument and displays it in mathematical notation. To invoke it, you can pass `blank` as an argument:
 
-\beforeverb \begin{pyinterpreter}
+```bash
+>>> print_point(blank)
+ (3.0, 4.0) 
+>>> 
+```
 
-> > > print\_point(blank) (3.0, 4.0) \end{pyinterpreter} \afterverb % Inside the function, {\tt p} is an alias for {\tt blank}, so if the function modifies {\tt p}, {\tt blank} changes.
+Inside the function, `p` is an alias for `blank`, so if the function modifies `p`, `blank` changes.
 
-\index{aliasing}
+**Exercise:** Write a function called `distance` that takes two Points as arguments and returns the Euclidean distance between them.&#x20;
 
-\begin{exercise} Write a function called {\tt distance} that takes two Points as arguments and returns the distance between them. The distance between two points $A=(x\_A, y\_A)$ and $B=(x\_B, y\_B)$ is given by: \begin{equation} d(A,B) = \sqrt{(x\_A - x\_B)^2 + (y\_A - y\_B)^2} \label{equ:distance} \end{equation} \end{exercise}
+The distance between two points $$A=(x_A, y_A)$$ and $$B=(x_B, y_B)$$ is given by:&#x20;
 
-\section{Rectangles}
+$$d(A,B) = \sqrt{(x_A - x_B)^2 + (y_A - y_B)^2}$$.&#x20;
+
+<details>
+
+<summary>Answer</summary>
+
+
+
+</details>
+
+## Rectangles
 
 Sometimes it is obvious what the attributes of an object should be, but other times you have to make decisions. For example, imagine you are designing a class to represent rectangles. What attributes would you use to specify the location and size of a rectangle? You can ignore angle; to keep things simple, assume that the rectangle is either vertical or horizontal.
 
-\index{representation}
-
 There are at least two possibilities:
 
-\begin{itemize}
-
-\item You could specify one corner of the rectangle (or the center), the width, and the height.
-
-\item You could specify two opposing corners.
-
-\end{itemize}
+1. You could specify one corner of the rectangle (or the centre), the width, and the height.
+2. You could specify two opposing corners.
 
 At this point it is hard to say whether either is better than the other, so we'll implement the first one, just as an example.
 
-\index{Rectangle class} \index{class!Rectangle}
-
 Here is the class definition:
 
-\beforeverb \begin{pycode} class Rectangle(object): """represent a rectangle. attributes: width, height, corner (bottom left corner). """ \end{pycode} \afterverb % The docstring lists the attributes: {\tt width} and {\tt height} are numbers; {\tt corner} is a Point object that specifies the lower-left corner. % To represent a rectangle, you have to instantiate a Rectangle object and assign values to the attributes:
+{% code lineNumbers="true" %}
+```python
+class Rectangle(object): 
+    """represent a rectangle.
+    attributes: width, height, corner (bottom left corner). """
+```
+{% endcode %}
 
-\beforeverb \begin{pycode} box = Rectangle() box.width = 100.0 box.height = 200.0 box.corner = Point() box.corner.x = 0.0 box.corner.y = 0.0 \end{pycode} \afterverb % The expression {\tt box.corner.x} means, \`\`Go to the object {\tt box} refers to and select the attribute named {\tt corner}; then go to that object and select the attribute named {\tt x}.''
+The docstring lists the attributes: `width` and `height` are numbers; `corner` is a `Point` object that specifies the lower-left corner. To represent a rectangle, you have to instantiate a `Rectangle` object and assign values to the attributes:
+
+```bash
+>>> box = Rectangle() 
+>>> box.width = 100.0 
+>>> box.height = 200.0 
+>>> box.corner = Point() 
+>>> box.corner.x = 0.0 
+>>> box.corner.y = 0.0 
+>>> 
+```
+
+The expression `box.corner.x` means, "Go to the object `box` refers to and select the attribute named `corner`; then go to that object and select the attribute named `x`".
 
 The figure shows the state of this object:
 
-\index{state diagram} \index{diagram!state} \index{object diagram} \index{diagram!object}
+\\<mark style="background-color:red;">beforefig \centerline{\includegraphics{figs/rectangle.eps\}} \afterfig</mark>
 
-\beforefig \centerline{\includegraphics{figs/rectangle.eps\}} \afterfig
+An object that is an attribute of another object is **embedded**.
 
-An object that is an attribute of another object is {\bf embedded}.
+## Instances as return values
 
-\index{embedded object} \index{object!embedded}
+Functions can return instances. For example, `find_centre` takes a `Rectangle` as an argument and returns a `Point` that contains the coordinates of the centre of the `Rectangle`:
 
-\section{Instances as return values}
+{% code lineNumbers="true" %}
+```python
+def find_centre(box): 
+    p = Point() 
+    p.x = box.corner.x + box.width/2.0 
+    p.y = box.corner.y + box.height/2.0 
+    return p 
+```
+{% endcode %}
 
-\index{instance!as return value} \index{return value}
+Here is an example that passes `box` as an argument and assigns the resulting Point to `centre`:
 
-Functions can return instances. For example, \verb"find\_center" takes a {\tt Rectangle} as an argument and returns a {\tt Point} that contains the coordinates of the center of the {\tt Rectangle}:
+```bash
+>>> centre = find_centre(box) 
+>>> print_point(centre) 
+ (50.0, 100.0)
+>>> 
+```
 
-\beforeverb \begin{pycode} def find\_center(box): p = Point() p.x = box.corner.x + box.width/2.0 p.y = box.corner.y + box.height/2.0 return p \end{pycode} \afterverb % Here is an example that passes {\tt box} as an argument and assigns the resulting Point to {\tt center}:
+## Objects are mutable
 
-\beforeverb \begin{pyinterpreter}
+You can change the state of an object by making an assignment to one of its attributes. For example, to change the size of a rectangle without changing its position, you can modify the values of `width` and `height`:
 
-> > > center = find\_center(box) print\_point(center) (50.0, 100.0) \end{pyinterpreter} \afterverb %
+```bash
+>>> box.width = box.width + 40 
+>>> box.height = box.width + 100
+>>> print_point(find_centre(box)) 
+ (70.0, 150.0)
+>>>
+```
 
-\section{Objects are mutable}
+You can also write functions that modify objects. For example, `grow_rectangle` takes a Rectangle object and two numbers, `dwidth` and `dheight`, and adds the numbers to the width and height of the rectangle:
 
-\index{object!mutable} \index{mutability}
+{% code lineNumbers="true" %}
+```python
+def grow_rectangle(rect, dwidth, dheight) : 
+   rect.width += dwidth 
+   rect.height += dheight
+```
+{% endcode %}
 
-You can change the state of an object by making an assignment to one of its attributes. For example, to change the size of a rectangle without changing its position, you can modify the values of {\tt width} and {\tt height}:
+Here is an example that demonstrates the effect:
 
-\beforeverb \begin{pycode} box.width = box.width + 50 box.height = box.width + 100 \end{pycode} \afterverb % You can also write functions that modify objects. For example, \verb"grow\_rectangle" takes a Rectangle object and two numbers, {\tt dwidth} and {\tt dheight}, and adds the numbers to the width and height of the rectangle:
+```bash
+>>> print(box.width) 
+ 140.0 
+>>> print(box.height)
+ 300.0 
+>>> grow_rectangle(box, 50, 100) 
+>>> print(box.width) 
+ 190.0 
+>>> print(box.height) 
+ 400.0 
+>>>
+```
 
-\beforeverb \begin{pycode} def grow\_rectangle(rect, dwidth, dheight) : rect.width += dwidth rect.height += dheight \end{pycode} \afterverb % Here is an example that demonstrates the effect:
+Inside the function, `rect` is an alias for `box`, so if the function modifies `rect`, `box` changes.
 
-\beforeverb \begin{pyinterpreter}
+**Exercise:** Write a function named `move_rectangle` that takes a Rectangle and two numbers named `dx` and `dy`. It should change the location of the rectangle by adding `dx` the `x` coordinate of `corner` and adding `dy` to the `y` coordinate of `corner`.&#x20;
 
-> > > print(box.width) 100.0 print(box.height) 200.0 grow\_rectangle(box, 50, 100) print(box.width) 150.0 print(box.height) 300.0 \end{pyinterpreter} \afterverb % Inside the function, {\tt rect} is an alias for {\tt box}, so if the function modifies {\tt rect}, {\tt box} changes.
+<details>
 
-\begin{exercise} Write a function named \verb"move\_rectangle" that takes a Rectangle and two numbers named {\tt dx} and {\tt dy}. It should change the location of the rectangle by adding {\tt dx} to the {\tt x} coordinate of {\tt corner} and adding {\tt dy} to the {\tt y} coordinate of {\tt corner}. \end{exercise}
+<summary>Answer</summary>
 
-\section{Copying}
 
-\index{aliasing}
+
+</details>
+
+## Copying
 
 Aliasing can make a program difficult to read because changes in one place might have unexpected effects in another place. It is hard to keep track of all the variables that might refer to a given object.
 
-\index{copying objects} \index{object!copying} \index{copy module} \index{module!copy}
+Copying an object is often an alternative to aliasing. The `copy` module contains a function called `copy` that can duplicate any object:
 
-Copying an object is often an alternative to aliasing. The {\tt copy} module contains a function called {\tt copy} that can duplicate any object:
+```bash
+>>> p1 = Point() 
+>>> p1.x = 3.0 
+>>> p1.y = 4.0
+>>> import copy 
+>>> p2 = copy.copy(p1) 
+>>>
+```
 
-\beforeverb \begin{pyinterpreter}
+`p1` and `p2` contain the same data, but they are not the same Point.
 
-> > > p1 = Point() p1.x = 3.0 p1.y = 4.0
+```bash
+>>> print_point(p1)
+ (3.0, 4.0)
+>>> print_point(p2)
+ (3.0, 4.0) 
+>>> p1 is p2 
+ False 
+>>> p1 == p2 
+ False
+>>>
+```
 
-> > > import copy p2 = copy.copy(p1) \end{pyinterpreter} \afterverb % {\tt p1} and {\tt p2} contain the same data, but they are not the same Point.
+The `is` operator indicates that `p1` and `p2` are not the same object, which is what we expected. But you might have expected `==` to yield `True` because these points contain the same data. In that case, you will be disappointed to learn that for instances, the default behavior of the `==` operator is the same as the `is` operator; it checks object identity, not object equivalence. Thankfully, this behaviour can be changed and we'll see how later in the chapter [Classes and Methods](classes-and-methods.md).
 
-\beforeverb \begin{pyinterpreter}
+If you use `copy.copy` to duplicate a Rectangle, you will find that it copies the Rectangle object but not the embedded Point.
 
-> > > print\_point(p1) (3.0, 4.0) print\_point(p2) (3.0, 4.0) p1 is p2 False p1 == p2 False \end{pyinterpreter} \afterverb % The {\tt is} operator indicates that {\tt p1} and {\tt p2} are not the same object, which is what we expected. But you might have expected {\tt ==} to yield {\tt True} because these points contain the same data. In that case, you will be disappointed to learn that for instances, the default behavior of the {\tt ==} operator is the same as the {\tt is} operator; it checks object identity, not object equivalence. Thankfully, this behavior can be changed---we'll see how later.
+```bash
+>>> box2 = copy.copy(box) 
+>>> box2 is box 
+ False 
+>>> box2.corner is box.corner 
+ True 
+>>>
+```
 
-\index{is operator} \index{operator!is}
+Here is what the object diagram looks like:
 
-If you use {\tt copy.copy} to duplicate a Rectangle, you will find that it copies the Rectangle object but not the embedded Point.
+<mark style="background-color:red;">\vspace{0.1in} \beforefig \centerline{\includegraphics{figs/rectangle2.eps\}} \afterfig \vspace{0.1in}</mark>
 
-\index{embedded object!copying}
+This operation is called a **shallow copy** because it copies the object and any references it contains, but not the embedded objects.
 
-\beforeverb \begin{pyinterpreter}
+For most applications, this is not what you want. In this example, invoking `grow_rectangle` on one of the Rectangles would not affect the other, but invoking `move_rectangle` on either would affect both! This behaviour is confusing and error-prone. Fortunately, the `copy` module contains a method named `deepcopy` that copies not only the object but also the objects it refers to, and the objects they refer to, and so on. You will not be surprised to learn that this operation is called a **deep copy**.
 
-> > > box2 = copy.copy(box) box2 is box False box2.corner is box.corner True \end{pyinterpreter} \afterverb % Here is what the object diagram looks like:
+```bash
+>>> box3 = copy.deepcopy(box) 
+>>> box3 is box 
+ False 
+>>> box3.corner is box.corner 
+ False 
+>>>
+```
 
-\index{state diagram} \index{diagram!state} \index{object diagram} \index{diagram!object}
+`box3` and `box` are completely separate objects.
 
-\vspace{0.1in} \beforefig \centerline{\includegraphics{figs/rectangle2.eps\}} \afterfig \vspace{0.1in}
+**Exercise:** Write a version of `move_rectangle` that creates and returns a new Rectangle instead of modifying the old one.
 
-This operation is called a {\bf shallow copy} because it copies the object and any references it contains, but not the embedded objects. % \index{shallow copy} \index{copy!shallow} % For most applications, this is not what you want. In this example, invoking \verb"grow\_rectangle" on one of the Rectangles would not affect the other, but invoking \verb"move\_rectangle" on either would affect both! This behavior is confusing and error-prone. % \index{deep copy} \index{copy!deep} % Fortunately, the {\tt copy} module contains a method named {\tt deepcopy} that copies not only the object but also the objects it refers to, and the objects {\em they} refer to, and so on. You will not be surprised to learn that this operation is called a {\bf deep copy}.
+<details>
 
-\index{deepcopy function} \index{function!deepcopy}
+<summary>Answer</summary>
 
-\beforeverb \begin{pyinterpreter}
 
-> > > box3 = copy.deepcopy(box) box3 is box False box3.corner is box.corner False \end{pyinterpreter} \afterverb % {\tt box3} and {\tt box} are completely separate objects.
 
-\begin{exercise} Write a version of \verb"move\_rectangle" that creates and returns a new Rectangle instead of modifying the old one. \end{exercise}
+</details>
 
-\section{Debugging} \label{sec:hasattr}
+## Debugging
 
-\index{debugging}
+When you start working with objects, you are likely to encounter some new exceptions. If you try to access an attribute that doesn't exist, you get an `AttributeError`:
 
-When you start working with objects, you are likely to encounter some new exceptions. If you try to access an attribute that doesn't exist, you get an {\tt AttributeError}:
+```bash
+>>> p = Point() 
+>>> print(p.z) 
+    AttributeError: Point instance has no attribute 'z' 
+>>>
+```
 
-\index{exception!AttributeError} \index{AttributeError}
+If you are not sure what type an object is, you can ask:
 
-\beforeverb \begin{pyinterpreter}
+```bash
+>>> type(p)
+ <<class 'main.Point'> 
+>>>
+```
 
-> > > p = Point() print(p.z) AttributeError: Point instance has no attribute 'z' \end{pyinterpreter} \afterverb % If you are not sure what type an object is, you can ask:
+If you are not sure whether an object has a particular attribute, you can use the built-in function `hasattr`:
 
-\index{type function} \index{function!type}
+```
+>>> hasattr(p, 'x') 
+ True 
+>>> hasattr(p, 'z') 
+ False 
+>>> 
+```
 
-\beforeverb \begin{pyinterpreter}
+The first argument can be any object; the second argument is a _string_ that contains the name of the attribute.
 
-> > > type(p) <\<class '**main**.Point'> \end{pyinterpreter} \afterverb % If you are not sure whether an object has a particular attribute, you can use the built-in function {\tt hasattr}:
+## Glossary
 
-\index{hasattr function} \index{function!hasattr}
+**class:** A user-defined type. A class definition creates a new class object.&#x20;
 
-\beforeverb \begin{pyinterpreter}
+**class object:** An object that contains information about a user-defined type. The class object can be used to create instances of the type.
 
-> > > hasattr(p, 'x') True hasattr(p, 'z') False \end{pyinterpreter} \afterverb % The first argument can be any object; the second argument is a {\em string} that contains the name of the attribute.
+**instance:** An object that belongs to a class.
 
-\section{Glossary}
+**attribute:** One of the named values associated with an object.&#x20;
 
-\begin{vocabulary}\[class:] A user-defined type. A class definition creates a new class object. \index{class} \end{vocabulary}
+**embedded (object):** An object that is stored as an attribute of another object.&#x20;
 
-\begin{vocabulary}\[class object:] An object that contains information about a user-defined type. The class object can be used to create instances of the type. \index{class object} \end{vocabulary}
+**shallow copy:** To copy the contents of an object, including any references to embedded objects; implemented by the `copy` function in the `copy` module.&#x20;
 
-\begin{vocabulary}\[instance:] An object that belongs to a class. \index{instance} \end{vocabulary}
+**deep copy:** To copy the contents of an object as well as any embedded objects, and any objects embedded in them, and so on; implemented by the `deepcopy` function in the `copy` module.&#x20;
 
-\begin{vocabulary}\[attribute:] One of the named values associated with an object. \index{attribute!instance} \index{instance attribute} \end{vocabulary}
-
-\begin{vocabulary}\[embedded (object):] An object that is stored as an attribute of another object. \index{embedded object} \index{object!embedded} \end{vocabulary}
-
-\begin{vocabulary}\[shallow copy:] To copy the contents of an object, including any references to embedded objects; implemented by the {\tt copy} function in the {\tt copy} module. \index{shallow copy} \end{vocabulary}
-
-\begin{vocabulary}\[deep copy:] To copy the contents of an object as well as any embedded objects, and any objects embedded in them, and so on; implemented by the {\tt deepcopy} function in the {\tt copy} module. \index{deep copy} \end{vocabulary}
-
-\begin{vocabulary}\[object diagram:] A diagram that shows objects, their attributes, and the values of the attributes. \index{object diagram} \index{diagram!object} \end{vocabulary}
+**object diagram:** A diagram that shows objects, their attributes, and the values of the attributes.&#x20;
