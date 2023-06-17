@@ -118,7 +118,7 @@ In \\<mark style="background-color:red;">prettyref{sec:stack-diagram}</mark>, we
 
 This figure below shows a stack diagram for `countdown` called with `n = 3`:
 
-\\<mark style="background-color:red;">vspace{4ex} \beforefig \centerline{\includegraphics{figs/stack2.eps\}} \afterfig \vspace{4ex}</mark>
+<figure><img src="../.gitbook/assets/stack2.png" alt="" width="188"><figcaption><p>stack diagram for <code>countdown</code> called with <code>n = 3</code>.</p></figcaption></figure>
 
 As usual, the top of the stack is the frame for `main`. It is empty because we did not create any variables in `main` or pass any arguments to it.
 

@@ -30,7 +30,7 @@ This loop traverses the string and displays each letter on a line by itself. The
 Another way to write a traversal is with a `for` loop:
 
 {% code lineNumbers="true" %}
-```
+```python
 for char in fruit: 
     print(char) 
 ```
@@ -329,6 +329,7 @@ Below you can find some example of code using format specifiers.
 
 5. Using f-strings to format multiline strings:
 
+{% code lineNumbers="true" %}
 ```python
 name = "John"
 age = 30
@@ -341,6 +342,7 @@ Address:
 """
 print(message)
 ```
+{% endcode %}
 
 Output:
 

@@ -32,6 +32,7 @@ If we test this function with the words `'pots'` and `'stop'`, we expect the ret
 
 For debugging this kind of error, my first move is to print the values of the indices immediately before the line where the error appears.
 
+{% code lineNumbers="true" %}
 ```python
 while j > 0: 
     print(i, j) # print here
@@ -40,6 +41,7 @@ while j > 0:
     i = i+1
     j = j-1
 ```
+{% endcode %}
 
 Now when I run the program again, I get more information:
 
@@ -64,7 +66,7 @@ If I fix that error and run the program again, I get:
 
 This time we get the right answer, but it looks like the loop only ran three times, which is suspicious. To get a better idea of what is happening, it is useful to draw a state diagram. During the first iteration, the frame for `is_reverse` looks like this:
 
-<mark style="background-color:red;">\beforefig \centerline{\includegraphics{figs/state4.eps\}} \afterfig</mark>
+<figure><img src="../.gitbook/assets/state4.png" alt="" width="375"><figcaption><p>Frame of the first iteration of the function <code>is_reverse</code>.</p></figcaption></figure>
 
 I took a little license by arranging the variables in the frame and adding dotted lines to show that the values of `i` and `j` indicate characters in `word1` and `word2`.
 
@@ -111,7 +113,8 @@ And these are wrong:
 <pre class="language-python" data-line-numbers><code class="lang-python"><strong>t.append([x]) # WRONG! t would be [1,2,3,[4]]
 </strong><strong>t = t.append(x) # WRONG! t is None
 </strong><strong>t + [x] # WRONG! t is not updated
-</strong><strong>t = t + x # WRONG! TypeError: can only concatenate list (not "int") to list
+</strong><strong>t = t + x # WRONG! 
+</strong><strong>          # TypeError: can only concatenate list (not "int") to list
 </strong></code></pre>
 
 ### Make copies to avoid aliasing.

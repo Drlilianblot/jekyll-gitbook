@@ -291,9 +291,7 @@ If we execute these assignment statements:
 
 We know that `a` and `b` both refer to a string, but we don't know whether they refer to the **same** string. There are two possible states:
 
-\index{aliasing}
-
-<mark style="background-color:blue;">\beforefig \centerline{\includegraphics{figs/list1.eps\}} \afterfig</mark>
+<figure><img src="../.gitbook/assets/list1.png" alt="" width="375"><figcaption><p>The two possible states for the variable <code>a</code> and <code>b</code>.</p></figcaption></figure>
 
 In one case, `a` and `b` refer to two different objects that have the same value. In the second case, they refer to the same object. To check whether two variables refer to the same object, you can use the `is` operator.
 
@@ -317,7 +315,7 @@ In this example, Python only created one string object, and both `a` and `b` ref
 
 So the state diagram looks like this:
 
-<mark style="background-color:blue;">\beforefig \centerline{\includegraphics{figs/list2.eps\}} \afterfig</mark>
+<figure><img src="../.gitbook/assets/list2.png" alt="" width="152"><figcaption><p>State diagram for the variable <code>a</code> and <code>b</code>.</p></figcaption></figure>
 
 In this case we would say that the two lists are **equivalent**, because they have the same elements, but not **identical**, because they are not the same object. If two objects are identical, they are also equivalent, but if they are equivalent, they are not necessarily identical.
 
@@ -337,7 +335,7 @@ If `a` refers to an object and you assign `b = a`, then both variables refer to 
 
 The state diagram looks like this:
 
-<mark style="background-color:blue;">\beforefig \centerline{\includegraphics{figs/list3.eps\}} \afterfig</mark>
+<figure><img src="../.gitbook/assets/list3.png" alt="" width="152"><figcaption><p>State diagram representing two references (<code>a</code> and <code>b</code>) <br>to the same object <code>[1,2,3]</code>. </p></figcaption></figure>
 
 The association of a variable with an object is called a `reference`. In this example, there are two references to the same object. An object with more than one reference has more than one name, so we say that the object is **aliased**.
 
@@ -384,9 +382,9 @@ Here's how it is used:
 >>>
 ```
 
-> > The parameter `lst` and the variable `letters` are aliases for the same object. The stack diagram looks like this:
+The parameter `lst` and the variable `letters` are aliases for the same object. The stack diagram looks like this:
 
-\\<mark style="background-color:blue;">vspace{4ex} \beforefig \centerline{\includegraphics{figs/stack5.eps\}} \afterfig \vspace</mark>{4ex}
+<figure><img src="../.gitbook/assets/stack5.png" alt="" width="366"><figcaption><p>State diagram of a mutable object passed in the parameters of a function.</p></figcaption></figure>
 
 Since the list is shared by two frames, I drew it between them.
 
@@ -439,8 +437,6 @@ This function leaves the original list unmodified. Here's how it is used:
  ['b', 'c']
 >>>
 ```
-
-\begin{exercise}
 
 **Exercise:** Write a function called `chop` that takes a list as parameter and modifies it, removing the first and last elements, and returns `None`. Then write a function called `middle` that takes a list and returns a new list that contains all but the first and last elements.
 

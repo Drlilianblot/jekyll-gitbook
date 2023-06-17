@@ -135,7 +135,7 @@ The histogram indicates that the letters `'a'` and `'b'` appear once; `'o'` appe
 
 </details>
 
-**Exericse:** <mark style="background-color:red;">TOREWRITE</mark> Dictionaries have a method called `get` that takes a key and a default value. If the key appears in the dictionary, `get` returns the corresponding value; otherwise it returns the default value. For example:
+**Exercise:** Dictionaries have a method called `get` that takes a key and a default value. If the key appears in the dictionary, `get` returns the corresponding value; otherwise it returns the default value. For example:
 
 ```bash
 >>> h = histogram('brontosaurus')
@@ -148,7 +148,7 @@ The histogram indicates that the letters `'a'` and `'b'` appear once; `'o'` appe
 >>>
 ```
 
-Use `get` to write `histogram` more concisely. You should be able to eliminate the {\tt if} statement. \end{exercise}
+Use `get` to write `histogram` more concisely. You should be able to eliminate the `if` statement.
 
 ## Looping and dictionaries
 
@@ -261,12 +261,6 @@ Here is an example:
 >>> 
 ```
 
-And here is a diagram showing `h` and `inv`:&#x20;
-
-&#x20;<mark style="background-color:red;">%\centerline{\includegraphics{figs/dict1.eps\}} %\afterfig %% %</mark>
-
-A dictionary is represented as a box with the type `dict` above it and the key-value pairs inside. If the values are integers, floats or strings, I usually draw them inside the box, but I usually draw lists outside the box, just to keep the diagram simple.
-
 Lists can be values in a dictionary, as this example shows, but they cannot be keys. Here's what happens if you try:&#x20;
 
 ```
@@ -373,10 +367,10 @@ This loop traverses the keys in `directory`, which are tuples. It assigns the el
 
 There are two ways to represent tuples in a state diagram. The more detailed version shows the indices and elements just as they appear in a list. For example, the tuple `('Cleese', 'John')` would appear:
 
-&#x20;<mark style="background-color:red;">\beforefig \centerline{\includegraphics{figs/tuple1.eps\}} \afterfig \vspace{4ex}</mark>
+<figure><img src="../.gitbook/assets/tuple1.png" alt="" width="188"><figcaption><p>Tuple representation in a state diagram</p></figcaption></figure>
 
 But in a larger diagram you might want to leave out the details. For example, a diagram of the telephone directory might appear:
 
-<mark style="background-color:red;">\vspace{4ex} \beforefig \centerline{\includegraphics{figs/dict2.eps\}} \afterfig \vspace{4ex}</mark>
+<figure><img src="../.gitbook/assets/dict2.png" alt="" width="375"><figcaption><p>Dictionary representation in a state diagram.</p></figcaption></figure>
 
 Here the tuples are shown using Python syntax as a graphical shorthand.

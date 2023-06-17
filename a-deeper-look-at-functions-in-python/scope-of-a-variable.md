@@ -19,7 +19,8 @@ my_list = [1, 2, 3, 4, 5]
 length = len(my_list)
 
 # Print the length of the list
-print("The length of the list is:", length)    # Output: The length of the list is: 5
+print("The length of the list is:", length)    
+# Output: The length of the list is: 5
 ```
 {% endcode %}
 
@@ -236,9 +237,9 @@ In Python, variable names are resolved using the LEGB rule, which stands for Loc
 
 It's important to note that Python always searches the scopes in this order, from local to built-in. If a name is found in a higher-level scope, Python stops searching and uses the value from that scope. Remember the code snippet we wrote in the [builtin section](scope-of-a-variable.md#built-in-scope), where we redefined the `sum` name in the global scope and shown below for convenience.&#x20;
 
-<pre><code><strong>>>> sum([1,2,3,4]) # uses the built-in function sum  
+<pre class="language-bash"><code class="lang-bash"><strong>>>> sum([1,2,3,4]) # uses the built-in function sum  
 </strong><strong>10
-</strong>>>> sum = 10 # redefined the built-in name sum within the global scope    
+</strong>>>> sum = 10 # redefined the built-in name sum within the global scope
 >>> sum([1,2,3])      
 Traceback (most recent call last):
   File "&#x3C;pyshell#13>", line 1, in &#x3C;module>
