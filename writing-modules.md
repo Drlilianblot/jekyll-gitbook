@@ -32,7 +32,7 @@ If you run this program, it reads itself and prints the number of lines in the f
 
 That provides a function called `linecount`:
 
-```
+```bash
 >>> wc.linecount('wc.py')
  7
 >>>

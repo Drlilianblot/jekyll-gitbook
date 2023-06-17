@@ -7,7 +7,7 @@ Python is an **object-oriented programming language**, which means that it provi
 * Programs are made up of object definitions and function definitions, and most of the computation is expressed in terms of operations on objects.
 * Each object definition corresponds to some object or concept in the real world, and the functions that operate on that object correspond to the ways real-world objects interact.
 
-For example, the `Time` class defined in <mark style="background-color:red;">\prettyref{cha:time}</mark> corresponds to the way people record the time of day, and the functions we defined correspond to the kinds of things people do with times. Similarly, the `Point` and `Rectangle` classes correspond to the mathematical concepts of a point and a rectangle.
+For example, the [`Time` class defined earlier](classes-and-functions.md#time) corresponds to the way people record the time of day, and the functions we defined correspond to the kinds of things people do with times. Similarly, the `Point` and `Rectangle` classes correspond to the mathematical concepts of a point and a rectangle.
 
 So far, we have not taken advantage of the features Python provides to support object-oriented programming. These features are not strictly necessary; most of them provide alternative syntax for things we have already done. But in many cases, the alternative is more concise and more accurately conveys the structure of the program.
 
@@ -22,13 +22,13 @@ In the next few sections, we will take the functions from the previous two chapt
 
 ## What is an instance?
 
-Before we get into creating a class itself, we need to understand an important distinction. A class is something that just contains structure – it defines how something should be laid out or structured, but does't actually fill in the content. For example, the `Time` class says that a time needs to have hours, minutes and seconds, but it does not actually say what the `time` is. This is where instances come in. An instance is a specific copy of the class that does contain all of the content. For example, if I create a time `t` of 1 hour 45 minutes and 10 seconds, then `t` **is an instance of** `Time`.
+Before we get into creating a class itself, we need to understand an important distinction. A class is something that just contains structure – it defines how something should be laid out or structured, but doesn't actually fill in the content. For example, the `Time` class says that a time needs to have hours, minutes and seconds, but it does not actually say what the `time` is. This is where instances come in. An instance is a specific copy of the class that does contain all of the content. For example, if I create a time `t` of 1 hour 45 minutes and 10 seconds, then `t` **is an instance of** `Time`.
 
 This can sometimes be a very difficult concept to master, so let’s look at it from another angle. Let’s say that the government has a particular tax form that it requires everybody to fill out. Everybody has to fill out the same type of form, but the content that people put into the form differs from person to person. A class is like the form: it specifies what content should exist. Your copy of the form with your specific information is like an instance of the class: it specifies what the content actually is.
 
 ## Printing objects
 
-In <mark style="background-color:red;">\prettyref{cha:time}</mark>, we defined a class named `Time` and in <mark style="background-color:red;">\prettyref{exo:printtime}</mark>, you wrote a function named `print_time`:
+Earlier we defined a [class named `Time`](classes-and-functions.md#time) and you wrote a function named `print_time`:
 
 {% code lineNumbers="true" %}
 ```python
@@ -93,7 +93,7 @@ class Time(object):
     attributes: hour, minute, second"""
     
     def print_time(self):
-        print('%.2d:%.2d:%.2d' % (self.hour,self.minute,self.second))
+        print('%.2d:%.2d:%.2d'%(self.hour,self.minute,self.second))
 ```
 {% endcode %}
 
@@ -129,7 +129,7 @@ Having shown both ways, the first way is the preferred way.
 Note how in the second example we had to pass in the instance because we did not call the method via the instance. Python can’t figure out what the instance is if it doesn't have any information about it.
 {% endhint %}
 
-**Exercise:** Rewrite `time_to_int` (from <mark style="background-color:red;">\prettyref{sec:prototype}</mark>) as a method. It is probably not appropriate to rewrite `int_to_time` as a method; it's not clear what object you would invoke it on!&#x20;
+**Exercise:** Rewrite the [function `time_to_int`](classes-and-functions.md#prototyping-versus-planning) defined earlier as a method. It is probably not appropriate to rewrite `int_to_time` as a method; it's not clear what object you would invoke it on!&#x20;
 
 <details>
 
@@ -141,7 +141,7 @@ Note how in the second example we had to pass in the instance because we did not
 
 ## Another example
 
-Here's a version of `increment` (from <mark style="background-color:red;">\prettyref{sec:increment}</mark>) rewritten as a method:
+Here's a version of `increment` (see previous implementation in [the section on modifiers](classes-and-functions.md#modifiers)) rewritten as a method:
 
 {% code lineNumbers="true" %}
 ```python
@@ -316,6 +316,10 @@ And here is how you could use it:
 When you apply the `+` operator to `Time` objects, Python invokes `__add__`. When you print the result, Python invokes `__str__`. So there is quite a lot happening behind the scenes!
 
 Changing the behaviour of an operator so that it works with user-defined types is called **operator overloading**. For every operator in Python there is a corresponding special method, like `__add__`. For more details, see the [special names docummentation](https://docs.python.org/3/reference/datamodel.html#special-method-names).
+
+## Overloading the operator `==`
+
+
 
 **Exercise:** Write an `__add__` method for the Point&#x20;
 

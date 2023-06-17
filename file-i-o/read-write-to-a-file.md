@@ -35,7 +35,7 @@ The file object keeps track of where it is in the file, so if you call `readline
 
 The next word is `aah`, which is, believe it or not, a perfectly legitimate word. If the whitespace is bothering you, we can get rid of it with the string method `strip()`:
 
-```
+```bash
 >>> line = fin.readline()
 >>> word = line.strip()
 >>> word

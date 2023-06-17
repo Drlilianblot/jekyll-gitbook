@@ -51,7 +51,7 @@ You can assign values to an instance using dot notation:
 
 This syntax is similar to the syntax for selecting a variable from a module, such as `math.pi` or `string.whitespace`. In this case, though, we are assigning values to named elements of an object. These elements are called **attributes**. The following diagram shows the result of these assignments. A state diagram that shows an object and its attributes is called an **object diagram**:
 
-<mark style="background-color:red;">\beforefig \centerline{\includegraphics{figs/point.eps\}} \afterfig</mark>
+<figure><img src="../.gitbook/assets/point.png" alt="" width="154"><figcaption><p>Object diagram for the variable <code>blank</code> of type <code>Point</code>.</p></figcaption></figure>
 
 The variable `blank` refers to a Point object, which contains two attributes. Each attribute refers to a floating-point number. You can read the value of an attribute using the same syntax:
 
@@ -147,7 +147,7 @@ The expression `box.corner.x` means, "Go to the object `box` refers to and selec
 
 The figure shows the state of this object:
 
-\\<mark style="background-color:red;">beforefig \centerline{\includegraphics{figs/rectangle.eps\}} \afterfig</mark>
+<figure><img src="../.gitbook/assets/rectangle.png" alt="" width="375"><figcaption><p>Object diagram of the variable <code>box</code> of type <code>Rectangle</code>.</p></figcaption></figure>
 
 An object that is an attribute of another object is **embedded**.
 
@@ -267,7 +267,7 @@ If you use `copy.copy` to duplicate a Rectangle, you will find that it copies th
 
 Here is what the object diagram looks like:
 
-<mark style="background-color:red;">\vspace{0.1in} \beforefig \centerline{\includegraphics{figs/rectangle2.eps\}} \afterfig \vspace{0.1in}</mark>
+<figure><img src="../.gitbook/assets/rectangle2.png" alt="" width="563"><figcaption><p>Object diagram after a shallow copy of the variable <code>box</code>.</p></figcaption></figure>
 
 This operation is called a **shallow copy** because it copies the object and any references it contains, but not the embedded objects.
 

@@ -24,7 +24,7 @@ We can create a new `Time` object and assign attributes for hours, minutes, and 
 
 The state diagram for the `Time` object looks like this:
 
-<mark style="background-color:red;">\beforefig \centerline{\includegraphics{figs/time.eps\}} \afterfig</mark>
+<figure><img src="../.gitbook/assets/time.png" alt="" width="233"><figcaption><p>State diagram of the <code>Time</code> object assigned to the variable <code>time</code>.</p></figcaption></figure>
 
 **Exercise:** Write a function called `print_time` that takes a Time object and prints it in the form `hour:minute:second`.
 

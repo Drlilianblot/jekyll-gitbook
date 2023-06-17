@@ -28,24 +28,29 @@ Function type hinting is a powerful feature in Python that allows developers to 
 
 First, let's define a simple function that takes two integers and returns their sum:
 
+{% code lineNumbers="true" %}
 ```python
 def add(x: int, y: int) -> int:
     return x + y
 ```
+{% endcode %}
 
 In this example, we use the `int` type hint to specify that both `x` and `y` are expected to be integers, and the return type hint of `-> int` specifies that the function should return an integer. This type hinting makes it clear to other developers what types of inputs and outputs the function expects.
 
 We can also use type hinting with default arguments. For example:
 
+{% code lineNumbers="true" %}
 ```python
 def greet(name: str = "world") -> str:
     return f"Hello, {name}!"
 ```
+{% endcode %}
 
 In this example, we specify that the `name` argument is expected to be a string, and that the function should return a string. We also provide a default value of `"world"` for the `name` argument. This makes it clear to other developers what the default behavior of the function is, and what types of inputs and outputs it expects.
 
 In addition to basic types such as `int`, `str`, and `bool`, we can also use more complex types such as lists, dictionaries, and custom classes in function type hinting. For example:
 
+{% code lineNumbers="true" %}
 ```python
 from typing import List, Dict, Tuple
 
@@ -57,6 +62,7 @@ def process_data(data: List[Dict[str, int]]) -> Tuple[int, int]:
         count += 1
     return total, count
 ```
+{% endcode %}
 
 In this example, we use the `List` and `Dict` types from the `typing` module to specify that the `data` argument is expected to be a list of dictionaries, where each dictionary has string keys and integer values. The function then processes the data and returns a tuple of two integers.
 
@@ -84,17 +90,20 @@ pip install mypy
 
 Then, we can create a file named `example.py` with the following code:
 
+{% code title="example.py" lineNumbers="true" %}
 ```python
 def add(a: int, b: int) -> int:
     return a + b
 
 result = add(1, '2')
 ```
+{% endcode %}
 
 In this code, we are calling the `add()` function with two arguments of different types (`1` and `'2'`). This would result in a type error if we run the code. However, if we run Mypy on the code, we get the following error message:
 
 ```go
-example.py:4: error: Argument 2 to "add" has incompatible type "str"; expected "int"
+example.py:4: 
+error: Argument 2 to "add" has incompatible type "str"; expected "int"
 ```
 
 This error message indicates that the second argument to `add()` has the wrong type (`str` instead of `int`), as specified by the type hint.
@@ -107,10 +116,12 @@ Python's type hinting system goes beyond basic types and allows for more advance
 
 Union types are used when a variable can accept more than one type. This is achieved by using the "|" operator between types. Here's an example:
 
+{% code lineNumbers="true" %}
 ```python
-pythonCopy codedef square(num: Union[int, float]) -> Union[int, float]:
+def square(num: Union[int, float]) -> Union[int, float]:
     return num * num
 ```
+{% endcode %}
 
 In the above example, the function `square` takes a parameter `num` which can either be an integer or a float. The return type of the function can also be either an integer or a float.
 
@@ -118,14 +129,16 @@ In the above example, the function `square` takes a parameter `num` which can ei
 
 Optional types are used when a variable can be of a specific type or None. This is achieved by using the "Optional" keyword from the typing module. Here's an example:
 
+{% code lineNumbers="true" %}
 ```python
-pythonCopy codefrom typing import Optional
+from typing import Optional
 
 def greeting(name: Optional[str]) -> str:
     if name is not None:
         return f"Hello, {name}!"
     return "Hello, World!"
 ```
+{% endcode %}
 
 In the above example, the function `greeting` takes an optional parameter `name` which can either be a string or None. If `name` is not None, the function returns a greeting with the name. If `name` is None, the function returns a generic greeting.
 
@@ -133,14 +146,16 @@ In the above example, the function `greeting` takes an optional parameter `name`
 
 Typed dictionaries allow you to specify the types of keys and values in a dictionary. This is achieved by using the "TypedDict" keyword from the typing module. Here's an example:
 
+{% code lineNumbers="true" %}
 ```python
-pythonCopy codefrom typing import TypedDict
+from typing import TypedDict
 
 class User(TypedDict):
     name: str
     age: int
     email: str
 ```
+{% endcode %}
 
 In the above example, the `User` class is a typed dictionary that specifies the types of the keys and values in the dictionary. The keys in the dictionary are `name`, `age`, and `email`, and their respective types are `str`, `int`, and `str`.
 
@@ -148,8 +163,9 @@ In the above example, the `User` class is a typed dictionary that specifies the 
 
 Callable types are used when a variable can be a function or a method. This is achieved by using the "Callable" keyword from the typing module. Here's an example:
 
+{% code lineNumbers="true" %}
 ```python
-pythonCopy codefrom typing import Callable
+from typing import Callable
 
 def apply_function(func: Callable[[int], int], num: int) -> int:
     return func(num)
@@ -160,6 +176,7 @@ def double(num: int) -> int:
 result = apply_function(double, 5)
 print(result)
 ```
+{% endcode %}
 
 In the above example, the function `apply_function` takes two parameters: a callable function `func` that takes an integer parameter and returns an integer, and an integer `num`. The function `apply_function` calls the function `func` with the `num` parameter and returns the result. The function `double` is defined as a callable function that doubles the value of the parameter passed to it. The `apply_function` function is called with the `double` function and an integer value of `5`, and the result is printed, which is `10`.
 
@@ -177,8 +194,9 @@ def print_dict(d: DictStrIntOrStr) -> None:
     for key, value in d.items():
         print(f"{key}: {value}")
 
-my_dict: DictStrIntOrStr = {"age": 42, "firstname": "Lilian", "surname": "Blot"}
-
+my_dict: DictStrIntOrStr = {"age": 42, 
+                            "firstname": "Lilian", 
+                            "surname": "Blot"}
 print_dict(my_dict)
 ```
 {% endcode %}
@@ -188,7 +206,7 @@ In this example, we define the `DictStrIntOrStr` alias to represent a dictionary
 We create an example dictionary `my_dict` of this type and pass it to the `print_dict` function. When we run the code, we see the following output:
 
 ```makefile
-foo: 42
+age: 42
 firstname: Lilian
 surname: Blot
 ```
@@ -199,7 +217,10 @@ Advanced type hinting allows developers to specify more complex data types and f
 
 ## Best Practices for Type Hinting&#x20;
 
-A. Choosing the Correct Type Hint B. Avoiding Overuse of Type Hints C. Documenting Type Hints D. Updating Type Hints
+1. Choosing the Correct Type Hint&#x20;
+2. Avoiding Overuse of Type Hints&#x20;
+3. Documenting Type Hints&#x20;
+4. Updating Type Hints
 
 Using type hinting can greatly improve the readability and maintainability of your Python code. However, simply adding type hints is not enough. It is important to follow best practices to ensure that your code is clear and consistent. Here are some best practices to follow when using type hinting in Python:
 
@@ -214,6 +235,7 @@ Using type hinting can greatly improve the readability and maintainability of yo
 
 To illustrate these best practices, consider the following example code:
 
+{% code lineNumbers="true" %}
 ```python
 from typing import List, Dict, Tuple
 
@@ -253,10 +275,9 @@ def add_student_scores(
 
 
 ```
+{% endcode %}
 
 In this example, type aliases are used to avoid repetition and make the code more readable. Precise types like `List[str]`, `Dict[str, int]`, and `Tuple[str, int]` are used to provide more information and make the code more self-documenting.
-
-
 
 ## Conclusion
 
