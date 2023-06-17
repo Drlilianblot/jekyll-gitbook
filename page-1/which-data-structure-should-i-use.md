@@ -11,12 +11,7 @@ In Python, an **ordered** collection means that the elements in the collection h
 
 On the other hand, a set is an **unordered** collection. If you create a set with the same elements as above (`{'apple', 'banana', 'cherry'}`), there is no guarantee about the order of elements when you iterate over them. The order in which they are added may not be retained by the data structure.
 
-| Collection | Mutable | Ordered | Indexing | Duplicate Data |
-| ---------- | ------- | ------- | -------- | -------------- |
-| List       | ✔       | ✔       | ✔        | ✔              |
-| Tuple      | 𐄂      | ✔       | ✔        | ✔              |
-| Set        | ✔       | 𐄂      | 𐄂       | 𐄂             |
-| Dictionary | ✔       | ✔       | ✔        | 𐄂             |
+<table><thead><tr><th>Collection</th><th width="122">Mutable</th><th>Ordered</th><th>Indexing</th><th>Duplicate Data</th></tr></thead><tbody><tr><td>List</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr><tr><td>Tuple</td><td>𐄂</td><td>✔</td><td>✔</td><td>✔</td></tr><tr><td>Set</td><td>✔</td><td>𐄂</td><td>𐄂</td><td>𐄂</td></tr><tr><td>Dictionary</td><td>✔</td><td>✔</td><td>✔</td><td>𐄂</td></tr></tbody></table>
 
 The choice of which collection to use depends on the specific use case and requirements.
 

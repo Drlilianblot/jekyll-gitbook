@@ -69,7 +69,7 @@ This example makes three assignments. The first assigns a string to a new variab
 
 A common way to represent variables on paper is to write the name with an arrow pointing to the variable's value. This kind of figure is called a **state diagram** because it shows what state each of the variables is in (think of it as the variable's state of mind). This diagram shows the result of the previous example:
 
-<mark style="background-color:red;">\beforefig \centerline{\includegraphics{figs/state2.eps\}} \afterfig</mark>
+<figure><img src="../.gitbook/assets/state2.png" alt=""><figcaption></figcaption></figure>
 
 To display the value of a variable, you can use a print statement:
 
@@ -175,7 +175,7 @@ The output of this program is:
 
 Because the first time `bruce` is printed, its value is 5, and the second time, its value is 7. Here is what **multiple assignment** looks like in a state diagram:
 
-<mark style="background-color:blue;">\beforefig \centerline{\includegraphics{figs/assign2.eps\}} \afterfig</mark>
+<figure><img src="../.gitbook/assets/assign2.png" alt="" width="170"><figcaption><p>State diagram of multiple assignments</p></figcaption></figure>
 
 With multiple assignment it is especially important to distinguish between an assignment operation and a statement of equality. Because Python uses the equal sign (`=`) for assignment, it is tempting to interpret a statement like `a = b` as a statement of equality. **It is not!**
 

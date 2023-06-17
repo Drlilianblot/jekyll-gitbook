@@ -62,7 +62,7 @@ We know that the values returned are strings due to the single quotes around the
 
 ## Common built-in functions
 
-Python provides many useful function for common programming tasks. We have already seen one, the **print**} function. A subset of the built-in function is given in <mark style="background-color:red;">\prettyref{tab:builtin}</mark>.
+Python provides many useful function for common programming tasks. We have already seen one, the **print**} function. A subset of the built-in function is given in the table below:
 
 | Function          | Description                                                                                           | Example                                                                                                |
 | ----------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
@@ -86,7 +86,7 @@ Python provides a built-in function called `input` that gets input from the keyb
 >>>
 ```
 
-Before getting input from the user, it is a good idea to print a prompt telling the user what to input. The function`input` can take a prompt as an argument:
+Before getting input from the user, it is a good idea to print a prompt telling the user what to input. The function `input` can take a prompt as an argument:
 
 ```bash
 >>> name = input('What...is your name?\n') 
@@ -121,8 +121,8 @@ But if the user types something other than a string of digits, you get an error:
  Traceback (most recent call last): 
      File "<pyshell#4>", line 1, 
          in int(speed) 
- ValueError: invalid literal for int() with base 10: 'What do you mean, an African or 
- a European swallow?' 
+ ValueError: invalid literal for int() with base 10: 'What do you mean, an 
+             African or a European swallow?' 
 >>>
 ```
 

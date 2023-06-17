@@ -18,7 +18,7 @@ def print_lyrics():
 
 The empty parentheses after the name indicate that this function doesn't take any arguments.
 
-The first line of the function definition is called the **header**; the rest is called the **body**. The header has to end with a colon and the body has to be indented. By convention, the indentation is always four spaces (<mark style="background-color:red;">see \prettyref{sec:editor}</mark>). The body can contain any number of statements.
+The first line of the function definition is called the **header**; the rest is called the **body**. The header has to end with a colon and the body has to be indented. By convention, the indentation is always four spaces (see the [section on editors](debugging.md#editor)). The body can contain any number of statements.
 
 The strings in the print statements are enclosed in double quotes. Single quotes and double quotes do the same thing; most people use single quotes except in cases like this where a single quote (which is also an apostrophe) appears in the string.
 
@@ -206,7 +206,7 @@ Parameters are also **local**. For example, outside `print_twice`, there is no s
 
 To keep track of which variables can be used where, it is sometimes useful to draw a **stack diagram**. Like state diagrams, stack diagrams show the value of each variable, but they also show the function each variable belongs to. Each function is represented by a **frame**. A frame is a box with the name of a function beside it and the parameters and variables of the function inside it. The stack diagram for the previous example looks like this:
 
-<mark style="background-color:red;">\vspace{4ex} \beforefig \centerline{\includegraphics{figs/stack.eps\}} \afterfig \vspace{4ex}</mark>
+<figure><img src="../.gitbook/assets/stack (1).png" alt="" width="376"><figcaption><p>Stack diagram showing the values assigned to the functions parameters</p></figcaption></figure>
 
 The frames are arranged in a stack that indicates which function called which, and so on. In this example, `print_twice` was called by `cat_twice`, and `cat_twice` was called by **`main`**, which is a special name for the topmost frame. When you create a variable outside of any function, it belongs to **main**. Such variable is said to be **global** as opposed to local.
 

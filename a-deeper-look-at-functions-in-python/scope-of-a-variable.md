@@ -283,14 +283,7 @@ When we call `outer_function`, it prints the value of `x` from the **local** sco
 
 The table below summarises some of the implications of Python scope:
 
-| Action                                                       | Global Code | Local Code                                        | Nested Function Code                              |
-| ------------------------------------------------------------ | ----------- | ------------------------------------------------- | ------------------------------------------------- |
-| Access or reference names that live in the global scope      | Yes         | Yes                                               | Yes                                               |
-| Modify or update names that live in the global scope         | Yes         | No (unless declared `global`)                     | No (unless declared `global`)                     |
-| Access or reference names that live in a local scope         | No          | Yes (its own local scope), No (other local scope) | Yes (its own local scope), No (other local scope) |
-| Override names in the built-in scope                         | Yes         | Yes (during function execution)                   | Yes (during function execution)                   |
-| Access or reference names that live in their enclosing scope | N/A         | N/A                                               | Yes                                               |
-| Modify or update names that live in their enclosing scope    | N/A         | N/A                                               | No (unless declared `nonlocal`)                   |
+<table><thead><tr><th>Action</th><th width="154">Global Code</th><th>Local Code</th><th>Nested Function Code</th></tr></thead><tbody><tr><td>Access or reference names that live in the global scope</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>Modify or update names that live in the global scope</td><td>Yes</td><td>No (unless declared <code>global</code>)</td><td>No (unless declared <code>global</code>)</td></tr><tr><td>Access or reference names that live in a local scope</td><td>No</td><td>Yes (its own local scope), No (other local scope)</td><td>Yes (its own local scope), No (other local scope)</td></tr><tr><td>Override names in the built-in scope</td><td>Yes</td><td>Yes (during function execution)</td><td>Yes (during function execution)</td></tr><tr><td>Access or reference names that live in their enclosing scope</td><td>N/A</td><td>N/A</td><td>Yes</td></tr><tr><td>Modify or update names that live in their enclosing scope</td><td>N/A</td><td>N/A</td><td>No (unless declared <code>nonlocal</code>)</td></tr></tbody></table>
 
 ### Best practices
 

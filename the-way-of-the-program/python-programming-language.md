@@ -36,11 +36,11 @@ The advantages are enormous. First, it is much easier for a human to program in 
 
 Two kinds of programs process high-level languages into low-level languages: **interpreters** and **compilers**. An interpreter reads a high-level program and executes it, meaning that it does what the program says. It processes the program a little at a time, alternately reading lines and performing computations.
 
-* [ ] <mark style="background-color:red;">insert figure for an interpreter</mark>
+<figure><img src="../.gitbook/assets/interpreter.png" alt="" width="475"><figcaption><p>process high-level languages into low-level languages using an interpreter</p></figcaption></figure>
 
 A compiler reads the program and translates it completely before the program starts running. In this context, the high-level program is called the **source code**, and the translated program is called the **object code** or the **executable**. Once a program is compiled, you can execute it repeatedly without further translation.
 
-* [ ] <mark style="background-color:red;">insert figure for compiler</mark>
+<figure><img src="../.gitbook/assets/compiler.png" alt="" width="563"><figcaption><p>process high-level languages into low-level languages using a compiler</p></figcaption></figure>
 
 Python is considered an interpreted language because Python programs are executed by an interpreter. There are two ways to use the interpreter: **interactive mode** and **script mode**. In interactive mode, you type Python programs and the interpreter prints the result:
 

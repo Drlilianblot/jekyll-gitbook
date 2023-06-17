@@ -287,17 +287,7 @@ In this example, the `:.2f` after the expression specifies that the number shoul
 
 Here's a table of some commonly used format specifiers:
 
-| Format specifier | Description                                                                 |
-| ---------------- | --------------------------------------------------------------------------- |
-| `:<`             | Left align the value                                                        |
-| `:>`             | Right align the value                                                       |
-| `:^`             | Center align the value                                                      |
-| `:0>`            | Pad the value with zeroes on the left                                       |
-| `:,`             | Add commas as thousands separators                                          |
-| `:.2f`           | Format the value as a float with two decimal places                         |
-| `:e`             | Format the value in scientific notation                                     |
-| `!s`             | Convert the value to a string                                               |
-| `!r`             | Convert the value to a string and represent it as a valid Python expression |
+<table><thead><tr><th width="194">Format specifier</th><th>Description</th></tr></thead><tbody><tr><td><code>:&#x3C;</code></td><td>Left align the value</td></tr><tr><td><code>:></code></td><td>Right align the value</td></tr><tr><td><code>:^</code></td><td>Center align the value</td></tr><tr><td><code>:0></code></td><td>Pad the value with zeroes on the left</td></tr><tr><td><code>:,</code></td><td>Add commas as thousands separators</td></tr><tr><td><code>:.2f</code></td><td>Format the value as a float with two decimal places</td></tr><tr><td><code>:e</code></td><td>Format the value in scientific notation</td></tr><tr><td><code>!s</code></td><td>Convert the value to a string</td></tr><tr><td><code>!r</code></td><td>Convert the value to a string and represent it as a valid Python expression</td></tr></tbody></table>
 
 Below you can find some example of code using format specifiers.
 

@@ -49,9 +49,9 @@ A segment of a string is called a **slice**. Selecting a slice is similar to sel
 >>>
 ```
 
-The operator `[n:m]` returns the part of the string from the `n-eth` character to the `m-eth` character, including the first but excluding the last. This behavior is counter intuitive, but it might help to imagine the indices pointing _between_ the characters, as in the following diagram:
+The operator `[n:m]` returns the part of the string from the `n-eth` character to the `m-eth` character, including the first but excluding the last. This behaviour is counter intuitive, but it might help to imagine the indices pointing _between_ the characters, as in the following diagram:
 
-<mark style="background-color:blue;">\beforefig \centerline{\includegraphics{figs/banana.eps\}} \afterfig</mark>
+<figure><img src="../.gitbook/assets/banana.png" alt="" width="274"><figcaption><p>Helpful indices representation to understand string slices</p></figcaption></figure>
 
 If you omit the first index (before the colon), the slice starts at the beginning of the string. If you omit the second index, the slice goes to the end of the string:
 
@@ -159,7 +159,7 @@ The one-eth element of `numbers`, which used to be `123`, is now `5`.
 
 You can think of a list as a relationship between indices and elements. This relationship is called a **mapping**; each index "maps to" one of the elements. Here is a state diagram showing `cheeses`, `numbers` and `empty`:
 
-<mark style="background-color:blue;">\beforefig \centerline{\includegraphics{figs/list\_state.eps\}} \afterfig</mark>
+<figure><img src="../.gitbook/assets/list_state.png" alt="" width="290"><figcaption><p>State diagram representing the mapping between indices and elements <br>after an assignment</p></figcaption></figure>
 
 Lists are represented by boxes with the word "list" outside and the elements of the list inside. `cheeses` refers to a list with three elements indexed `0`, `1` and `2`. `numbers` contains two elements; the diagram shows that the value of the second element has been reassigned from `123` to `5`. `empty` refers to a list with no elements. List indices work the same way as string indices:
 
