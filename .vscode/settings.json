@@ -1,0 +1,6 @@
+{
+    "markdown.styles": [
+        "assets\\gitbook\\custom.css",
+        "assets\\gitbook\\style.css"
+    ]
+}
