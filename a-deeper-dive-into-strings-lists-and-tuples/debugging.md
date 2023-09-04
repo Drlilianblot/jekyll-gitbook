@@ -4,18 +4,21 @@ When you use indices to traverse the values in a sequence, it is tricky to get t
 
 \beforeverb \begin{pycode}&#x20;
 
-<pre class="language-python" data-line-numbers><code class="lang-python">def is_reverse(word1, word2): 
+{% code lineNumbers="true" %}
+```python
+def is_reverse(word1, word2): 
     if len(word1) != len(word2): 
         return False
     i = 0
     j = len(word2)
     while j > 0:
-<strong>        if word1[i] != word2[j]:
-</strong>            return False
+        if word1[i] != word2[j]:
+            return False
         i = i+1
         j = j-1
     return True
-</code></pre>
+```
+{% endcode %}
 
 The first `if` statement checks whether the words are the same length. If not, we can return `False` immediately and then, for the rest of the function, we can assume that the words are the same length. This is an example of the guardian pattern in <mark style="background-color:red;">\prettyref{sec:guardian}</mark>.&#x20;
 
@@ -110,12 +113,15 @@ t = t + [x]
 
 And these are wrong:
 
-<pre class="language-python" data-line-numbers><code class="lang-python"><strong>t.append([x]) # WRONG! t would be [1,2,3,[4]]
-</strong><strong>t = t.append(x) # WRONG! t is None
-</strong><strong>t + [x] # WRONG! t is not updated
-</strong><strong>t = t + x # WRONG! 
-</strong><strong>          # TypeError: can only concatenate list (not "int") to list
-</strong></code></pre>
+{% code lineNumbers="true" %}
+```python
+t.append([x]) # WRONG! t would be [1,2,3,[4]]
+t = t.append(x) # WRONG! t is None
+t + [x] # WRONG! t is not updated
+t = t + x # WRONG! 
+          # TypeError: can only concatenate list (not "int") to list
+```
+{% endcode %}
 
 ### Make copies to avoid aliasing.
 

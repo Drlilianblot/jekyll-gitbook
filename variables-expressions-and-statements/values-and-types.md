@@ -18,12 +18,13 @@ The print statement also works for integers.
 
 If you are not sure what type a value has, the interpreter can tell you.
 
-<pre class="language-bash"><code class="lang-bash"><strong>>>> type('Hello, World!') 
-</strong><strong> &#x3C;class 'str'> 
-</strong><strong>>>> type(17) 
-</strong> &#x3C;class 'int'>
-<strong>>>>
-</strong></code></pre>
+```bash
+>>> type('Hello, World!') 
+ <class 'str'> 
+>>> type(17) 
+ <class 'int'>
+>>>
+```
 
 Not surprisingly, strings belong to the type (class) `str` and integers belong to the type (class) `int`. Less obviously, numbers with a decimal point belong to a type called `float`, because these numbers are represented in a format called **floating-point**.
 
@@ -47,10 +48,11 @@ They are strings.
 
 When you type a large integer, you might be tempted to use commas between groups of three digits, as in `1,000,000`. This is not a legal integer in Python, but it is legal:
 
-<pre class="language-bash"><code class="lang-bash"><strong>>>> print(1,000,000) 
-</strong><strong> 1 0 0 
-</strong><strong>>>>
-</strong></code></pre>
+```bash
+>>> print(1,000,000) 
+ 1 0 0 
+>>>
+```
 
 Well, that's not what we expected at all! Python interprets `1,000,000` as a comma-separated sequence of integers, which it prints with spaces between. This is the first example we have seen of a semantic error: the code runs without producing an error message, but it doesn't do the "right" thing.
 
@@ -83,14 +85,15 @@ To display the value of a variable, you can use a print statement:
 
 The type of a variable is the type of the value it refers to.
 
-<pre class="language-bash"><code class="lang-bash"><strong>>>> type(message)
-</strong> &#x3C;class 'str'> 
-<strong>>>> type(n) 
-</strong><strong> &#x3C;class 'int'> 
-</strong><strong>>>> type(pi) 
-</strong><strong> &#x3C;class 'float'>
-</strong><strong>>>>
-</strong></code></pre>
+```bash
+>>> type(message)
+ <class 'str'> 
+>>> type(n) 
+ <class 'int'> 
+>>> type(pi) 
+ <class 'float'>
+>>>
+```
 
 :information\_source: If you type an integer with a leading zero, you might get a confusing error:
 

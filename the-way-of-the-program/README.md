@@ -1,4 +1,6 @@
-# The way of the program
+# 1 - The way of the program
+
+{% embed url="https://www.youtube.com/watch?v=kgEP202a2MU" %}
 
 ## What is a program?
 

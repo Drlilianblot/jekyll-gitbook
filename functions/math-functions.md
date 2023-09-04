@@ -28,12 +28,13 @@ The first example computes the logarithm base 10 of the signal-to-noise ratio. T
 
 The second example finds the sine of `radians`. The name of the variable is a hint that `sin` and the other trigonometric functions (`cos`, `tan`, etc.) take arguments in radians. To convert from degrees to radians, divide by 360 and multiply by $$2 \pi$$:
 
-<pre class="language-bash"><code class="lang-bash">>>> degrees = 45 
-<strong>>>> radians = degrees / 360.0 * 2 * math.pi 
-</strong>>>> math.sin(radians) 
+```bash
+>>> degrees = 45 
+>>> radians = degrees / 360.0 * 2 * math.pi 
+>>> math.sin(radians) 
  0.707106781187 
 >>>
-</code></pre>
+```
 
 The expression `math.pi` gets the variable `pi` from the math module. The value of this variable is an approximation of $$\pi$$, accurate to about 15 digits.
 

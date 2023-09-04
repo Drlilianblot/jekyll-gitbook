@@ -4,7 +4,7 @@
 
 Python provides a built-in function called `len` that returns the length of a string, so the value of `len('allen')` is 5.
 
-Write a function named `right_justify`" that takes a string named `s` as a parameter and prints the string with enough leading spaces so that the last letter of the string is in column 70 of the display.
+Write a function named `right_justify`" that takes a string named `word` as a parameter and prints the string with enough leading spaces so that the last letter of the string is in column 70 of the display.
 
 ```sh
 >>> right_justify('allen') 
@@ -16,8 +16,8 @@ Write a function named `right_justify`" that takes a string named `s` as a param
 <summary>Answer</summary>
 
 ```python
-def rightJustify(s):
-    print(' ' * (70 - len(s)) + s)
+def rightJustify(word):
+    print(' ' * (70 - len(s)) + word)
 ```
 
 </details>

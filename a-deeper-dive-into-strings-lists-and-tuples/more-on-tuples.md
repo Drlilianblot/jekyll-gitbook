@@ -149,7 +149,34 @@ _Hint:_ see the `random` function in the `random` module.
 
 <summary>Answer:</summary>
 
+{% code lineNumbers="true" %}
+```python
+from random import random
 
+def sort_by_length(words): 
+    t = [] 
+    for word in words: 
+        t.append((len(word), random(), word))
+    t.sort(reverse=True)
+    res = []
+    for length, position, word in t:
+        res.append(word)
+    return res
+```
+{% endcode %}
+
+First we must import the function `random` from the module `random`. On line 6, we create a triplet with the length of the word, followed by a random number, followed by the word itself. On line 7, the method `sort` sort the triplets by comparing first the length of the words, and if the length are the same, the method break ties by comparing the random numbers generated.
+
+If you run the function `sort_by_length` twice with the same parameter, the output may differ.
+
+```bash
+>>> words = ['a', 'to', 'an', 'oh', 'two', 'one', 'and', 'or', 'i']
+>>> print(sort_by_length(words))
+ ['and', 'two', 'one', 'to', 'oh', 'an', 'or', 'a', 'i']
+>>> print(sort_by_length(words))
+ ['one', 'and', 'two', 'oh', 'an', 'or', 'to', 'a', 'i']
+>>>
+```
 
 </details>
 

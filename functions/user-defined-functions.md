@@ -92,7 +92,7 @@ As you might expect, you have to create a function before you can execute it. In
 
 <details>
 
-<summary>Exercise 1</summary>
+<summary>Try it</summary>
 
 Move the last line of this program to the top, so the function call appears before the definitions. Run the program and see what error message you get.
 
@@ -100,7 +100,7 @@ Move the last line of this program to the top, so the function call appears befo
 
 <details>
 
-<summary>Exercise 2</summary>
+<summary>Try it</summary>
 
 Move the function call back to the bottom and move the definition of `print_lyrics` after the definition of `repeat_lyrics`. What happens when you run this program?
 

@@ -125,10 +125,13 @@ The modulus operator is very useful in determining if a integer `x` is an even n
 
 In general, you cannot perform mathematical operations on strings, even if the strings look like numbers, so the following are illegal:
 
-<pre class="language-python" data-line-numbers><code class="lang-python"><strong>'2'-'1' 
-</strong><strong>'eggs'/'easy' 
-</strong><strong>'third'*'a charm'
-</strong></code></pre>
+{% code lineNumbers="true" %}
+```python
+'2'-'1' 
+'eggs'/'easy' 
+'third'*'a charm'
+```
+{% endcode %}
 
 The `+` operator works with strings, but it might not do what you expect: it performs **concatenation**, which means joining the strings by linking them end-to-end. For example:
 

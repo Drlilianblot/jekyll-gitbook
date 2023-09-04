@@ -159,7 +159,7 @@ def capitalise_all(word):
 ```
 {% endcode %}
 
-`result` is initialised with an empty list; each time through the loop, we append the next element. So `result` is another kind of accumulator. An operation like `capitalise_all` is sometimes called a `map` because it "maps" a function (in this case the method `capitalize`) onto each of the elements in a sequence.
+`result` is initialised with an empty list; each time through the loop, we append the next element. So `result` is another kind of accumulator. An operation like `capitalise_all` is sometimes called a **map** because it "maps" a function (in this case the method `capitalize`) onto each of the elements in a sequence.
 
 Another common operation is to select some of the elements from a list and return a sublist. For example, the following function takes a list of strings and returns a list that contains only the uppercase strings:
 
@@ -178,13 +178,25 @@ def only_upper(word):
 
 Most common list operations can be expressed as a combination of map, filter and reduce. Because these operations are so common, Python provides language features to support them, including the built-in function `map` and an operator called a **comprehension**.
 
-**Exercise:** Write a function that takes a list of numbers and returns the cumulative sum; that is, a new list where the $$i^{th}$$ element is the sum of the first $$i+1$$ elements from the original list. For example, the cumulative sum of `[1, 2, 3]` is `[1, 3, 6]`.
+**Exercise:** Write a function `cumulative_sum` that takes a list of numbers and returns the cumulative sum; that is, a new list where the $$i^{th}$$ element is the sum of the first $$i+1$$ elements from the original list. For example, the cumulative sum of `[1, 2, 3]` is `[1, 3, 6]`.
 
 <details>
 
-<summary>Answer:</summary>
+<summary>Answer</summary>
 
-
+{% code lineNumbers="true" %}
+```python
+def cumulative_sum(elements):
+    if elements is []:
+        return []
+    cumulative = 0
+    cumulative_list = []
+    for elt in elements:
+        cumulative += elt
+        cumulative_list.append(cumulative)
+    return cumulative_list
+```
+{% endcode %}
 
 </details>
 
@@ -233,6 +245,45 @@ The return value from `remove` is `None`. To remove more than one element, you c
 ```
 
 As usual, the slice selects all the elements up to, but not including, the second index.
+
+## Sorting a list
+
+The `sorted()` function in Python is a built-in function that sorts the elements of a given iterable in a specific order (ascending or descending) and returns it as a list. The `sorted()` function takes two optional parameters:
+
+* `reverse`: A boolean value that specifies whether the list should be sorted in descending order (`True`) or ascending order (`False`). The default value is `False`.
+* `key`: A function that takes a single element from the iterable as input and returns a value that will be used to sort the element. This allows you to sort the iterable based on a custom criteria.
+
+The `sorted()` function can be used to sort any iterable object, such as lists, tuples, strings, and dictionaries. For example, the following code sorts a list of numbers in ascending order:
+
+```bash
+>>> numbers = [10, 5, 2, 3, 1]
+>>> sorted_numbers = sorted(numbers)
+>>> print(sorted_numbers)
+ [1, 2, 3, 5, 10]
+>>>
+```
+
+We can also sort a list in descending order using the key parameter `reverse`:
+
+```bash
+>>> numbers = [2, 10, 5, 3, 1]
+>>> sorted_numbers = sorted(numbers, reverse=True)
+>>> print(sorted_numbers)
+ [10, 5, 3, 2, 1]
+>>>
+```
+
+The `sorted()` function can also be used to sort a list of strings in alphabetical order:
+
+```bash
+>>> strings = ["hello", "world", "python", "programming"]
+>>> sorted_strings = sorted(strings)
+>>> print(sorted_strings)
+ ['hello', 'python', 'programming', 'world']
+>>>
+```
+
+The `sorted()` function is a powerful tool that can be used to sort any iterable object in a variety of ways. It is a versatile function that can be used in a variety of programming tasks. We will revisit the function later in the book when we have learned the concept of **lambda functions**.
 
 ## Lists and strings
 
@@ -444,6 +495,25 @@ This function leaves the original list unmodified. Here's how it is used:
 
 <summary>Answer</summary>
 
+{% code lineNumbers="true" %}
+```python
+def chop(elements):
+    del elements[0]
+    del elements[-1]
 
+def middle(elements):
+    return elements[1:-1]  
+```
+{% endcode %}
+
+Alternatively, we could use the `pop` method from the list object:
+
+{% code lineNumbers="true" %}
+```python
+def chop_with_pop(elements):
+    elements.pop(0)
+    elements.pop()
+```
+{% endcode %}
 
 </details>

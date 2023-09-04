@@ -1,7 +1,5 @@
 # Python Programming Language
 
-{% embed url="https://www.youtube.com/watch?v=kgEP202a2MU" %}
-
 ## Formal and natural languages
 
 **Definition -Natural languages** are the languages people speak, such as English, Spanish, and French. They were not designed by people (although people try to impose some order on them); they evolved naturally.

@@ -86,17 +86,20 @@ foo = long_function_name(
 ```
 {% endcode %}
 
-<pre class="language-python" data-line-numbers><code class="lang-python">#No:
+{% code lineNumbers="true" %}
+```python
+#No:
 # Arguments on first line forbidden when not using vertical alignment.
 foo = long_function_name(var_one, var_two, 
     var_three, var_four)
     
-<strong># Further indentation required as indentation is not distinguishable.
-</strong>def long_function_name( 
+# Further indentation required as indentation is not distinguishable.
+def long_function_name( 
     var_one, var_two, 
     var_three, var_four): 
     print(var_one)
-</code></pre>
+```
+{% endcode %}
 
 {% hint style="info" %}
 The 4-space rule is optional for continuation lines.

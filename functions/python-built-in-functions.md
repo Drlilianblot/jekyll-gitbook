@@ -19,14 +19,15 @@ It is common to say that a function "takes'' an argument and "returns'' a result
 
 Python provides **built-in** functions that convert values from one type to another. The `int` function takes any value and converts it to an integer, if it can, or complains otherwise:
 
-<pre class="language-bash"><code class="lang-bash">>>> int('32')
+```bash
+>>> int('32')
  32 
 >>> int('Hello') 
-<strong> Traceback (most recent call last): 
-</strong><strong>     File "&#x3C;pyshell#40>", line 1, 
-</strong><strong>         in int('hello')
-</strong>ValueError: invalid literal for int() with base 10: 'Hello' 
-</code></pre>
+ Traceback (most recent call last): 
+     File "<pyshell#40>", line 1, 
+         in int('hello')
+ ValueError: invalid literal for int() with base 10: 'Hello' 
+```
 
 `int` can convert floating-point values to integers, but it doesn't round off; it chops off the fraction part:
 

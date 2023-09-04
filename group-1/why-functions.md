@@ -1,5 +1,11 @@
 # Why functions?
 
+{% embed url="https://pythontutor.com/visualize.html#code=def%20factorial%28n%29%3A%0A%20%20%20%20if%20n%20%3C%200%3A%0A%20%20%20%20%20%20%20raise%20ValueError%28'msg'%29%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20return%20n%20*%20factorial%28n-1%29%0A%20%20%20%20%0Aprint%28factorial%283%29%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false" %}
+
+{% embed url="https://acos.cs.aalto.fi/html/jsvee/jsvee-python-json/transpiler?url=https://www-users.york.ac.uk/~lb1008\web\books\assets\simpleCodeAnimation.json" %}
+
+{% embed url="https://acos.cs.aalto.fi/html/jsvee/jsvee-python-json/transpiler?url=https://www-users.york.ac.uk/~lb1008\books\assets\simpleCodeAnimation.json" %}
+
 It may not be clear why it is worth the trouble to divide a program into functions. There are several reasons:
 
 * Creating a new function gives you an opportunity to name a group of statements, which makes your program easier to read and debug.

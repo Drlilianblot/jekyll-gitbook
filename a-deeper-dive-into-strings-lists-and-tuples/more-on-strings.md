@@ -23,7 +23,15 @@ This loop traverses the string and displays each letter on a line by itself. The
 
 <summary>Answer</summary>
 
-
+{% code lineNumbers="true" %}
+```python
+def print_reversed(word):
+    index = len(word) - 1
+    while index >= 0:
+        print(word[index])
+        index -= 1
+```
+{% endcode %}
 
 </details>
 
@@ -70,7 +78,17 @@ Of course, that's not quite right because "Ouack" and "Quack" are misspelled.
 
 <summary>Answer</summary>
 
-
+{% code lineNumbers="true" %}
+```python
+prefixes = 'JKLMNOPQ' 
+suffix = 'ack'
+for letter in prefixes: 
+    if letter == 'O' or letter == 'Q':
+        print(letter + 'u' + suffix) 
+    else:
+        print(letter + suffix) 
+```
+{% endcode %}
 
 </details>
 
@@ -98,7 +116,17 @@ In a sense, `find` is the opposite of the `[ ]` operator. Instead of taking an i
 
 <summary>Answer</summary>
 
-
+{% code lineNumbers="true" %}
+```python
+def find(word, letter, start): 
+    index = start 
+    while index < len(word): 
+        if word[index] == letter: 
+            return index 
+        index = index + 1 
+    return -1 
+```
+{% endcode %}
 
 </details>
 
@@ -125,7 +153,16 @@ This program demonstrates another pattern of computation called a **counter**. T
 
 <summary>Answer</summary>
 
-
+{% code lineNumbers="true" %}
+```python
+def count(word, char):
+    count = 0 
+    for letter in word: 
+        if letter == char: 
+            count = count + 1 
+    print(count) 
+```
+{% endcode %}
 
 </details>
 
@@ -135,7 +172,17 @@ This program demonstrates another pattern of computation called a **counter**. T
 
 <summary>Answer</summary>
 
-
+{% code lineNumbers="true" %}
+```python
+def count_with_find(word, char):
+    count = 0 
+    index = find(word, char, 0)
+    while index > 0:
+        count += 1
+        index = find(word, char, index + 1)
+    print(count) 
+```
+{% endcode %}
 
 </details>
 
@@ -143,11 +190,13 @@ This program demonstrates another pattern of computation called a **counter**. T
 
 A `method` is similar to a function - it takes arguments and may return a value - but the syntax is different. For example, the method `upper` takes a string and returns a new string with all uppercase letters; Instead of the function syntax `upper(word)`, it uses the method syntax `word.upper()`. This is known as the **dot** notation.
 
-<pre class="language-bash"><code class="lang-bash">>>> word = 'banana'
-<strong>>>> new_word = word.upper() 
-</strong>>>> print(new_word)
+```bash
+>>> word = 'banana'
+>>> new_word = word.upper() 
+>>> print(new_word)
  BANANA 
-</code></pre>
+>>>
+```
 
 This form of dot notation specifies the name of the method, `upper`, and the name of the string to apply the method to, `word`. The empty parentheses indicate that this method takes no argument.
 
@@ -158,6 +207,7 @@ A method call is called an **invocation**; in this case, we would say that we ar
 >>> index = word.find('a') 
 >>> print(index) 
  1 
+>>>
 ```
 
 In this example, we invoke `find` on `word` and pass the letter we are looking for as a parameter. Actually, the `find` method is more general than our function; it can find substrings, not just characters:
@@ -187,13 +237,18 @@ And as a third argument the index where it should stop:
 
 This search fails because `b` does not appear in the index range from `1` to `2` (not including `2`).
 
-Exercise: There is a string method called `count` that is similar to the function in the previous exercise. Read the documentation of this method and write an invocation that counts the number of `a` in `banana`.
+**Exercise:** There is a string method called `count` that is similar to the function in the previous exercise. Read the documentation of this method and write an invocation that counts the number of `a` in `banana`.
 
 <details>
 
 <summary>Answer</summary>
 
-
+```bash
+>>> word = 'banana'
+>>> print(word.count('a'))
+ 3
+>>>
+```
 
 </details>
 
@@ -263,12 +318,13 @@ F-strings provide an easier, cleaner, and more concise way of formatting strings
 
 To create an f-string, you simply prepend the string literal with the letter "f" and then include the expressions you want to include inside curly braces. For example:
 
-<pre class="language-bash"><code class="lang-bash">>>> name = "Alice"
-<strong>>>> age = 25
-</strong>>>> print(f"Hello, my name is {name} and I am {age} years old.")
+```bash
+>>> name = "Alice"
+>>> age = 25
+>>> print(f"Hello, my name is {name} and I am {age} years old.")
  Hello, my name is Alice and I am 25 years old.
 >>>
-</code></pre>
+```
 
 In this example, the f-string includes two expressions inside curly braces: `{name}` and `{age}`. When the string is evaluated, these expressions will be replaced with their corresponding values.
 
