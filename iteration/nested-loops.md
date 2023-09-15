@@ -86,6 +86,50 @@ Remember that it's crucial to increment the loop variables (`row` and `column`) 
 
 Clearly, using nested for loops in this example is clearer and easier to read and understand. So one could assume that we should only use nested for loops and avoid the use of nested while loops. This would we a mistake. Nested while loops have their place in the developer arsenal. For example when you have complex control flow requirements with multiple conditions, nested while loops can help you handle different scenarios based on the state of variables or user input.
 
+In addtition, nested while loops can be advantageous over nested for loops in scenarios where you need to perform tasks with dynamic conditions or iterate through data structures that don't have a fixed or predictable length. One common use case is searching for a specific element in a multi-dimensional list or matrix when you don't know the exact dimensions in advance. Here's an example where nested while loops are more suitable:
+
+**Problem**: Find the position of a specific element in a 2-dimensional list (matrix) using nested while loops.
+
+```python
+# Create a 2-D list (matrix)
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+# Element to search for
+target = 5
+
+# Initialize row and column indices
+row, col = 0, 0
+
+# Initialize a flag to track whether the element is found
+found = False
+
+# Outer loop to iterate through rows
+while row < len(matrix):
+    # Inner loop to iterate through columns
+    while col < len(matrix[row]):
+        if matrix[row][col] == target:
+            found = True
+            break  # Exit the inner loop if the element is found
+        col += 1  # Move to the next column
+    if found:
+        break  # Exit the outer loop if the element is found
+    col = 0  # Reset the column index for the next row
+    row += 1  # Move to the next row
+
+if found:
+    print(f"Element {target} found at position ({row}, {col}).")
+else:
+    print(f"Element {target} not found in the matrix.")
+```
+
+In this example, we have a 2-dimensional list (matrix) and want to find the position of a specific element (`target`) within it. We use nested while loops to iterate through the rows and columns of the matrix until the target element is found. When the element is found, we set the `found` flag to `True` and break out of both loops to avoid unnecessary iterations.
+
+This approach is suitable when the matrix size is not known in advance, and you need to search for an element with dynamic conditions. Nested while loops provide the flexibility to handle such situations effectively.
+
 However, it's essential to use nested while loops judiciously, as excessive nesting can lead to code that's challenging to understand and maintain. When using nested loops, consider the readability and performance of your code. If the nesting becomes too deep or the loops are overly complex, you may want to refactor your code into smaller functions or explore alternative constructs like recursion, or list comprehensions.
 
 ## Best Practices for Using Nested Loops
