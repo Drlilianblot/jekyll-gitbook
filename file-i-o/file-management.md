@@ -83,9 +83,3 @@ def walk(dir):
 </details>
 
 **Exercise:** The `os` module provides a function called `walk` that is similar to this one but more versatile. Read the documentation and use it to print the names of the files in a given directory and its subdirectories.
-
-## File handling
-
-Expand on what is covered in the link below
-
-{% embed url="https://devarea.com/8-python-modules-for-files-handling/" %}
