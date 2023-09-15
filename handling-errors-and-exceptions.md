@@ -1,4 +1,6 @@
-# Handling Errors and Exceptions
+# 10 - Handling Errors and Exceptions
+
+{% embed url="https://youtu.be/7Kf-gOQV2RU?si=ZA7P_57CQteQyvxt" %}
 
 ## Catching exceptions
 

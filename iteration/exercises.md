@@ -73,45 +73,7 @@ Note: This solution is better than the one given for the function `twoByTwoGrid`
 
 3. Write a more generic function `xbyYGrid(rows, cols)` that draws a similar grid with `rows` rows and `cols` columns.
 
-## Exercise 2: Newton's method
-
-After reading the section on [Newton's method](newtons-method.md#newtons-method-for-computing-square-root) to compute the square root of a number, write a function called `squareRoot` that takes `a` as a parameter, chooses a reasonable value of `x`, and returns an estimate of the square root of `a`.
-
-<details>
-
-<summary>Answer</summary>
-
-
-
-</details>
-
-## Exercise 3:
-
-To test the square root algorithm implemented in exercise 2, you could compare it with `math.sqrt`. Write a script that prints a table like this:
-
-```
-1.0   1.0             1.0             0.0 
-2.0   1.41421356237   1.41421356237   2.22044604925e-16 
-3.0   1.73205080757   1.73205080757   0.0 
-4.0   2.0             2.0             0.0 
-5.0   2.2360679775    2.2360679775    0.0 
-6.0   2.44948974278   2.44948974278   0.0 
-7.0   2.64575131106   2.64575131106   0.0 
-8.0   2.82842712475   2.82842712475   4.4408920985e-16
-9.0   3.0             3.0             0.0
-```
-
-The first column is a number, $$a$$; the second column is the square root $$\sqrt{a}$$ computed with the algorithm from exercise 2; the third column is the square root computed by `math.sqrt`; the fourth column is the absolute value of the difference between the two estimates.
-
-<details>
-
-<summary>Answer</summary>
-
-
-
-</details>
-
-## Exercise 4: Srinivasa Ramanujan infinite series
+## Exercise 2: Srinivasa Ramanujan infinite series
 
 The brilliant mathematician Srinivasa Ramanujan found an [infinite series](https://www.wikipedia.org/wiki/Pi) that can be used to generate a numerical approximation of $$\pi$$:
 

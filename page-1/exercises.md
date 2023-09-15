@@ -2,7 +2,7 @@
 
 ## Exercise 1
 
-If you did <mark style="background-color:red;">\prettyref{exo:duplicate}</mark>, you already have a function named `has_duplicates` that takes a list as a parameter and returns `True` if there is any object that appears more than once in the list.
+If you did the exericse `duplicate` you already have a function named `has_duplicates` that takes a list as a parameter and returns `True` if there is any object that appears more than once in the list.
 
 Use a dictionary to write a faster, simpler version of `has_duplicates`.
 
@@ -16,7 +16,7 @@ Use a dictionary to write a faster, simpler version of `has_duplicates`.
 
 ## Exercise 2: rotate-pairs
 
-Two words are "rotate pairs" if you can rotate one of them and get the other (see `rotate_word` in <mark style="background-color:red;">\prettyref{exo:rotate}</mark>). Write a program that reads a wordlist and finds all the rotate pairs.&#x20;
+Two words are "rotate pairs" if you can rotate one of them and get the other (see `rotate_word`). Write a program that reads a wordlist and finds all the rotate pairs.&#x20;
 
 <details>
 
@@ -36,7 +36,7 @@ Here's another Puzzler from [Car Talk](https://www.cartalk.com/puzzler/browse):
 >
 > But there is, however, at least one word that Dan and we know of, which will yield two homophones if you remove either of the first two letters to make two, new four-letter words. The question is, what's the word?
 
-You can use the dictionary from <mark style="background-color:red;">\prettyref{exo:wordlist2}</mark> to check whether a string is in the word list. To check whether two words are homophones, you can download the[ CMU Pronouncing Dictionary](https://www.speech.cs.cmu.edu/cgi-bin/cmudict).
+You can use the dictionary from `wordlist2` to check whether a string is in the word list. To check whether two words are homophones, you can download the[ CMU Pronouncing Dictionary](https://www.speech.cs.cmu.edu/cgi-bin/cmudict).
 
 Write a program that lists all the words that solve the Puzzler.&#x20;
 

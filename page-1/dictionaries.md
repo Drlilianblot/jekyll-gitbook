@@ -1,5 +1,7 @@
 # Dictionaries
 
+{% embed url="https://youtu.be/UEGMycXgOTY?si=opo1gyBb1LEgxg08" %}
+
 ## Introduction
 
 A **dictionary** is like a list, but more general. In a list, the indices have to be integers; in a dictionary they can be (almost) any type. You can think of a dictionary as a mapping between a set of indices (which are called **keys**) and a set of values. Each key maps to a value. The association of a key and a value is called a **key-value pair** or sometimes an **item**. As an example, we'll build a dictionary that maps from English to French words, so the keys and the values are all strings.
@@ -87,7 +89,7 @@ To see whether something appears as a value in a dictionary, you can use the met
 >>>
 ```
 
-The `in` operator uses different algorithms for lists and dictionaries. For lists, it uses a search algorithm, as in <mark style="background-color:red;">{\color{red} \prettyref{sec:find\}}</mark>. As the list gets longer, the search time gets longer in direct proportion. For dictionaries, Python uses an algorithm called a **hashtable** that has a remarkable property: the `in` operator takes about the same amount of time no matter how many items there are in a dictionary. I won't explain how that's possible, but you can read more about it on the [hashtable Wikipedia page](https://www.wikipedia.org/wiki/Hash\_table).
+The `in` operator uses different algorithms for lists and dictionaries. For lists, it uses a search algorithm, as in `find`. As the list gets longer, the search time gets longer in direct proportion. For dictionaries, Python uses an algorithm called a **hashtable** that has a remarkable property: the `in` operator takes about the same amount of time no matter how many items there are in a dictionary. I won't explain how that's possible, but you can read more about it on the [hashtable Wikipedia page](https://www.wikipedia.org/wiki/Hash\_table).
 
 ## Dictionary as a set of counters
 
@@ -125,7 +127,7 @@ Line 2 creates an empty dictionary named `hist`. The `for` loop traverses the st
 
 The histogram indicates that the letters `'a'` and `'b'` appear once; `'o'` appears twice, and so on.
 
-**Exercise:** Write a function that reads the words in a long string (or a text file) and stores them as keys in a dictionary. The values are the number of time the word appears in the text. Then you can use the `in` operator as a fast way to check whether a string is in the dictionary. If you did <mark style="background-color:red;">{\color{red} \prettyref{exo:wordlist1\}}</mark>, you can compare the speed of this implementation with the list `in` operator and the bisection search.
+**Exercise:** Write a function that reads the words in a long string (or a text file) and stores them as keys in a dictionary. The values are the number of time the word appears in the text. Then you can use the `in` operator as a fast way to check whether a string is in the dictionary. If you did the exercise `wordlist1`, you can compare the speed of this implementation with the list `in` operator and the bisection search.
 
 <details>
 

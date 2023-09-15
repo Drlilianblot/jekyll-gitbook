@@ -8,13 +8,13 @@ The guidelines provided in this chapter are specific to the Python language, and
 
 ## Coding Conventions - PEP 8
 
-Throughout this book, we will be adding to the conventions described in this chapter. To find these conventions easily, they will be grouped into a single section within a chapter. The title of such sections will contains the keyword PEP. We will be exploring part of the <mark style="background-color:red;">PEP 8\~\cite{PEP0008}</mark> and <mark style="background-color:red;">PEP 257\~\cite{PEP0257}</mark> (Docstring Conventions) where it applies. PEP 8 and PEP 257 were adapted from Guido's original Python Style Guide essay, with some additions from Barry's style guide <mark style="background-color:red;">\[2]</mark>. The Python style guide evolves over time as additional conventions are identified and past conventions are rendered obsolete by changes in the language itself.
+Throughout this book, we will be adding to the conventions described in this chapter. To find these conventions easily, they will be grouped into a single section within a chapter. The title of such sections will contains the keyword PEP. We will be exploring part of the [PEP 0008](https://peps.python.org/pep-0008/) (referred to as PEP 8 in the remainder of the book) and [PEP 0257](https://peps.python.org/pep-0257/) (Docstring Conventions) where it applies. PEP 8 and PEP 257 were adapted from Guido's original Python Style Guide essay, with some additions from [Barry's style guide](https://barry.warsaw.us/software/STYLEGUIDE.txt). The Python style guide evolves over time as additional conventions are identified and past conventions are rendered obsolete by changes in the language itself.
 
 Note that many projects have their own coding style guidelines. In the event of any conflicts, such project-specific guides should take precedence for that project. It is essential that conventions within a project remain consistent.
 
 ## A Foolish Consistency is the Hobgoblin of Little Minds
 
-One of Guido's key insights is that code is read much more often than it is written. The guidelines provided throughout the booklet are intended to improve the readability of code and make it consistent across the wide spectrum of Python code. As <mark style="background-color:red;">PEP 20\~\cite{PEP0020}</mark> says, "Readability counts".
+One of Guido's key insights is that code is read much more often than it is written. The guidelines provided throughout the booklet are intended to improve the readability of code and make it consistent across the wide spectrum of Python code. As [PEP 0020](https://peps.python.org/pep-0020/) says, "Readability counts".
 
 > Code is more often read than written. \[Guido Van Rossum]
 
@@ -47,7 +47,7 @@ income = (gross_wages +
 ```
 {% endcode %}
 
-To solve this readability problem, mathematicians and their publishers follow the opposite convention. Donald Knuth explains the traditional rule in his Computers and Typesetting series: "Although formulas within a paragraph always break after binary operations and relations, displayed formulas always break before binary operations" <mark style="background-color:red;">\[3]</mark>.
+To solve this readability problem, mathematicians and their publishers follow the opposite convention. Donald Knuth explains the traditional rule in his [Computers and Typesetting series](https://www-cs-faculty.stanford.edu/\~knuth/abcde.html): "Although formulas within a paragraph always break after binary operations and relations, displayed formulas always break before binary operations".
 
 Following the tradition from mathematics usually results in more readable code:
 

@@ -2,7 +2,7 @@
 
 Documenting code is describing its use and functionality to your users. While it may be helpful in the development process, the main intended audience is the users.
 
-Python uses documentation string (docstring) to document code. A docstring is a string that is the first statement in a package, module, class or function. The docstring is a special attribute of the object (`object.`**`doc`**) and, for consistency, is surrounded by triple double quotes (per PEP 257<mark style="background-color:red;">\~\cite{PEP0257}</mark>). These strings can be extracted automatically by `pydoc` (try running pydoc on your module to see how it looks.).
+Python uses documentation string (docstring) to document code. A docstring is a string that is the first statement in a package, module, class or function. The docstring is a special attribute of the object (`object.`**`doc`**) and, for consistency, is surrounded by triple double quotes (per PEP 257). These strings can be extracted automatically by `pydoc` (try running pydoc on your module to see how it looks.).
 
 A docstring should be organized as a summary line (one physical line) terminated by a period, question mark, or exclamation point, followed by a blank line, followed by the rest of the docstring starting at the same cursor position as the first quote of the first line (see example below).
 
@@ -12,13 +12,13 @@ It can be spread over several lines.
 """ 
 ```
 
-Although it may seems obvious it is worth reiterating the Google Python style guide<mark style="background-color:red;">\~\cite{googlepythonstyle}</mark> recommendation to pay attention to punctuation, spelling, and grammar; it is easier to read well-written comments than badly written ones.&#x20;
+Although it may seems obvious it is worth reiterating the Google Python style guide recommendation to pay attention to punctuation, spelling, and grammar; it is easier to read well-written comments than badly written ones.&#x20;
 
 The selection of the docstring format is up to you, but you should stick with the same format throughout your document/project.
 
 ## Google Comments and Docstrings Standard
 
-This section is directly taken from Google's Python style guide<mark style="background-color:red;">\~\cite{googlepythonstyle}</mark>. Some of the elements have been omitted as they were not relevant to the module taught, however the interested reader should have a look at the full documentation.
+This section is directly taken from Google's Python style guide. Some of the elements have been omitted as they were not relevant to the module taught, however the interested reader should have a look at the full documentation.
 
 ### Functions and Methods
 

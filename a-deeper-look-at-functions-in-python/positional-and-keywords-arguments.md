@@ -1,5 +1,7 @@
 # Positional and Keywords arguments
 
+{% embed url="https://youtu.be/voDzV-vToc0?si=gFQW1og9eJRFzwl6" %}
+
 In programming, calling a function is the act of executing the function with specific parameters. In this section, we will explore two methods of calling a function: positional arguments and keyword arguments.
 
 Consider the function `feet_to_meters()`, which takes two integer parameters: one for the number of `feet` and one for the number of `inches`. The function returns the measurement in meters.&#x20;
@@ -187,8 +189,6 @@ Default parameters are a useful feature in Python functions that allow you to sp
 ## Variable-length argument tuples
 
 Functions can take a variable number of arguments. A parameter name that begins with `*` **gathers** arguments into a tuple.&#x20;
-
-
 
 In Python, functions can accept a variable number of arguments using the special parameter `*args`. This is a powerful feature that allows developers to write functions that can accept any number of arguments without needing to specify them in the function definition. In this section, we will explore what `*args` is, how it works, and how to use it effectively in Python functions.
 

@@ -1,5 +1,7 @@
 # Recursion
 
+{% embed url="https://youtu.be/c-HUMsXyEm8?si=ECV1hX3JCD2U4hzt" %}
+
 The concept of recursion is a challenging concept which sometimes inspires fears among students. For some it is a natural way of thinking and they will find the concept almost trivial, whereas for others it will take more time. Don't be discouraged, after some effort you will find the concept rather elegant and intuitive.
 
 ## A definition
@@ -114,7 +116,7 @@ For simple examples like this, it is probably easier to use a `for` loop. But we
 
 ## Stack diagrams for recursive functions
 
-In \\<mark style="background-color:red;">prettyref{sec:stack-diagram}</mark>, we used a stack diagram to represent the state of a program during a function call. The same kind of diagram can help interpret a recursive function. Every time a function gets called, Python creates a new function frame, which contains the function's local variables and parameters. For a recursive function, there might be more than one frame on the stack at the same time.
+We used a stack diagram to represent the state of a program during a function call. The same kind of diagram can help interpret a recursive function. Every time a function gets called, Python creates a new function frame, which contains the function's local variables and parameters. For a recursive function, there might be more than one frame on the stack at the same time.
 
 This figure below shows a stack diagram for `countdown` called with `n = 3`:
 
@@ -182,3 +184,7 @@ These two requirements together ensure that the recursion stops and a value is r
 {% hint style="info" %}
 In fact, there is a limit to what the interpreter can compute recursively, because it needs to keep track of all of the ongoing, partial computations in the call stack. Despite our function `countdown` being correctly implemented, calling `countdown(1000}` will result in the same error as an infinite recursion. Other programming languages like 'Scheme', 'Common Lisp', and 'Haskell' are better suited than Python for recursive programming.
 {% endhint %}
+
+## Iterative versus Recursive functions
+
+{% embed url="https://youtu.be/RoziVzlumSg?si=_AC3VQUbVD0I0Oi8" %}

@@ -468,8 +468,6 @@ def bad_delete_head(t):
 
 The slice operator creates a new list and the assignment makes `t` refer to it, but none of that has any effect on the list that was passed as an argument.
 
-%{\color{red} <mark style="background-color:orange;">MUST EXPAND ON THIS</mark>}
-
 An alternative is to write a function that creates and returns a new list. For example, `tail` shown below returns all but the first element of a list:
 
 {% code lineNumbers="true" %}

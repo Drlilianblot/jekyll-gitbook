@@ -1,5 +1,7 @@
 # Scope of a variable
 
+{% embed url="https://youtu.be/c-HUMsXyEm8?si=ECV1hX3JCD2U4hzt" %}
+
 In programming, variables are used to store values that can be manipulated and used in various parts of the code. The concept of scope refers to the part of the code where a variable can be accessed and modified. In Python 3, variables can have different scopes, which affects how they can be used in the code. In this section, we will explore the concept of scope in Python 3, and explain how it affects variable usage in the code.
 
 ## Built-in scope

@@ -1,5 +1,7 @@
 # 6 - A deeper look at Functions in Python
 
+{% embed url="https://youtu.be/9KU28h2O3go?si=lLuN_NLEM8eGdGbR" %}
+
 It may not be clear why it is worth the trouble to divide a program into functions. There are several reasons:
 
 * Creating a new function gives you an opportunity to name a group of statements, which makes your program easier to read and debug.

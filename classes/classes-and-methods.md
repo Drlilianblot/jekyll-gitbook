@@ -1,5 +1,7 @@
 # Classes and Methods
 
+{% embed url="https://youtu.be/8xi38rzaO8w?si=IsOh6YpIdQH6Hr8d" %}
+
 ## Object-oriented features
 
 Python is an **object-oriented programming language**, which means that it provides features that support object-oriented programming. It is not easy to define object-oriented programming, but we have already seen some of its characteristics:
@@ -532,36 +534,3 @@ def print_attributes(obj):
 `print_attributes` traverses the items in the object's dictionary and prints each attribute name and its corresponding value.
 
 The built-in function `__getattr__` takes an object and an attribute name (as a string) and returns the attribute's value.
-
-## Glossary
-
-**object-oriented language:** A language that provides features, such as user-defined classes and method syntax, that facilitate object-oriented programming.&#x20;
-
-**object-oriented programming:** A style of programming in which data and the operations that manipulate it are organized into classes and methods.&#x20;
-
-**method:** A function that is defined inside a class definition and is invoked on instances of that class.
-
-**subject:** The object a method is invoked on.
-
-**operator overloading:** Changing the behaviour of an operator like `+` so it works with a user-defined type.&#x20;
-
-**type-based dispatch:** A programming pattern that checks the type of an operand and invokes different functions for different types.
-
-**polymorphic:** Pertaining to a function that can work with more than one type.
-
-## Exercises
-
-### **Exercise:**
-
-This exercise is a cautionary tale about one of the most common, and difficult to find, errors in Python.
-
-*   Write a definition for a class named `Kangaroo` with the following methods:
-
-    * An `__init__` method that initialises an attribute named `pouch_contents` to an empty list.
-    * A method named `put_in_pouch` that takes an object of any type and adds it to `pouch_contents`.
-    * A `__str__` method that returns a string representation of the `Kangaroo` object and the contents of the pouch.
-
-    Test your code by creating two `Kangaroo` objects, assigning them to variables named `kanga`} and `roo`, and then adding `roo` to the contents of `kanga`'s pouch.
-* Download [BadKangaroo.py](https://greenteapress.com/thinkpython/code/BadKangaroo.py). It contains a solution to the previous problem with one big, nasty bug. Find and fix the bug.
-
-If you get stuck, you can download [GoodKangaroo.py](https://greenteapress.com/thinkpython/code/GoodKangaroo.py), which explains the problem and demonstrates a solution.

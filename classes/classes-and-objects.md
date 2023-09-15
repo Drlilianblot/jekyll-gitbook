@@ -1,5 +1,7 @@
 # Classes and Objects
 
+{% embed url="https://youtu.be/EsEk6Hv1AJs?si=W04nozpFi1coeQPI" %}
+
 ## User-defined types
 
 We have used many of Python's built-in types; now we are going to define a new type. As an example, we will create a type called `Point` that represents a point in two-dimensional space. In mathematical notation, points are often written in parentheses with a comma separating the coordinates. For example, $$(0, 0)$$ represents the origin, and $$(x, y)$$ represents the point $$x$$ units to the right and $$y$$ units up from the origin.
@@ -324,21 +326,3 @@ If you are not sure whether an object has a particular attribute, you can use th
 ```
 
 The first argument can be any object; the second argument is a _string_ that contains the name of the attribute.
-
-## Glossary
-
-**class:** A user-defined type. A class definition creates a new class object.&#x20;
-
-**class object:** An object that contains information about a user-defined type. The class object can be used to create instances of the type.
-
-**instance:** An object that belongs to a class.
-
-**attribute:** One of the named values associated with an object.&#x20;
-
-**embedded (object):** An object that is stored as an attribute of another object.&#x20;
-
-**shallow copy:** To copy the contents of an object, including any references to embedded objects; implemented by the `copy` function in the `copy` module.&#x20;
-
-**deep copy:** To copy the contents of an object as well as any embedded objects, and any objects embedded in them, and so on; implemented by the `deepcopy` function in the `copy` module.&#x20;
-
-**object diagram:** A diagram that shows objects, their attributes, and the values of the attributes.&#x20;

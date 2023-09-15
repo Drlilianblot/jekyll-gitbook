@@ -1,5 +1,7 @@
 # Sets
 
+{% embed url="https://youtu.be/MCwtsnKRuxY?si=rme43wqa8WqyAk1V" %}
+
 ## Set
 
 In Python, a set is an unordered collection of unique elements. It is similar to a list or a tuple but with a few differences. One of the most important differences is that a set only contains unique elements, meaning that no duplicates are allowed. Another important difference is that sets are mutable, which means that you can add or remove elements from them. Sets are very useful when it comes to solving problems that involve finding unique elements, such as removing duplicates or determining the intersection of two lists.

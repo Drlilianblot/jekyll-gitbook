@@ -13,7 +13,7 @@ A string slice can take a third index that specifies the "step size"; that is, t
 >>>
 ```
 
-A step size of -1 goes through the word backwards, so the slice `[::-1]` generates a reversed string. Use this idiom to write a one-line version of `is_palindrome`from <mark style="background-color:red;">\prettyref{exo:palindrome}</mark>.&#x20;
+A step size of -1 goes through the word backwards, so the slice `[::-1]` generates a reversed string. Use this idiom to write a one-line version of `is_palindrome` from previous exercise.&#x20;
 
 <details>
 

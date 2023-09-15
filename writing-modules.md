@@ -1,4 +1,4 @@
-# Writing modules
+# 11 - Writing modules
 
 Any file that contains Python code can be imported as a module. For example, suppose you have a file named `wc.py` with the following code:&#x20;
 
@@ -58,11 +58,3 @@ if __name__ == 'main':
 {% hint style="info" %}
 **Warning:** If you import a module that has already been imported, Python does nothing. It does not re-read the file, even if it has changed. If you want to reload a module, you can use the built-in function **`reload`**, but it can be tricky, so the safest thing to do is restart the interpreter and then import the module again.&#x20;
 {% endhint %}
-
-<details>
-
-<summary>Answer</summary>
-
-
-
-</details>

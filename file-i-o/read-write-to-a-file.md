@@ -2,7 +2,9 @@
 
 ## Reading from a file
 
-In this chapter we will be using a list of English words. There are lots of word lists available on the Web, but the one most suitable for our purpose is one of the word lists collected and contributed to the public domain by Grady Ward as part of the [Moby lexicon project](https://www.wikipedia.org/wiki/Moby\_Project). It is a list of 113,809 official crosswords; that is, words that are considered valid in crossword puzzles and other word games. In the Moby collection, the filename is `113809of.fic`; <mark style="background-color:red;">I include a copy of this file, with the simpler name</mark> <mark style="background-color:red;"></mark><mark style="background-color:red;">`words.txt`</mark><mark style="background-color:red;">, along with Swampy</mark>.
+In this chapter we will be using a list of English words. There are lots of word lists available on the Web, but the one most suitable for our purpose is one of the word lists collected and contributed to the public domain by Grady Ward as part of the [Moby lexicon project](https://www.wikipedia.org/wiki/Moby\_Project). It is a list of 113,809 official crosswords; that is, words that are considered valid in crossword puzzles and other word games. The file is provided below as a text file for convenience.
+
+{% file src="../.gitbook/assets/words.txt" %}
 
 This file is in plain text, so you can open it with a text editor, but you can also read it from Python. The built-in function `open` takes the name of the file as a parameter and returns a **file object** you can use to read the file.
 

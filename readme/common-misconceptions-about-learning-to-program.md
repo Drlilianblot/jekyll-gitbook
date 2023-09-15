@@ -1,5 +1,7 @@
 # Common misconceptions about learning to program
 
+{% embed url="https://youtu.be/VMBM_mEfiBI?si=rDof-tz1UFfr268i" %}
+
 Learning to program can be a rewarding and fulfilling experience, but there are many misconceptions that can prevent people from pursuing this skill. One of the most common misconceptions about programming is that it's only for geniuses. As much as I would like to call myself a genius, it is sadly not the case. The idea that you need to be a genius to be good at coding is far from the truth. Programming is a skill that anyone can learn, just like any other skill. You don't need to be a genius or have a high IQ to learn to program. All you need is the right mindset, dedication, and practice.
 
 There are some beliefs that in order to be successful in computer science, you need to possess the “programming gene” or “geek gene”. This is simply not true, and despite half a century of research trying to predict who can succeed in an introductory programming course, no reliable predictor could be found. This is simply a myth that is cultivated in social environments, and propagated via popular culture and media such as sitcoms and movies.

@@ -1,5 +1,7 @@
 # Classes and Functions
 
+{% embed url="https://youtu.be/hhKKXgpzFV0?si=7U-dqhjL1q52kq1A" %}
+
 ## Time
 
 As another example of a user-defined type, we'll define a class called `Time` that records the time of day. The class definition looks like this:
@@ -266,61 +268,4 @@ def add_time(t1, t2):
 
 `assert` statements are useful because they distinguish code that deals with normal conditions from code that checks for errors.
 
-## Glossary
-
-**prototype and patch:** A development plan that involves writing a rough draft of a program, testing, and correcting errors as they are found.&#x20;
-
-**planned development:** A development plan that involves high-level insight into the problem and more planning than incremental development or prototype development.&#x20;
-
-**pure function:** A function that does not modify any of the objects it receives as arguments. Most pure functions are fruitful.&#x20;
-
-**modifier:** A function that changes one or more of the objects it receives as arguments. Most modifiers are fruitless.
-
-**invariant:** A condition that should always be true during the execution of a program.&#x20;
-
-## Exercises
-
-### Exercise&#x20;
-
-Write a function called `mul_time` that takes a Time object and a number and returns a new `Time` object that contains the product of the original `Time` and the number.
-
-Then use `mul_time` to write a function that takes a `Time` object that represents the finishing time in a race, and a number that represents the distance, and returns a `Time` object that represents the average pace (time per mile).
-
-<details>
-
-<summary>Answer</summary>
-
-
-
-</details>
-
-### Exercise
-
-Write a class definition for a `Date` object that has attributes `day`, `month` and `year`. Write a function called `increment_date` that takes a `Date` object, `date` and an integer, `n`, and returns a new `Date` object that represents the day `n` days after `date`.
-
-{% hint style="info" %}
-"Thirty days hath September..." Challenge: does your function deal with [leap years](https://www.wikipedia.org/wiki/Leap\_year) correctly?
-{% endhint %}
-
-<details>
-
-<summary>Answer</summary>
-
-
-
-</details>
-
-### Exercise
-
-The `datetime` module provides `date` and `time` objects that are similar to the `Date` and `Time` objects in this chapter, but they provide a rich set of methods and operators. Read the [documentation of both objects](https://www.docs.python.org/lib/datetime-date.html).&#x20;
-
-* Use the `datetime` module to write a program that gets the current date and prints the day of the week.
-* Write a program that takes a birthday as input and prints the user's age and the number of days, hours, minutes and seconds until their next birthday.&#x20;
-
-<details>
-
-<summary>Answer</summary>
-
-
-
-</details>
+##

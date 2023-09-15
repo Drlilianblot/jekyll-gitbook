@@ -20,7 +20,7 @@ def is_reverse(word1, word2):
 ```
 {% endcode %}
 
-The first `if` statement checks whether the words are the same length. If not, we can return `False` immediately and then, for the rest of the function, we can assume that the words are the same length. This is an example of the guardian pattern in <mark style="background-color:red;">\prettyref{sec:guardian}</mark>.&#x20;
+The first `if` statement checks whether the words are the same length. If not, we can return `False` immediately and then, for the rest of the function, we can assume that the words are the same length. This is an example of the guardian pattern, a programming pattern that uses a conditional statement to check for and handle circumstances that might cause an error.&#x20;
 
 &#x20;`i` and `j` are indices: `i` traverses `word1` forward while `j` traverses `word2` backward. If we find two letters that don't match, we can return `False` immediately. If we get through the whole loop and all the letters match, we return `True`.
 

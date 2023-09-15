@@ -14,9 +14,9 @@ def hello_world():
 ```
 {% endcode %}
 
-According to PEP8<mark style="background-color:red;">\cite{PEP0008}</mark>, comments should have a maximum length of 72 characters. This is true even if your project changes the max line length to be greater than the recommended 80 characters. You should use two spaces after a sentence-ending period in multi- sentence comments, except after the final sentence. Paragraphs inside a block comment are separated by a line containing a single `#`.
+According to PEP8, comments should have a maximum length of 72 characters. This is true even if your project changes the max line length to be greater than the recommended 80 characters. You should use two spaces after a sentence-ending period in multi- sentence comments, except after the final sentence. Paragraphs inside a block comment are separated by a line containing a single `#`.
 
-In addition, comments should be complete sentences. The first word should be capitalized, unless it is an identifier that begins with a lower case letter (never alter the case of identifiers!). Furthermore, when writing English, you should follow Strunk and White <mark style="background-color:red;">\cite{strunk2007elements}</mark>.
+In addition, comments should be complete sentences. The first word should be capitalized, unless it is an identifier that begins with a lower case letter (never alter the case of identifiers!). Furthermore, when writing English, you should follow [Strunk and White](https://faculty.washington.edu/heagerty/Courses/b572/public/StrunkWhite.pdf).
 
 If a comment is going to be greater than the comment char limit, using multiple lines for the comment is appropriate:
 
@@ -64,7 +64,7 @@ Comments to your code should be kept brief and focused. Avoid using long comment
 * Don't include redundant information. Assume the reader of the code has a basic understanding of programming principles and language syntax.
 * Design your code to comment itself. The easiest way to understand code is by reading it. When you design your code using clear, easy-to-understand concepts, the reader will be able to quickly conceptualize your intent.
 
-Remember that comments are designed for the reader, including yourself, to help guide them in understanding the purpose and design of the software. To that end, Google<mark style="background-color:red;">\~\cite{googlepythonstyle}</mark> recommends that&#x20;
+Remember that comments are designed for the reader, including yourself, to help guide them in understanding the purpose and design of the software. To that end, [Google Python style guide](https://google.github.io/styleguide/pyguide.html) recommends that&#x20;
 
 * comments must never describe the code. You should Assume the person reading the code knows the language (though not what you're trying to do) better than you do.&#x20;
 * The place to have comments is in tricky parts of the code. Complicated operations get a few lines of comments before the operations commence. Non-obvious ones get comments at the end of the line. In addition, to improve legibility, these comments should be at least 2 spaces away from the code.&#x20;
@@ -82,7 +82,7 @@ if i & (i-1) == 0: # True if i is 0 or a power of 2.
 ```
 {% endcode %}
 
-In<mark style="background-color:red;">\~\cite{martin2008}</mark>, Marting has a rather negative view on comments (not API Documentation). In particular, he list a series of bad habit that should be avoided at all costs. Here is a sub-sample of the thing to be avoided, for the full list please read chapter 4 of<mark style="background-color:red;">\~\cite{martin2008}</mark>.&#x20;
+In "Clean Code: A Handbook of Agile Software Craftsmanship" by Martin, Martin has a rather negative view on comments (not API Documentation). In particular, he list a series of bad habit that should be avoided at all costs. Here is a sub-sample of the thing to be avoided, for the full list please read chapter 4 of "Clean Code: A Handbook of Agile Software Craftsmanship".&#x20;
 
 * **Inaccurate comments** are far worse than no comments at all. They delude and mislead.&#x20;
 * **Comments Do Not Make Up for Bad Code.** Clear and expressive code with few comments is far superior to cluttered and complex code with lots of comments. Rather than spending time writing comments to explain your code, you should spend that time refactoring your code.
