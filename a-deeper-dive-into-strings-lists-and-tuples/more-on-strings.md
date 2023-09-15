@@ -310,7 +310,7 @@ else:
 
 Python does not handle uppercase and lowercase letters the same way that people do. All the uppercase letters come before all the lowercase letters.
 
-### String Formatting
+## String Formatting
 
 Python f-strings are a convenient way to format strings by embedding expressions within curly braces `{}`. The `f` in f-strings stands for “formatted” and they were introduced in Python 3.6.
 
