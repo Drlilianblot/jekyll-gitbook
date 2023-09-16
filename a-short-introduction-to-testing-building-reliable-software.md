@@ -2,7 +2,25 @@
 
 This short chapter dives into a topic that's often overlooked but absolutely essential in the world of coding - testing. Testing is an essential part of programming and software engineering. It helps to ensure that the code is correct, reliable, and efficient. Testing also helps to find and fix errors, bugs, and vulnerabilities that may compromise the functionality, security, or performance of the software. Testing can be done at different levels of abstraction, from individual units of code to entire systems or applications. However, at our level, we will be focusing on testing individual units of code, and more specifically functions that we have implemented.
 
+## The Essence of Software Testing
+
+Software testing is the systematic process of evaluating a software application or system to identify defects, errors, or inconsistencies. It encompasses a wide range of activities aimed at assessing the software's behavior, performance, and compliance with specified requirements. Testing is not merely a phase; it's an ongoing discipline that runs parallel to development, guiding the software towards maturity and excellence.
+
+## Test Driven Development
+
 One of the aspects of testing that is relevant for software design and implementation is the concept of test-driven development (TDD). TDD is a methodology that involves writing tests before writing the actual code. The tests define the expected behaviour and output of the code, and serve as a guide for the development process. The code is then written to pass the tests, and refactored as needed to improve its quality and readability. TDD helps to ensure that the code meets the requirements and specifications, and that it is easy to maintain and modify.
+
+### The Software Testing Lifecycle
+
+Software testing is not a single, isolated task; it follows a structured lifecycle that aligns with the software development process. This lifecycle typically includes the following phases:
+
+1. **Test Planning**: Defining the testing objectives, scope, resources, and schedule.
+2. **Test Design**: Creating test cases, test scripts, and test data based on requirements and use cases.
+3. **Test Execution**: Running the tests, capturing results, and identifying defects.
+4. **Defect Reporting**: Documenting and reporting identified defects to the development team for resolution.
+5. **Defect Retesting**: Verifying that reported defects have been fixed correctly.
+6. **Regression Testing**: Ensuring that changes or enhancements do not introduce new defects.
+7. **Test Closure**: Summarizing testing activities, evaluating the exit criteria, and generating test reports.
 
 ## The `assert` statement
 
@@ -32,7 +50,7 @@ The assert statements after the function definition check the post condition of 
 
 The `assert` statements will raise an `AssertionError` if any of the conditions are false, indicating that there is an error in the code or the input. The assert statement can also take an optional second argument that provides a message to explain why the assertion failed.
 
-## A more advanced technique called `unittest`
+## A more advanced tool called `unittest`
 
 The `assert` statement is a useful tool for testing, but it has some limitations. It can only check for simple conditions, and it does not provide a comprehensive report of the test results. It also stops the execution of the program when an assertion fails, which may not be desirable in some cases.&#x20;
 
@@ -44,7 +62,7 @@ We will revisit this concept later, when we are familiar with implementing class
 
 In conclusion, testing is not an afterthought but a crucial aspect of programming. It ensures your software's reliability, saves time, and enhances your code's quality. Testing can also improve the design and implementation of the software, by making it clearer, more concise, and consistent.
 
-Testing is a vital skill for any programmer or software engineer., and as a novice programmer, start with the simple yet effective \`assert\` statement. As you progress, consider exploring the power of \`unittest\` for more comprehensive testing.
+Testing is a vital skill for any programmer or software engineer., and as a novice programmer, start with the simple yet effective `assert` statement. As you progress, consider exploring the power of `unittest` for more comprehensive testing.
 
 Remember, in the world of coding, testing isn't just about finding errors; it's about building robust, dependable software.&#x20;
 
