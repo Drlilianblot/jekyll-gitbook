@@ -160,17 +160,17 @@ You can read about this problem on [wikipedia](https://www.wikipedia.org/wiki/Bi
 
 <summary>Answer</summary>
 
+The idea behind the proposed solution is that we take the first element of the list and check if it is in the remainder of the list. If it is, we know that there is at least one duplicate and we return `True`. Otherwise, we look at the next element and we do the same. Ask yourself why we do not need to check if `element[i]` exists before the $$i^{th}$$element?
 
+```python
+def has_duplicates(elements):
+    for i in range(len(elements)):
+        if elements[i] in elements[i+1:]:
+            return True
+    return False
+```
 
-</details>
-
-### Exercise 8
-
-Write a function called `remove_duplicates` that takes a list as parameter and returns a new list with only the unique elements from the original. Hint: they don't have to be in the same order.
-
-<details>
-
-<summary>Answer</summary>
+An alternative implementation is given below.&#x20;
 
 {% code lineNumbers="true" %}
 ```python
@@ -185,17 +185,29 @@ def has_duplicates(elements):
 ```
 {% endcode %}
 
-An alternative implementation is given below. Is this  implementation correct or not? Try to understand the code and explain your answer.
+</details>
+
+### Exercise 8
+
+Write a function called `remove_duplicates` that takes a list as parameter and returns a new list with only the unique elements from the original. Hint: they don't have to be in the same order.
+
+<details>
+
+<summary>Answer</summary>
 
 {% code lineNumbers="true" %}
 ```python
-def has_duplicates2(elements):
-    for index in range(len(elements)-1):
-        if elements[index] in elements[index+1:]:
-            return True
-    return False
+def remove_duplicates(elements):
+    no_duplicates = []
+    for i in range(len(elements)):
+        if (elements[i]  not in elements[i+1:]
+            and elements[i] not in elements[:i]):
+            no_duplicates.append(elements[i])
+    return no_duplicates
 ```
 {% endcode %}
+
+An better implementation is uses `set` a data structure described in [section about sets](../page-1/sets.md). Once you have covered the `set` data structure, you should ask yourself "Why would using sets be better?"
 
 </details>
 
@@ -276,25 +288,48 @@ If the search is not finished, we need to determine which segment of the list we
 
 Two words "interlock" if taking alternating letters from each forms a new word. For example, "shoe" and "cold" interlock to form "schooled".
 
-1. Write a function `interlock(list_of_words)` that finds and returns all pairs of words that interlock from the list passed in the parameter. Note that two words from the list interlock only if the resulting word is in the list itself. For example, if the list contains the words "shoe" and "cold" but not the word "schooled", the two words should not be returned.
+1. Write a function `find_interlock(list_of_words)` that finds and returns all pairs of words that interlock from the list passed in the parameter. Note that two words from the list interlock only if the resulting word is in the list itself. For example, if the list contains the words "shoe" and "cold" but not the word "schooled", the two words should not be returned.
+
+```
+>>> print(find_interlock(['a', 'shoe', 'cold', 'ah', 'h', 'schooled', 'ha']))
+[('a', 'h'), ('h', 'a'), ('shoe', 'cold')]
+>>>
+```
 
 <details>
 
 <summary>Answer</summary>
 
+A common mistake is to not consider the two possible combination of the two words, that is given the words 'shoe' and 'cold' they combined either as 'schooled' or 'csohlode'. One is a word and the other one is not. However, in some cases it could result in two valid words.
 
+```python
+def find_interlock(words):
+    interlock_words = []
+    for i in range(len(words)):
+        for j in range(i+1, len(words)):
+            locked1 = interlock(words[i], words[j])
+            locked2 = interlock(words[j], words[i])
+            if locked1 is not None and locked1 in words:
+                interlock_words.append((words[i], words[j]))
+            if locked2 is not None and locked2 in words:
+                interlock_words.append((words[j], words[i]))
+    return interlock_words
+
+
+def interlock(word1, word2):
+    if len(word1) != len(word2):
+        return None
+    output = ''
+    for i in range(len(word1)):
+        output += word1[i] + word2[i]
+    return output
+```
+
+Again, I have used convenience method to make it easier to read, understand and test the code.
 
 </details>
 
 2. Can you find any words that are three-way interlocked; that is, every third letter forms a word, starting from the first, second or third?
-
-<details>
-
-<summary>Answer</summary>
-
-
-
-</details>
 
 {% hint style="info" %}
 This exercise is inspired by an example at puzzlers.org.
@@ -308,6 +343,29 @@ Write a function called `most_frequent` that takes a string and prints the lette
 
 <summary>Answer</summary>
 
+In order to map a letter to its frequency, we need to use a list of tuples where the first element of the tuple is the frequency of a character, and the second is the character itself. The order of the element in the tuple matters if we want to use the `sorted` function (see the [section on comparing tuples](more-on-tuples.md#comparing-tuples)).
 
+In addition, we need to create a lookup table to match the position of a character in the list of frequencies. For this we use the position of a character in the `ascii_lowercase` string.
+
+{% code lineNumbers="true" %}
+```python
+from string import ascii_lowercase
+
+def most_frequent(sentence):
+    frequencies = [(0, letter) for letter in ascii_lowercase]
+    increment = 1.0 / len(sentence)
+    for letter in sentence.lower():
+        frequency_index = ascii_lowercase.find(letter)
+        if frequency_index >= 0:
+            frequencies[frequency_index] = (frequencies[frequency_index][0] 
+                                            + increment, 
+                                            frequencies[frequency_index][1])
+    frequencies = sorted(frequencies, reverse=True)
+    for frequency, letter in frequencies:
+        print(letter, '=', frequency)
+```
+{% endcode %}
+
+In the chapter [Sets and dictionaries](../page-1/), we will introduce a better data structure than a list of tuples to map the characters and their frequencies. The data structure is called a dictionary in Python.
 
 </details>
