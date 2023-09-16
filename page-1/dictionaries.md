@@ -133,7 +133,17 @@ The histogram indicates that the letters `'a'` and `'b'` appear once; `'o'` appe
 
 <summary>Answer:</summary>
 
+{% code lineNumbers="true" %}
+```python
+def words_frequencies(text):
+    words = [word.strip().lower() for word in text.split()]
+    hist = dict()
+    for w in words:
+        hist[w] = hist.get(w, 0) + 1
+    print(hist)
 
+```
+{% endcode %}
 
 </details>
 
@@ -185,7 +195,14 @@ Again, the keys are in no particular order.
 
 <summary>Answer</summary>
 
+{% code lineNumbers="true" %}
+```python
+def print_histogram(hist): 
+    for character in sorted(hist): 
+        print(character, hist[character])
 
+```
+{% endcode %}
 
 </details>
 
@@ -227,7 +244,17 @@ A reverse lookup is much slower than a forward lookup; if you have to do it ofte
 
 <summary>Answer</summary>
 
+{% code lineNumbers="true" %}
+```python
+def reverse_lookup(dico, value): 
+    reversed_lookup = []
+    for key in dico: 
+        if dico[key] == value:
+            reversed_lookup.append(key)
+    return reversed_lookup
 
+```
+{% endcode %}
 
 </details>
 
@@ -284,7 +311,17 @@ That's why the keys have to be hashable, and why mutable types like lists aren't
 
 <summary>Answer</summary>
 
+{% code lineNumbers="true" %}
+```python
+def invert_dict(dico): 
+    inverted = dict() 
+    for key in dico: 
+        value = dico[key] 
+        inverted.setdefault(value,[]).append(key)
+    return inverted 
 
+```
+{% endcode %}
 
 </details>
 
