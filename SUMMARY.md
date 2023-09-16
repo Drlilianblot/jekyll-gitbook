@@ -40,6 +40,7 @@
   * [Debugging](iteration/debugging.md)
   * [Glossary](iteration/glossary.md)
   * [Exercises](iteration/exercises.md)
+* [A short introduction to testing: Building Reliable Software](a-short-introduction-to-testing-building-reliable-software.md)
 * [5 - A deeper dive into Strings, Lists and Tuples](a-deeper-dive-into-strings-lists-and-tuples/README.md)
   * [More on Strings](a-deeper-dive-into-strings-lists-and-tuples/more-on-strings.md)
   * [More on Lists](a-deeper-dive-into-strings-lists-and-tuples/more-on-lists.md)
@@ -81,4 +82,3 @@
   * [Glossary](classes/glossary.md)
   * [Exercises](classes/exercises.md)
 * [13 - Python's Type Hinting](page-1-1.md)
-* [14 - Higher-Order Functions and Lambda Functions](14-higher-order-functions-and-lambda-functions.md)
