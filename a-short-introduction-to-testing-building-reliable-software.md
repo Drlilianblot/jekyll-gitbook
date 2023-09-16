@@ -1,6 +1,6 @@
 # A short introduction to testing: Building Reliable Software
 
-This short chapter dives into a topic that's often overlooked but absolutely essential in the world of coding - testing. Testing is an essential part of programming and software engineering. It helps to ensure that the code is correct, reliable, and efficient. Testing also helps to find and fix errors, bugs, and vulnerabilities that may compromise the functionality, security, or performance of the software. Testing can be done at different levels of abstraction, from individual units of code to entire systems or applications. However, at our level, we will be focusing on testing individual units of code, and more specifically functions that we have implemented.
+{% embed url="https://youtu.be/bfOIP-JRZ1I" %}
 
 ## The Essence of Software Testing
 
