@@ -1,2 +1,3 @@
-# Classes
+# 13 - Classes
 
+Data structures are essential for organising and manipulating data in any programming language. Python provides built-in data structures such as lists, tuples, dictionaries and sets, but sometimes they may not be suitable for specific problems or applications. In this chapter, we will learn how to create bespoke data structures using the concepts of classes in Python. Classes are user-defined types that can encapsulate data and behaviour in a single entity. We will see how to define classes, create objects, and implement common data structure operations such as indexing, iteration and comparison. By the end of this chapter, you will be able to design and implement your own data structures that can meet your specific needs and preferences.
