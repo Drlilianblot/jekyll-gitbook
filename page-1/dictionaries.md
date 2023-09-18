@@ -413,3 +413,44 @@ But in a larger diagram you might want to leave out the details. For example, a 
 <figure><img src="../.gitbook/assets/dict2.png" alt="" width="375"><figcaption><p>Dictionary representation in a state diagram.</p></figcaption></figure>
 
 Here the tuples are shown using Python syntax as a graphical shorthand.
+
+## **Dictionary Comprehension**
+
+Dictionary comprehension in Python shares some similarities with list and set comprehensions but is distinct in how it generates key-value pairs for dictionaries.
+
+```python
+new_dict = {key_expression: value_expression for item in iterable if condition}
+```
+
+Here's a brief example illustrating the differences:
+
+```python
+# List Comprehension
+numbers = [1, 2, 3, 4, 4]
+
+# Dictionary Comprehension
+squared_dict = {x: x**2 for x in numbers}
+# squared_dict is a dictionary: {1: 1, 2: 4, 3: 9, 4: 16}
+```
+
+Dictionary comprehension is useful when you need to create dictionaries with custom keys and values based on an iterable. But be careful, keys must be unique in a dictionary. This means that despite the initial list having 5 elements, the resulting dictionary contains only 4 key-value pairs.&#x20;
+
+The following example highlights the fact that keys are unique and that the key-value `(4: 3)` has been replaced by the key-value pair `(4: 4)`.&#x20;
+
+{% code lineNumbers="true" %}
+```python
+numbers = [1, 2, 3, 4, 4]
+
+value_index = {numbers[index]: index for index in range(len(numbers))}
+# value_index is: {1: 0, 2: 1, 3: 2, 4: 4}
+```
+{% endcode %}
+
+If you need to keep both pairs, you must use another data structure, like a list of tuples:
+
+{% code lineNumbers="true" %}
+```python
+value_index = [(numbers[index], index) for index in range(len(numbers))]
+# value_index is: [(1, 0), (2, 1), (3, 2), (4, 3), (4, 4)]
+```
+{% endcode %}

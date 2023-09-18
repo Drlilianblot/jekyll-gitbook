@@ -180,6 +180,30 @@ If you run the function `sort_by_length` twice with the same parameter, the outp
 
 </details>
 
+## Tuple Comprehension
+
+You can use a similar approach to list comprehension to create tuples.  However, there's a subtle difference: in Python, tuple comprehension is not directly supported like list comprehension. Instead, you can use generator expressions to create tuples and then convert them into tuples using the `tuple()` constructor.
+
+Here's how you can achieve tuple comprehension-like behaviour:
+
+```python
+new_tuple = tuple(expression for item in iterable if condition)
+```
+
+For example to create a tuple containing the square of even numbers we could write the following code:
+
+```python
+# Using a generator expression to create a tuple
+numbers = (1, 2, 3, 4, 5)
+squares = tuple(x**2 for x in numbers if x % 2 == 0)
+
+# 'squares' will be a tuple: (4, 16)
+```
+
+In this example, we use a generator expression inside the `tuple()` constructor to create a new tuple `squares` containing the squares of the even numbers from the original tuple `numbers`. At this stage, you don't need to understand what generator expression are in Python, just use the given expression format.
+
+While tuple comprehension is not a direct syntax like list comprehension, this approach allows you to achieve similar functionality when you want to create tuples by applying an expression to items from an existing iterable. Note that `numbers` could have been a list or another type of iterable (like [set, a data type covered in another chapter](../page-1/sets.md)), it does not need to be a tuple.
+
 ## Sequences of sequences
 
 I have focused on lists of tuples, but almost all of the examples in this chapter also work with lists of lists, tuples of tuples, and tuples of lists. To avoid enumerating the possible combinations, it is sometimes easier to talk about sequences of sequences.&#x20;
@@ -191,6 +215,6 @@ To start with the obvious, strings are more limited than other sequences because
 Lists are more common than tuples, mostly because they are mutable. But there are a few cases where you might prefer tuples:
 
 * In some contexts, like a `return` statement, it is syntactically simpler to create a tuple than a list. In other contexts, you might prefer a list.&#x20;
-* If you are passing a sequence as an argument to a function, using tuples reduces the potential for unexpected behavior due to aliasing.
+* If you are passing a sequence as an argument to a function, using tuples reduces the potential for unexpected behaviour due to aliasing.
 
 Because tuples are immutable, they don't provide methods like `sort` and `reverse`, which modify existing lists. But Python provides the built-in functions `sorted` and `reversed`, which take any sequence as a parameter and return a new list with the same elements in a different order.

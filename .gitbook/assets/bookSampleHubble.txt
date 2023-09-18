@@ -1,0 +1,17 @@
+from https://www.gutenberg.org/cache/epub/71654/pg71654.txt
+
+PHOTOGRAPHIC INVESTIGATIONS OF FAINT NEBULAE
+BY EDWIN P. HUBBLE
+
+The study of nebulae is essentially a photographic problem for cameras
+of wide angle and reflectors of large focal ratio. The photographic
+plate presents a definite and permanent record beside which visual
+observations lose most of their significance. Perhaps the one field
+left for the older method is the measurement of sharp nuclei deeply
+enshrouded in nebulosity. New nebulae are now but rarely seen in the
+sky, although an hour’s exposure made at random with a large reflector
+has more than an even chance of adding several small faint objects to
+the rapidly growing list of those already known. About 17,000 have
+already been catalogued, and the estimates of those within reach of
+existing instruments, based on the ratio of those previously known to
+those new in various fields, lie around 150,000.

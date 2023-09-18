@@ -78,7 +78,21 @@ def walk(dir):
 
 <summary>Answer</summary>
 
+```python
+import os
 
+def walk(dir): 
+    name_list = []
+    for name in os.listdir(dir): 
+        path = os.path.join(dir, name)
+        if os.path.isfile(path):
+            name_list.append(path)  
+        else:
+            name_list += walk(path)
+    return name_list
+```
+
+A common error is to use a return statement within the for loop. This would terminate the recursion prematurely.
 
 </details>
 
