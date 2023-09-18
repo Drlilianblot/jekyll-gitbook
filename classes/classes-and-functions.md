@@ -30,15 +30,18 @@ The state diagram for the `Time` object looks like this:
 
 **Exercise:** Write a function called `print_time` that takes a Time object and prints it in the form `hour:minute:second`.
 
-{% hint style="info" %}
-**Hint:** the format sequence `'%.2d'` prints an integer using at least two digits, including a leading zero if necessary.&#x20;
-{% endhint %}
-
 <details>
 
 <summary>Answer</summary>
 
+To format the string as requested, I use [Python's f-string](../a-deeper-dive-into-strings-lists-and-tuples/more-on-strings.md#string-formatting). This a simple and convenient way to format a string.
 
+{% code lineNumbers="true" %}
+```python
+def print_time(time):
+    print(f'{time.hour:02d}:{time.minute:02d}:{time.second:02d}')
+```
+{% endcode %}
 
 </details>
 
@@ -135,7 +138,20 @@ In that case, it is not enough to carry once; we have to keep doing it until `ti
 
 <summary>Answer</summary>
 
+This is one of many implementation. Another approach would be to convert the time into seconds, increment the result by the number of seconds `seconds`, and then convert it back into hours, minutes and seconds.
 
+{% code lineNumbers="true" %}
+```python
+def increment(time, seconds): 
+    time.second += seconds
+    if time.second >= 60:
+        time.minute += time.second // 60
+        time.second = time.second % 60
+    if time.minute >= 60:
+        time.hour += time.minute // 60
+        time.minute = time.minute % 60
+```
+{% endcode %}
 
 </details>
 
@@ -149,7 +165,22 @@ In general, I recommend that you write pure functions whenever it is reasonable 
 
 <summary>Answer</summary>
 
+{% code lineNumbers="true" %}
+```python
+import copy
 
+def pure_increment(time, seconds): 
+    new_time = copy.deepcopy(time)
+    new_time.second += seconds
+    if new_time.second >= 60:
+        new_time.minute += new_time.second // 60
+        new_time.second = new_time.second % 60
+    if new_time.minute >= 60:
+        new_time.hour += new_time.minute // 60
+        new_time.minute = new_time.minute % 60
+    return new_time
+```
+{% endcode %}
 
 </details>
 
@@ -174,15 +205,12 @@ def time_to_int(time):
 
 And here is the function that converts integers to Times (recall that `divmod` divides the first argument by the second and returns the quotient and remainder as a tuple).
 
-{% code lineNumbers="true" %}
-```python
-def int_to_time(seconds): 
-    time = Time() 
+<pre class="language-python" data-line-numbers><code class="lang-python"><strong>def int_to_time(seconds): 
+</strong>    time = Time() 
     minutes, time.second = divmod(seconds, 60) 
     time.hour, time.minute = divmod(minutes, 60) 
     return time 
-```
-{% endcode %}
+</code></pre>
 
 You might have to think a bit, and run some tests, to convince yourself that these functions are correct.&#x20;
 
@@ -204,7 +232,14 @@ This version is shorter than the original, and easier to verify.
 
 <summary>Answer</summary>
 
+Again, this version is shorter, clearer and easier to verify than the original one. In addition, it is a pure function.
 
+{% code lineNumbers="true" %}
+```python
+def increment(time, seconds):
+    return int_to_time(time_to_int(time) + seconds)
+```
+{% endcode %}
 
 </details>
 
@@ -220,7 +255,12 @@ Ironically, sometimes making a problem harder (or more general) makes it easier 
 
 <summary>Answer</summary>
 
-
+{% code lineNumbers="true" %}
+```python
+def time_difference(time1, time2):
+    return int_to_time(abs(time_to_int(time1) - time_to_int(time2)))
+```
+{% endcode %}
 
 </details>
 

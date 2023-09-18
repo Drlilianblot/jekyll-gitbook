@@ -137,7 +137,15 @@ Note how in the second example we had to pass in the instance because we did not
 
 <summary>Answer</summary>
 
-
+{% code lineNumbers="true" %}
+```python
+    # inside class Time:
+    def time_to_int(self): 
+        minutes = self.hour * 60 + self.minute 
+        seconds = minutes * 60 + self.second 
+        return seconds 
+```
+{% endcode %}
 
 </details>
 
@@ -147,7 +155,7 @@ Here's a version of `increment` (see previous implementation in [the section on 
 
 {% code lineNumbers="true" %}
 ```python
-    // inside class Time:
+    # inside class Time:
     def increment(self, seconds):
         seconds += self.time_to_int()
         return int_to_time(seconds)
@@ -181,7 +189,7 @@ The error message is initially confusing, because there are only two arguments i
 
 ## A more complicated example
 
-`is_after` (from <mark style="background-color:red;">\prettyref{exo:is-after}</mark>) is slightly more complicated because it takes two `Time` objects as parameters. In this case it is conventional to name the first parameter `self` and the second parameter `other`:
+`is_after` is slightly more complicated because it takes two `Time` objects as parameters. In this case it is conventional to name the first parameter `self` and the second parameter `other`:
 
 {% code lineNumbers="true" %}
 ```python
@@ -252,7 +260,16 @@ And if you provide three arguments, they override all three default values.
 
 <summary>Answer</summary>
 
+{% code lineNumbers="true" %}
+```python
+class Point: 
+    """represents a point in 2-D space""" 
 
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+```
+{% endcode %}
 
 </details>
 
@@ -286,7 +303,20 @@ When I write a new class, I almost always start by writing `__init__`, which mak
 
 <summary>Answer</summary>
 
+{% code lineNumbers="true" %}
+```python
+Class Point:
+    ...
+    ...
+    # inside class Point (indented)
+    def __str__(self):
+        return f'({self.x}, {self.y})'
 
+# outside class Point (not indented
+p = Point(4,  0)
+print(p)
+```
+{% endcode %}
 
 </details>
 
@@ -321,15 +351,64 @@ Changing the behaviour of an operator so that it works with user-defined types i
 
 ## Overloading the operator `==`
 
+In Python, you can overload the `==` operator, also known as the equality operator, for custom classes by defining a special method called `__eq__()`. Overloading this operator allows you to specify how instances of your class should be compared for equality.
 
+Here's how you can overload the `==` operator for a custom class:
 
-**Exercise:** Write an `__add__` method for the Point&#x20;
+```python
+class MyClass:
+    def __init__(self, value):
+        self.value = value
+
+    def __eq__(self, other):
+        if not isinstance(other, MyClass):
+            return False
+        return self.value == other.value 
+```
+
+In the example above:
+
+1. We define a custom class `MyClass` with an `__init__` method to initialize instances with a `value` attribute.
+2. We overload the `==` operator by defining the `__eq__` method within the class. This method takes two arguments: `self` and `other`, where `self` represents the instance on the left side of the `==` operator, and `other` is the instance on the right side.
+3. Inside the `__eq__` method, we check if `other` is an instance of `MyClass` using `isinstance`. If it is not we return `False`, otherwise we compare the `value` attribute of both instances and return `True` if they are equal, indicating that the instances are considered equal, `False` if it is not the case.
+
+By overloading the `==` operator, you can define custom equality logic for instances of your class, making it possible to compare them based on specific attributes or criteria that are meaningful for your application.
+
+Here is an example of overloading the `==` operator for the class `Time`.
+
+{% code lineNumbers="true" %}
+```python
+    # inside class Time:
+    def __eq__(self, other):
+        if not isinstance(other, Time):
+            return False
+        return (self.hour == other.hour
+                and self.minute == other.minute
+                and self.second == other.second)
+```
+{% endcode %}
+
+**Exercise:** Write an `__add__` method for the Point, and overload the operator == for class Point.
 
 <details>
 
 <summary>Answer</summary>
 
+{% code lineNumbers="true" %}
+```python
+    # inside class Point
+    def __add__(self, other):
+        if not isinstance(other, Point):
+            raise TypeError('unsupported operand type(s) for +.')
+        self.x += other.x
+        self.y += other.y
 
+    def __eq__(self, other):
+        if not isinstance(other, Point):
+            return False
+        return (self.x == other.x and self.y == other.y)
+```
+{% endcode %}
 
 </details>
 
@@ -441,7 +520,7 @@ We have now achieved the desired behaviour, where trying to do an illegal additi
 ```
 
 {% hint style="info" %}
-**Remark:** You may have noticed the Boolean expression `not isinstance(other, bool)` in the `elif` clause. One could wonder why we needed to this additional condition. As we mentioned earlier in <mark style="background-color:red;">\prettyref{sec:logical-operator}</mark>, in Python `True` and `1` can be used interchangeably, the same applies between `False` and `0`. Therefore, adding `True` to an `int` is a valid operation.\
+**Remark:** You may have noticed the Boolean expression `not isinstance(other, bool)` in the `elif` clause. One could wonder why we needed to this additional condition. As we mentioned earlier in , in Python `True` and `1` can be used interchangeably, the same applies between `False` and `0`. Therefore, adding `True` to an `int` is a valid operation.\
 So why don't we allow the the addition between `Time` object and Booleans?\
 We apply this restriction on the addition operator to preserve the semantic coherence of the `Time` type. The moral of the story is "It's not because we can do something that we should do it!". When building new types, it is essential to preserve semantic coherence for this type, and refrain from using any shortcut.&#x20;
 {% endhint %}
@@ -464,7 +543,7 @@ We apply this restriction on the addition operator to preserve the semantic cohe
 
 Type-based dispatch is useful when it is necessary, but (fortunately) it is not always necessary. Often you can avoid it by writing functions that work correctly for arguments with different types.
 
-Many of the functions we wrote for strings will actually work for any kind of sequence. For example, in <mark style="background-color:red;">\prettyref{sec:histogram}</mark> we used `histogram` to count the number of times each letter appears in a word.
+Many of the functions we wrote for strings will actually work for any kind of sequence. For example, in section histogram we used `histogram` to count the number of times each letter appears in a word.
 
 {% code lineNumbers="true" %}
 ```python

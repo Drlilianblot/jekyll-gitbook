@@ -108,7 +108,15 @@ $$d(A,B) = \sqrt{(x_A - x_B)^2 + (y_A - y_B)^2}$$.&#x20;
 
 <summary>Answer</summary>
 
+{% code lineNumbers="true" %}
+```python
+def distance(pointA, pointB):
+    return pow(pow(pointA.x - pointB.x, 2) 
+               + pow(pointA.y - pointB.y, 2),
+               0.5)
 
+```
+{% endcode %}
 
 </details>
 
@@ -221,7 +229,13 @@ Inside the function, `rect` is an alias for `box`, so if the function modifies `
 
 <summary>Answer</summary>
 
-
+{% code lineNumbers="true" %}
+```python
+def move_rectangle(rect, dx, dy):
+    rect.corner.x += dx
+    rect.corner.y += dy
+```
+{% endcode %}
 
 </details>
 
@@ -292,7 +306,17 @@ For most applications, this is not what you want. In this example, invoking `gro
 
 <summary>Answer</summary>
 
+{% code lineNumbers="true" %}
+```python
+import copy
 
+def move_rectangle(rect, dx, dy):
+    moved_rect = copy.deepcopy(rect)
+    moved_rect.corner.x += dx
+    moved_rect.corner.y += dy
+    return moved_rect
+```
+{% endcode %}
 
 </details>
 
