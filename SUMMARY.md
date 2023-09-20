@@ -1,6 +1,7 @@
 # Table of contents
 
-* [Preface](README.md)
+* [Introduction to programming with Python 3](README.md)
+* [Preface](<README (1).md>)
   * [Common misconceptions about learning to program](readme/common-misconceptions-about-learning-to-program.md)
   * [The Hard truth about learning to program](readme/the-hard-truth-about-learning-to-program.md)
   * [Personal qualities for success](readme/personal-qualities-for-success.md)
