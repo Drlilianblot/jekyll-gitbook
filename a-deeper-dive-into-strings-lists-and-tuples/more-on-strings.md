@@ -177,7 +177,7 @@ def count(word, char):
 def count_with_find(word, char):
     count = 0 
     index = find(word, char, 0)
-    while index > 0:
+    while index >= 0:
         count += 1
         index = find(word, char, index + 1)
     print(count) 
