@@ -1,4 +1,4 @@
-# 10 - Handling Errors and Exceptions
+# 12 - Handling Errors and Exceptions
 
 {% embed url="https://youtu.be/7Kf-gOQV2RU?si=ZA7P_57CQteQyvxt" %}
 
@@ -7,6 +7,8 @@ In the realm of programming, errors and unexpected situations are inevitable. To
 ## Raising exceptions
 
 Raising an exception in programming means intentionally triggering an error or an exceptional condition within your code. When an exception is raised, it signifies that something unexpected or erroneous has occurred during the execution of your program. This action is a deliberate way to signal that a problem exists and needs to be addressed.
+
+{% embed url="https://youtu.be/mTXgx52l9YU" %}
 
 Here are the key aspects of raising exceptions:
 
@@ -39,7 +41,7 @@ Raising exceptions is a fundamental part of error handling in programming. It al
 
 Raising exceptions serves various purposes in programming, making it a versatile and indispensable tool:
 
-1. **Error Signaling**: Exceptions are primarily used to signal that something unexpected or erroneous has occurred in your code. Whether it's a division by zero, an attempt to access a non-existent file, or an invalid input, exceptions provide a clear and standardized way to communicate such issues.
+1. **Error Signalling**: Exceptions are primarily used to signal that something unexpected or erroneous has occurred in your code. Whether it's a division by zero, an attempt to access a non-existent file, or an invalid input, exceptions provide a clear and standardized way to communicate such issues.
 2. **Error Recovery**: Exceptions allow you to gracefully recover from errors or exceptional conditions. Instead of crashing your program, you can catch and handle exceptions, potentially allowing the program to continue its execution or terminate gracefully with meaningful error messages.
 3. **Debugging Aid**: Exceptions can be invaluable during the debugging process. When an exception is raised, it typically includes a traceback, which shows the call stack, helping you identify where the error originated. This information is immensely helpful in diagnosing and fixing issues.
 4. **Program Flow Control**: Exceptions can also be used as a control flow mechanism. By raising and catching exceptions in specific situations, you can direct the flow of your program based on various conditions. This can be useful for implementing complex logic or handling specific scenarios.
