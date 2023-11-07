@@ -48,7 +48,7 @@ Raising exceptions serves various purposes in programming, making it a versatile
 
 ## Catching exceptions
 
-A lot of things can go wrong when you try to read and write files. If you try to open a file that doesn't exist, you get an `IOError`:
+A lot of things can go wrong when you try to read and write files. If you try to open a file that doesn't exist, you get an `OSError`:
 
 ```bash
 >>> fin = open('bad_file') 
@@ -60,8 +60,10 @@ And if you try to open a directory for reading, you get
 
 ```bash
 >>> fin = open('/home') 
-  IOError: [Errno 21] Is a directory 
+  PermissionError: [Errno 13] Permission denied: '/home' 
 ```
+
+Note that `FileNotFoundError` and `PermissionError` are both  `OSError`, in other words they are more specific types of `OSError`. In object oriented programming we say that `OSError` is the super class of `FileNotFoundError` and `PermissionError`. The object oriented paradigm and the concepts of inheritance, super classes and subclasses is beyond the scope of this course and this book.
 
 To avoid these errors, you could use functions like `os.path.exists()` and `os.path.isfile()`, but it would take a lot of time and code to check all the possibilities.
 
@@ -183,7 +185,7 @@ except ExceptionTypeN:
 
 In this example, the try block contains the code that may raise an exception. The except clauses are used to handle exceptions of different types. Each except clause is associated with a specific exception type. When an exception is raised in the try block, Python checks each except clause in order, and executes the first one that matches the exception type. If none of the except clauses match the exception type, the exception is passed up to the calling code.
 
-It's important to note that the except clauses should be ordered from the most specific to the most general exception type. This is because Python checks each except clause in order, and the first one that matches the exception type is executed. If you have a more general exception type before a more specific one, the more general one will catch the exception first, and the more specific one will never be executed.
+It's important to note that the except clauses should be ordered from the most specific to the most general exception type. This is because Python checks each except clause in order, and the first one that matches the exception type is executed. If you have a more general exception type (like `OSError`) before a more specific one (like `FileNotFoundError`), the more general one will catch the exception first, and the more specific one will never be executed.
 
 Here's an example of a try statement with multiple except clauses:
 

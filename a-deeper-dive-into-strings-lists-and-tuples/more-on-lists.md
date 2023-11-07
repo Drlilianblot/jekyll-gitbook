@@ -108,7 +108,7 @@ This example leaves `t2` unmodified.
 >>>
 ```
 
-List methods are all void; they modify the list and return `None`. If you accidentally write\
+List methods are almost all void; they modify the list and return `None`. If you accidentally write\
 `t = t.sort()`, you will be disappointed with the result.
 
 ## Map, filter and reduce
@@ -187,8 +187,6 @@ Most common list operations can be expressed as a combination of map, filter and
 {% code lineNumbers="true" %}
 ```python
 def cumulative_sum(elements):
-    if elements is []:
-        return []
     cumulative = 0
     cumulative_list = []
     for elt in elements:
