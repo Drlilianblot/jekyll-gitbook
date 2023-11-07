@@ -83,3 +83,4 @@
   * [Glossary](classes/glossary.md)
   * [Exercises](classes/exercises.md)
 * [15 - Python's Type Hinting](page-1-1.md)
+* [Acknowledgements](acknowledgements.md)
