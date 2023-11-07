@@ -1,6 +1,6 @@
 # Recursion
 
-{% embed url="https://youtu.be/c-HUMsXyEm8?si=ECV1hX3JCD2U4hzt" %}
+{% embed url="https://youtu.be/D05fd7fIk_8" %}
 
 The concept of recursion is a challenging concept which sometimes inspires fears among students. For some it is a natural way of thinking and they will find the concept almost trivial, whereas for others it will take more time. Don't be discouraged, after some effort you will find the concept rather elegant and intuitive.
 
