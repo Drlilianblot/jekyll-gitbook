@@ -46,7 +46,7 @@ def countdown(n):
         print('Blastoff!') 
     else: 
         print(n) 
-    countdown(n-1) 
+        countdown(n-1) 
 ```
 {% endcode %}
 
@@ -90,7 +90,14 @@ A recursive function may have multiple base cases (**at least one**), and multip
 
 <summary>Answer</summary>
 
-
+{% code lineNumbers="true" %}
+```python
+def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)
+```
+{% endcode %}
 
 </details>
 
@@ -132,7 +139,7 @@ The four `countdown` frames have different values for the parameter `n`. The bot
 
 <summary>Answer</summary>
 
-
+<img src="../.gitbook/assets/code trace gitbook recursion 1.png" alt="" data-size="original">
 
 </details>
 
@@ -142,7 +149,7 @@ The four `countdown` frames have different values for the parameter `n`. The bot
 
 <summary>Answer</summary>
 
-
+<img src="../.gitbook/assets/code trace gitbook recursion 2.png" alt="" data-size="original">
 
 </details>
 
