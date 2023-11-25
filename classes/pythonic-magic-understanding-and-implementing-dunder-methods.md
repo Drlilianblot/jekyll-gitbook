@@ -1,6 +1,8 @@
 # Pythonic Magic: Understanding and Implementing Dunder Methods
 
-Dunder methods, short for "double underscore" methods, are special methods in Python identified by their names enclosed in double underscores at the beginning and end, such as `__init__` or `__str__`. These methods play a crucial role in defining how objects behave in various contexts. In this video we will be looking into their use, common implementations, best practices, and considerations.
+Dunder methods, short for "double underscore" methods, are special methods in Python identified by their names enclosed in double underscores at the beginning and end, such as `__init__` or `__str__`. These methods play a crucial role in defining how objects behave in various contexts. In this section, we will be looking into their use, common implementations, best practices, and considerations.
+
+{% embed url="https://www.youtube.com/watch?v=-KwmuCc0XIs" %}
 
 ## Purpose of Dunder Methods
 
