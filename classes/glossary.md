@@ -4,6 +4,12 @@
 
 **class object:** An object that contains information about a user-defined type. The class object can be used to create instances of the type.
 
+**indexable class:** an indexable class provides a familiar and intuitive interface for accessing elements within its instances using square brackets notation.
+
+**iterable class:** an iterable class allows traversal of its elements in a systematic way via dunder methods, providing a natural integration with Python's iteration protocols.
+
+**comparable class:** a comparable class provides a meaningful order among its instances.
+
 **instance:** An object that belongs to a class.
 
 **attribute:** One of the named values associated with an object.&#x20;
@@ -31,6 +37,8 @@
 **object-oriented programming:** A style of programming in which data and the operations that manipulate it are organized into classes and methods.&#x20;
 
 **method:** A function that is defined inside a class definition and is invoked on instances of that class.
+
+**dunder method:** special methods in Python identified by their names enclosed in double underscores at the beginning and end. Used for operator overloading and interacting with built-in function.
 
 **subject:** The object a method is invoked on.
 

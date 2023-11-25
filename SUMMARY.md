@@ -80,6 +80,7 @@
   * [Classes and Objects](classes/classes-and-objects.md)
   * [Classes and Functions](classes/classes-and-functions.md)
   * [Classes and Methods](classes/classes-and-methods.md)
+  * [Pythonic Magic: Understanding and Implementing Dunder Methods](classes/pythonic-magic-understanding-and-implementing-dunder-methods.md)
   * [Glossary](classes/glossary.md)
   * [Exercises](classes/exercises.md)
 * [15 - Python's Type Hinting](page-1-1.md)
