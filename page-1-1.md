@@ -1,10 +1,12 @@
-# Python's Type Hinting
+# 15 - Python's Type Hinting
+
+{% embed url="https://youtu.be/yW__I5HGyEg" %}
 
 Python is a dynamically typed programming language, which means that the type of a variable is determined at runtime, not at compile time. This feature allows for more flexibility and rapid prototyping but can also lead to errors that are difficult to catch and fix. To address this issue, Python introduced type hinting in version 3.5, a way of annotating code with hints about the types of variables and function arguments.
 
 Type hinting is not enforced by the Python interpreter, which means that it is optional and does not affect the runtime behaviour of the program. However, type hints can be useful for improving code readability, catching errors early in the development process, and enabling better code analysis and documentation.
 
-In this chapter, we will explore the basics of type hinting in Python, including the syntax for annotating variables and functions, the types that can be used, and the tools available for type checking and enforcement. We will also discuss some best practices and common pitfalls when using type hints, and how to integrate type hinting with other Python features such as decorators and inheritance. By the end of this chapter, you will have a solid understanding of type hinting and how to use it effectively in your Python code.
+In this chapter, we will explore the basics of type hinting in Python, including the syntax for annotating variables and functions, the types that can be used, and the tools available for type checking and enforcement. We will also discuss some best practices and common pitfalls when using type hints. By the end of this chapter, you will have a solid understanding of type hinting and how to use it effectively in your Python code.
 
 ## Introduction&#x20;
 
@@ -14,7 +16,7 @@ The primary purpose of type hinting is to make code more maintainable and easier
 
 Type hinting in Python has several advantages, including:
 
-1. Improved code readability: Type hints can make code more self-documenting, allowing other developers to more easily understand the purpose and expected behavior of functions and variables.
+1. Improved code readability: Type hints can make code more self-documenting, allowing other developers to more easily understand the purpose and expected behaviour of functions and variables.
 2. Earlier error detection: Type hints can help catch errors early in the development process, before they cause issues in production code.
 3. Better tooling support: Many modern integrated development environments (IDEs) and code editors can use type hints to provide improved auto-complete, code highlighting, and other features.
 4. Easier refactoring: Type hints can make refactoring code easier by helping developers understand the flow of data in their code.
@@ -41,12 +43,12 @@ We can also use type hinting with default arguments. For example:
 
 {% code lineNumbers="true" %}
 ```python
-def greet(name: str = "world") -> str:
+def greet(name: str="world") -> str:
     return f"Hello, {name}!"
 ```
 {% endcode %}
 
-In this example, we specify that the `name` argument is expected to be a string, and that the function should return a string. We also provide a default value of `"world"` for the `name` argument. This makes it clear to other developers what the default behavior of the function is, and what types of inputs and outputs it expects.
+In this example, we specify that the `name` argument is expected to be a string, and that the function should return a string. We also provide a default value of `"world"` for the `name` argument. This makes it clear to other developers what the default behaviour of the function is, and what types of inputs and outputs it expects.
 
 In addition to basic types such as `int`, `str`, and `bool`, we can also use more complex types such as lists, dictionaries, and custom classes in function type hinting. For example:
 
@@ -61,6 +63,9 @@ def process_data(data: List[Dict[str, int]]) -> Tuple[int, int]:
         total += item["value"]
         count += 1
     return total, count
+
+data = [{'A': 1, 'B': 2}, {'C': 3}, {'D': 4, 'E': 5}]
+print(process_data(data))
 ```
 {% endcode %}
 
@@ -80,9 +85,9 @@ In this code, `x` is a variable of type `int`, and its initial value is 10.
 
 ### Type Checking Tools
 
-Python does not include built-in type checking functionality. However, there are third-party tools that can perform static or dynamic type checking based on type hints. These tools can detect type-related errors, such as type mismatches, before the code is executed. Some popular type checking tools for Python include Mypy, Pyright, PyCharm, and PyLint.
+Python does not include built-in type checking functionality. However, there are third-party tools that can perform static or dynamic type checking based on type hints. These tools can detect type-related errors, such as type mismatches, before the code is executed. Some popular type checking tools for Python include Mypy, Pyright, and PyCharm.
 
-The following example demonstrates how type checking works with Mypy, a static type checker for Python. First, we need to install Mypy using pip:
+The following example demonstrates how type checking works with Mypy, a static type checker for Python. First, we need to install Mypy using `pip`:
 
 ```sh
 pip install mypy
@@ -99,7 +104,7 @@ result = add(1, '2')
 ```
 {% endcode %}
 
-In this code, we are calling the `add()` function with two arguments of different types (`1` and `'2'`). This would result in a type error if we run the code. However, if we run Mypy on the code, we get the following error message:
+In this code, we are calling the `add()` function with two arguments of different types (`1` and `'2'`). This would result in a type error if we run the code. However, if we run `mypy` on the code, we get the following error message:
 
 ```go
 example.py:4: 
@@ -110,54 +115,155 @@ This error message indicates that the second argument to `add()` has the wrong t
 
 ### Advanced Type Hinting
 
-Python's type hinting system goes beyond basic types and allows for more advanced type hinting to enhance code readability and maintainability. In this section, we will cover Union Types, Optional Types, Typed Dictionaries, and Callable Types.
+Python's type hinting system goes beyond basic types and allows for more advanced type hinting to enhance code readability and maintainability. In this section, we will cover `Union` Types, `Optional` Types, Typed Dictionaries, and `Callable` Types.
 
 #### Union Types:&#x20;
 
-Union types are used when a variable can accept more than one type. This is achieved by using the "|" operator between types. Here's an example:
+The `Union` type is used to indicate that a variable can have multiple types. It is a way of expressing that a variable or parameter can be of one type or another. This is particularly useful when a function or variable can accept a range of data types.
 
-{% code lineNumbers="true" %}
+The `Union` type is typically used from the typing module, and it is applied by using square brackets (`[]`). The syntax looks like `Union[type1, type2, ...]`.
+
+Let's consider an example where a function takes a parameter that can be either a `str` or an `int`:
+
+{% code title="typehinting.py" lineNumbers="true" %}
 ```python
-def square(num: Union[int, float]) -> Union[int, float]:
-    return num * num
+from typing import Union
+
+def sum_digits(number: Union[str, int]) -> int:
+    digits = [int(x) for x in str(number)]
+    return sum(digits)
+
+print(sum_digits('1234')) #10
+print(sum_digits(1234)) #10
+
+# Invalid usage:
+print(sum_digits(1234.0))
+# The line above would result in a type error during static analysis:
+#
+# typehinting.py:11: error: Argument 1 to "sum_digits" has incompatible type 
+#     "float"; expected "str | int" [arg-type]
+# Found 1 error in 1 file (checked 1 source file)
 ```
 {% endcode %}
 
-In the above example, the function `square` takes a parameter `num` which can either be an integer or a float. The return type of the function can also be either an integer or a float.
+This usage of Union allows the `sum_digits` function to handle both integers and string without causing a type error during static analysis.
+
+`Union` provides flexibility in specifying that a parameter or variable can accept more than one type. It makes the code more explicit by indicating the expected types of data. It's commonly used when a function or variable can handle various data types, enhancing the versatility of the code. However, while `Union` is powerful, it's essential not to overuse it. Consider using more specific types when possible to maintain code clarity.
 
 #### Optional Types:&#x20;
 
-Optional types are used when a variable can be of a specific type or None. This is achieved by using the "Optional" keyword from the typing module. Here's an example:
+The `Optional` type is used to indicate that a variable can either have a specific type or `None`. This is useful when you want to specify that a function parameter is optional and can be omitted. The `Optional` type is part of the `typing` module, and it is often used in scenarios where a variable can have a specific type or be `None`. The syntax for using `Optional` involves using the keyword `Optional` and specifying the type within square brackets (`[]`). It looks like `Optional[type]`.
+
+Let's consider an example where a function takes an optional parameter that can be either a `str` or `None`:
+
+{% code title="typehinting_2.py" lineNumbers="true" %}
+```python
+from typing import Optional
+
+def greet(name: Optional[str]=None) -> str:
+    if name is not None:
+        return f"Hello, {name}!"
+    else:
+        return "Hello, Stranger!"
+
+# Valid usage
+print(greet("Alice"))  # "Hello, Alice!"
+print(greet())  # "Hello, Stranger!"
+
+# Invalid usage (passing an integer)
+print(greet(42))
+
+# The line above would result in a type error during static analysis:
+#
+# typehinting_2.py:14: error: Argument 1 to "greet" has incompatible type "int";
+#    expected "str | None"  [arg-type]
+# Found 1 error in 1 file (checked 1 source file)
+```
+{% endcode %}
+
+In this example:
+
+* The `greet` function takes an optional parameter `name` of type `Optional[str]`, indicating that it can be either a `str` or `None`.
+* If `name` is provided, it returns a personalised greeting; otherwise, it defaults to a generic greeting.
+
+This usage of `Optional` allows the greet function to handle cases where the name parameter is optional, and it can be safely omitted.
+
+When specifying a default value for the parameter, it's entirely valid to provide a default value other than `None`. The `Optional` type indicates that the parameter can take on the specified type or be omitted, defaulting to the provided default value if omitted.
+
+Let's illustrate this by refactoring our previous example:
 
 {% code lineNumbers="true" %}
 ```python
 from typing import Optional
 
-def greeting(name: Optional[str]) -> str:
-    if name is not None:
-        return f"Hello, {name}!"
-    return "Hello, World!"
+def greet(name: Optional[str]='Stranger') -> str:
+    return f"Hello, {name}!"
 ```
 {% endcode %}
 
-In the above example, the function `greeting` takes an optional parameter `name` which can either be a string or None. If `name` is not None, the function returns a greeting with the name. If `name` is None, the function returns a generic greeting.
+In this example:
+
+* The `greet` function takes an optional parameter name of type Optional\[str], indicating that it can be either a string or None.
+* The default value for `name` is set to `"Stranger"` providing a default value other than `None`.
+* Valid usages include providing a specific name or omitting the `name` parameter, in which case the default value `"Stranger"` is used.
+
+This pattern is commonly used when you want to allow a parameter to be optional but provide a meaningful default value if it's omitted.
 
 #### Typed Dictionaries:&#x20;
 
-Typed dictionaries allow you to specify the types of keys and values in a dictionary. This is achieved by using the "TypedDict" keyword from the typing module. Here's an example:
+In Python type hinting, `TypedDict` is a class provided by the `typing` module that allows you to define a dictionary with specific key-value pairs and their corresponding types. This is particularly useful when you want to enforce a certain structure for dictionaries within your code, providing better static analysis and documentation.
 
-{% code lineNumbers="true" %}
+`TypedDict` is used to create a type hint for a dictionary where you specify the expected keys and their corresponding value types.
+
+The basic syntax for defining a `TypedDict` involves creating a class that inherits from `TypedDict` and specifying the keys and their types as class attributes.
+
+For example,&#x20;
+
+* We define a `UserProfile` class inheriting from `TypedDict` where `username`, `age`, and `email` are the expected keys with their respective types.
+* The `print_user_profile` function takes a parameter user of type `UserProfile` and prints the user's information.
+* When using the `UserProfile` type, the code analyser ensures that all required keys with their specified types are present in the dictionary. If a required key is missing, or an additional key is present,  or if there's a type mismatch, it raises a static analysis error.
+
+{% code title="typehinting_6.py" overflow="wrap" lineNumbers="true" fullWidth="false" %}
 ```python
 from typing import TypedDict
 
-class User(TypedDict):
-    name: str
-    age: int
-    email: str
+# Define a TypedDict class for a user profile
+class UserProfile(TypedDict):
+ username: str
+ age: int
+ email: str
+
+# Function using TypedDict
+def print_user_profile(user: UserProfile) -> None:
+ print(f"Username: {user['username']}")
+ print(f"Age: {user['age']}")
+ print(f"Email: {user['email']}")
+
+# Valid usage
+valid_user_data: UserProfile = {'username': 'john_doe', 
+                                'age': 25, 
+                                'email': 'john@example.com'}
+print_user_profile(valid_user_data)
+
+
+# invalid_user_data: 
+missing_key_data: UserProfile = {'username': 'jane_doe', 
+                                 'email': 'jane@example.com'}
+too_manyKeys_data: UserProfile = {'username': 'jane_doe', 
+                                  'email': 'jane@example.com', 
+                                  'age': 24, 
+                                  'height': 175}
+
+# The two lines above would result in a type error during static analysis
+# typehinting_6.py:23: error: Missing key "age" for TypedDict "UserProfile"  [typeddict-item]
+# typehinting_6.py:25: error: Extra key "height" for TypedDict "UserProfile"  [typeddict-unknown-key]
+# Found 2 errors in 1 file (checked 1 source file)
 ```
 {% endcode %}
 
-In the above example, the `User` class is a typed dictionary that specifies the types of the keys and values in the dictionary. The keys in the dictionary are `name`, `age`, and `email`, and their respective types are `str`, `int`, and `str`.
+In the above example, the `UserProfile` class is a typed dictionary that specifies the types of the keys and values in the dictionary. The keys in the dictionary are `name`, `age`, and `email`, and their respective types are `str`, `int`, and `str`.
+
+`TypedDict` helps enforce a specific structure for dictionaries. It provides better static analysis during development. Use `TypedDict` when you want to communicate and enforce a specific structure for dictionaries in your code.
 
 #### Callable Types:&#x20;
 
@@ -217,21 +323,12 @@ Advanced type hinting allows developers to specify more complex data types and f
 
 ## Best Practices for Type Hinting&#x20;
 
-1. Choosing the Correct Type Hint&#x20;
-2. Avoiding Overuse of Type Hints&#x20;
-3. Documenting Type Hints&#x20;
-4. Updating Type Hints
-
 Using type hinting can greatly improve the readability and maintainability of your Python code. However, simply adding type hints is not enough. It is important to follow best practices to ensure that your code is clear and consistent. Here are some best practices to follow when using type hinting in Python:
 
 1. Be consistent: Consistency is key when it comes to type hinting. Make sure that you use type hints consistently throughout your codebase. This means using the same style of type hinting, and being consistent with the names and types of variables and parameters.
 2. Use descriptive variable names: When using type hinting, it is important to use descriptive variable names. This will make it easier for others to understand what the variable is for and what type it should be.
-3. Use Union types for variables that can have multiple types: Union types allow you to specify that a variable can have more than one type. This can be useful when dealing with variables that can have multiple types, such as a parameter that can be either a string or a list.
-4. Use Optional types for optional parameters: Optional types allow you to specify that a parameter is optional. This can be useful when dealing with functions that have optional parameters.
-5. Use Typed Dictionaries: Typed dictionaries are a great way to define a dictionary with specific key-value pairs. This can be useful when working with APIs that require specific input formats.
-6. Use Callable types for functions that take functions as arguments: Callable types allow you to specify the type of function that is expected as an argument. This can be useful when working with higher-order functions that take functions as arguments.
-7. It is important to be precise with the types being used. This means avoiding generic types like `Any` and instead using more specific types like `List[str]` or `Tuple[int, str]`. This helps make the code more self-documenting and easier to understand.
-8. It is a good practice to use type aliases to avoid repetition and make the code more readable. For example, instead of writing `Dict[str, Union[int, str]]`, a type alias `DictStrIntOrStr` can be defined and used throughout the code
+3. Use Typed Dictionaries: Typed dictionaries are a great way to define a dictionary with specific key-value pairs. This can be useful when working with APIs that require specific input formats.
+4. It is important to be precise with the types being used. This means avoiding generic types like Any and instead using more specific types like List\[str] or Tuple\[int, str]. This helps make the code more self-documenting and easier to understand.
 
 To illustrate these best practices, consider the following example code:
 
@@ -253,9 +350,6 @@ def get_first_element(data: Union[List[str], str]) -> str:
     if isinstance(data, list):
         return data[0]
     return data
-    
-# Use type aliases to avoid repetition and make code more readable
-DictStrIntOrStr = Dict[str, Union[int, str]]
 
 # Be precise with types being used
 def get_longest_string(strings: List[str]) -> str:
@@ -272,13 +366,22 @@ def add_student_scores(
     for student, score in student_scores:
         scores[student] = scores.get(student, 0) + score
     return scores
-
-
 ```
 {% endcode %}
 
-In this example, type aliases are used to avoid repetition and make the code more readable. Precise types like `List[str]`, `Dict[str, int]`, and `Tuple[str, int]` are used to provide more information and make the code more self-documenting.
+In this example, precise types like `List[str]`, `Dict[str, int]`, and `Tuple[str, int]` are used to provide more information and make the code more self-documenting.
 
 ## Conclusion
 
-Overall, type hinting is a powerful tool for improving code maintainability, reducing errors, and enhancing collaboration among developers. In the following chapter, we will explore the syntax and usage of type hints in Python, as well as best practices for implementing them in your own code.
+In the ever-evolving landscape of Python programming, the adoption of type hinting has emerged as a transformative practice, offering developers a valuable tool to enhance code quality, readability, and maintainability. As we wrap up our exploration of type hinting in Python, let's reflect on the key takeaways and the impact this feature has on modern Python development.
+
+* Clarity and Readability: type hinting serves as a form of documentation, making code more explicit and self-explanatory. By providing insights into variable types, function parameters, and return types, developers can quickly understand the expected structure and behaviour of the code.
+* Early Error Detection: one of the major advantages of type hinting is its role in catching errors early in the development process. By incorporating type annotations, developers can identify potential issues during static analysis, preventing runtime errors and enhancing overall code robustness.
+* Collaboration and Communication: type hinting acts as a communication tool among developers working on a project. It facilitates collaboration by clearly defining the interfaces between different components, making it easier for team members to understand and contribute to the codebase.
+* Enhanced Refactoring: type hints play a crucial role in making codebases more adaptable to changes. During refactoring, developers can rely on type annotations to understand the flow of data and make modifications with greater confidence, minimising the risk of introducing errors.
+* Advanced Type Hinting Features: Python's type hinting system goes beyond basic types, offering features like Union Types, Optional Types, Typed Dictionaries, Callable Types, and more. These advanced features provide developers with a versatile toolkit to express complex data structures and function signatures.
+* Type Hinting as a Guideline: it's important to note that while type hinting is a powerful aid, it is not enforced by the Python interpreter. Developers should view type hints as guidelines that enhance code quality but not as strict rules governing behaviour. The flexibility of Python remains intact, allowing for a balance between clarity and flexibility.
+
+In summary, the adoption of type hinting represents a significant step forward in the evolution of Python. As the language continues to evolve, developers are empowered with tools that not only boost their productivity but also contribute to the creation of more reliable, understandable, and maintainable software. Type hinting, when used judiciously, becomes an integral part of the Pythonic journey, enriching the coding experience and ensuring the sustainability of Python projects in the long run.
+
+\
