@@ -18,7 +18,7 @@ Here is a small extract from the book "Photographic investigations of faint nebu
 
 In order to extract the words from a text easily, i have implemented a method called `remove_nonalphanum(filename)` that reads a text files and replaces punctuation with a blank space. Again, I cannot emphasise enough how important it is to use convenience function to make your code easier to read.
 
-Once the function has been implemented, the solution to the problem is straightforward. I have been using `set` comprehension and the join method from the str type to make the code clearer and more concise. Note that I could have used a list instead of a set. If you are still unfamiliar with these concepts, I recommend that you read the chapters on [list](../a-deeper-dive-into-strings-lists-and-tuples/more-on-lists.md) and [sets](../page-1/sets.md).&#x20;
+Once the function has been implemented, the solution to the problem is straightforward. I have been using `set` comprehension and the join method from the str type to make the code clearer and more concise. Note that I could have used a list instead of a set. If you are still unfamiliar with these concepts, I recommend that you read the chapters on [list](../a-deeper-dive-into-strings-lists-and-tuples/more-on-lists.md) and [sets](../10-sets-and-dictionaries/sets.md).&#x20;
 
 ```python
 def remove_nonalphanum(filename):

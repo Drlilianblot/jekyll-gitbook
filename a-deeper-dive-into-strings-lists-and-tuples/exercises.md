@@ -207,7 +207,7 @@ def remove_duplicates(elements):
 ```
 {% endcode %}
 
-An better implementation is uses `set` a data structure described in [section about sets](../page-1/sets.md). Once you have covered the `set` data structure, you should ask yourself "Why would using sets be better?"
+An better implementation is uses `set` a data structure described in [section about sets](../10-sets-and-dictionaries/sets.md). Once you have covered the `set` data structure, you should ask yourself "Why would using sets be better?"
 
 </details>
 
@@ -366,6 +366,6 @@ def most_frequent(sentence):
 ```
 {% endcode %}
 
-In the chapter [Sets and dictionaries](../page-1/), we will introduce a better data structure than a list of tuples to map the characters and their frequencies. The data structure is called a dictionary in Python.
+In the chapter [Sets and dictionaries](../10-sets-and-dictionaries/), we will introduce a better data structure than a list of tuples to map the characters and their frequencies. The data structure is called a dictionary in Python.
 
 </details>

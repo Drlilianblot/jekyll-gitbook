@@ -202,7 +202,7 @@ squares = tuple(x**2 for x in numbers if x % 2 == 0)
 
 In this example, we use a generator expression inside the `tuple()` constructor to create a new tuple `squares` containing the squares of the even numbers from the original tuple `numbers`. At this stage, you don't need to understand what generator expression are in Python, just use the given expression format.
 
-While tuple comprehension is not a direct syntax like list comprehension, this approach allows you to achieve similar functionality when you want to create tuples by applying an expression to items from an existing iterable. Note that `numbers` could have been a list or another type of iterable (like [set, a data type covered in another chapter](../page-1/sets.md)), it does not need to be a tuple.
+While tuple comprehension is not a direct syntax like list comprehension, this approach allows you to achieve similar functionality when you want to create tuples by applying an expression to items from an existing iterable. Note that `numbers` could have been a list or another type of iterable (like [set, a data type covered in another chapter](../10-sets-and-dictionaries/sets.md)), it does not need to be a tuple.
 
 ## Sequences of sequences
 
