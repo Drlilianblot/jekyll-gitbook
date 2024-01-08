@@ -73,7 +73,7 @@ You can use dot notation as part of any expression. For example:
 ```bash
 >>> print('(%g, %g)' % (blank.x, blank.y))
  (3.0, 4.0) 
->>> distance = math.sqrt(blank.x2 + blank.y2) 
+>>> distance = math.sqrt(blank.x**2 + blank.y**2) 
 >>> print(distance) 
  5.0 
 >>> 
