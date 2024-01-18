@@ -92,7 +92,7 @@ When more than one operator appears in an expression, the order of evaluation de
 | +, -                               | Addition and subtraction                                           |
 | >>, <<                             | Right and left bitwise shift                                       |
 | <=, <, >, >=                       | Comparison operators                                               |
-| <>, ==, !=                         | Equality operators                                                 |
+| ==, !=                             | Equality operators                                                 |
 | `is`, `is not`                     | Identity operators                                                 |
 | `in`, `not in`                     | Membership operators                                               |
 | not                                | Logical operator                                                   |
