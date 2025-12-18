@@ -59,7 +59,7 @@ def rotate_word(word, shift):
 
 ### Exercise 3
 
-Read the documentation of the [string methods](https://www.docs.python.org/lib/string-methods.html) and experiment with some of them to make sure you understand how they work. `strip` and `replace` are particularly useful. The documentation uses a syntax that might be confusing. For example, in `find(sub[, start[, end]])`, the brackets indicate optional arguments. So `sub` is required, but `start` is optional, and if you include `start`, then `end` is optional.&#x20;
+Read the documentation of the [string methods](https://docs.python.org/3/library/stdtypes.html#string-methods) and experiment with some of them to make sure you understand how they work. `strip` and `replace` are particularly useful. The documentation uses a syntax that might be confusing. For example, in `find(sub[, start[, end]])`, the brackets indicate optional arguments. So `sub` is required, but `start` is optional, and if you include `start`, then `end` is optional.&#x20;
 
 {% hint style="info" %}
 The ability to read and understand documentation is a key skill. You need to spend time exploring the Python documentation, as well as some useful modules, such as `math` and `random`.
@@ -154,7 +154,7 @@ The (so-called) Birthday Paradox:
 1. Write a function called `has_duplicates` that takes a list and returns `True` if there is any element that appears more than once. It should not modify the original list.&#x20;
 2. If there are 23 students in your class, what are the chances that two of you have the same birthday? You can estimate this probability by generating random samples of 23 birthdays and checking for matches. Hint: you can generate random birthdays with the `randint` function in the `random` module.
 
-You can read about this problem on [wikipedia](https://www.wikipedia.org/wiki/Birthday\_paradox).
+You can read about this problem on [wikipedia](https://www.wikipedia.org/wiki/Birthday_paradox).
 
 <details>
 
@@ -337,7 +337,7 @@ This exercise is inspired by an example at puzzlers.org.
 
 ### Exercise 12
 
-Write a function called `most_frequent` that takes a string and prints the letters in decreasing order of frequency. Find text samples from several different languages and see how letter frequency varies between languages. Compare your results with the tables given in the [Wikipedia's letter frequencies page](https://www.wikipedia.org/wiki/Letter\_frequencies).&#x20;
+Write a function called `most_frequent` that takes a string and prints the letters in decreasing order of frequency. Find text samples from several different languages and see how letter frequency varies between languages. Compare your results with the tables given in the [Wikipedia's letter frequencies page](https://www.wikipedia.org/wiki/Letter_frequencies).&#x20;
 
 <details>
 
