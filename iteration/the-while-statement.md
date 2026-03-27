@@ -44,7 +44,7 @@ In the previous case, we can prove that the loop terminates because we know that
 
 {% code lineNumbers="true" %}
 ```python
-n = int(input('Enter a positive integer:') 
+n = int(input('Enter a positive integer:')) 
 while n != 1: 
     print(n) 
     if n % 2 == 0: # n is even 
@@ -58,4 +58,4 @@ The condition for this loop is `n != 1`, so the loop will continue until `n` is 
 
 Since `n` sometimes increases and sometimes decreases, there is no obvious proof that `n` will ever reach `1`, or that the program terminates. For some particular values of `n`, we can prove termination. For example, if the starting value is a power of two, then the value of `n` will be even each time through the loop until it reaches `1`. The previous example ends with such a sequence, starting with 16.
 
-The hard question is whether we can prove that this program terminates for _"all positive values"_ of `n`. So far, no one has been able to prove it _or_ disprove it (See [Collatz conjecture](https://www.wikipedia.org/wiki/Collatz\_conjecture))!
+The hard question is whether we can prove that this program terminates for _"all positive values"_ of `n`. So far, no one has been able to prove it _or_ disprove it (See [Collatz conjecture](https://www.wikipedia.org/wiki/Collatz_conjecture))!
